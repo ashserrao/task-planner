@@ -77,7 +77,11 @@ function buildTimelineGrid(containerId, referenceDate) {
   const targetDateString = formatDateKey(referenceDate);
 
   // Filter rows down to tasks that happen on this selected calendar date
-  const targetedTasks = allTasksState.filter(t => t["task date time"] && formatDateKey(new Date(t["task date time"])) === targetDateString);
+  const targetedTasks = allTasksState.filter(
+    (t) =>
+      t["task date time"] &&
+      formatDateKey(new Date(t["task date time"])) === targetDateString,
+  );
 
   // Create an array for all 24 hours. Each hour will hold an array of task slots.
   let hourlySlotsMap = Array.from({ length: 24 }, () => []);
@@ -85,7 +89,7 @@ function buildTimelineGrid(containerId, referenceDate) {
   // Track slots that are "occupied" by a multi-hour task so we can hide the "+ Allocate" button
   let occupiedHours = new Set();
 
-  targetedTasks.forEach(task => {
+  targetedTasks.forEach((task) => {
     const startDate = new Date(task["task date time"]);
     const startHour = startDate.getHours();
 
@@ -100,10 +104,17 @@ function buildTimelineGrid(containerId, referenceDate) {
       if (currentHour < 24) {
         // We only append the full UI card data into the *initial* starting slot row
         if (i === 0) {
-          hourlySlotsMap[currentHour].push({ type: "task-card", data: task, durationBlocks: duration });
+          hourlySlotsMap[currentHour].push({
+            type: "task-card",
+            data: task,
+            durationBlocks: duration,
+          });
         } else {
           // Subsequent hours get flagged as extended blocks so they look cohesive
-          hourlySlotsMap[currentHour].push({ type: "extension-block", data: task });
+          hourlySlotsMap[currentHour].push({
+            type: "extension-block",
+            data: task,
+          });
         }
         occupiedHours.add(currentHour);
       }
@@ -112,9 +123,10 @@ function buildTimelineGrid(containerId, referenceDate) {
 
   // Populate actual HTML layout rows
   for (let h = 0; h < 24; h++) {
-    const displayHour = h.toString().padStart(2, '0') + ":00";
+    const displayHour = h.toString().padStart(2, "0") + ":00";
     const slotsContainer = document.createElement("div");
-    slotsContainer.className = "flex flex-col sm:flex-row p-3 hover:bg-gray-50/50 transition items-start sm:items-center gap-4 min-h-[70px]";
+    slotsContainer.className =
+      "flex flex-col sm:flex-row p-3 hover:bg-gray-50/50 transition items-start sm:items-center gap-4 min-h-[70px]";
 
     let slotsContentHTML = `<div class="w-16 font-mono text-sm font-semibold text-gray-400 select-none">${displayHour}</div>`;
     slotsContentHTML += `<div class="flex-1 flex flex-col gap-2 w-full">`;
@@ -122,24 +134,24 @@ function buildTimelineGrid(containerId, referenceDate) {
     const hourContents = hourlySlotsMap[h];
 
     if (hourContents.length > 0) {
-      hourContents.forEach(slot => {
+      hourContents.forEach((slot) => {
         const task = slot.data;
         const isCompleted = task["task status"] === "Completed";
 
         if (slot.type === "task-card") {
           const priorityColors = {
-            "High": "border-l-4 border-l-rose-500 bg-rose-50 text-rose-900",
-            "Medium": "border-l-4 border-l-amber-500 bg-amber-50 text-amber-900",
-            "Low": "border-l-4 border-l-sky-500 bg-sky-50 text-sky-900"
+            High: "border-l-4 border-l-rose-500 bg-rose-50 text-rose-900",
+            Medium: "border-l-4 border-l-amber-500 bg-amber-50 text-amber-900",
+            Low: "border-l-4 border-l-sky-500 bg-sky-50 text-sky-900",
           };
 
           slotsContentHTML += `
-                        <div onclick="openTaskModalForEdit(${JSON.stringify(task).replace(/"/g, '&quot;')})" class="cursor-pointer w-full p-3 rounded-lg shadow-sm border border-gray-100 ${priorityColors[task["task priority"] || 'Medium']} ${isCompleted ? 'opacity-60 line-through bg-gray-100 border-l-gray-400' : ''} transition hover:scale-[1.005]">
+                        <div onclick="openTaskModalForEdit(${JSON.stringify(task).replace(/"/g, "&quot;")})" class="cursor-pointer w-full p-3 rounded-lg shadow-sm border border-gray-100 ${priorityColors[task["task priority"] || "Medium"]} ${isCompleted ? "opacity-60 line-through bg-gray-100 border-l-gray-400" : ""} transition hover:scale-[1.005]">
                             <div class="flex justify-between items-start">
                                 <h5 class="font-semibold text-sm">${task["Task title"]} <span class="text-xs text-gray-400 font-normal">(Starts here)</span></h5>
-                                <span class="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded ${isCompleted ? 'bg-gray-200 text-gray-600' : 'bg-white/80'}">${task["task category"]}</span>
+                                <span class="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded ${isCompleted ? "bg-gray-200 text-gray-600" : "bg-white/80"}">${task["task category"]}</span>
                             </div>
-                            <p class="text-xs text-gray-500 mt-1 line-clamp-1">${task["Task description"] || 'No description'}</p>
+                            <p class="text-xs text-gray-500 mt-1 line-clamp-1">${task["Task description"] || "No description"}</p>
                             <div class="text-[11px] text-indigo-600 font-medium mt-2 flex items-center gap-1">
                                 <i class="fa-regular fa-clock"></i> Blocks next ${task["task duration"]} hr(s)
                             </div>
@@ -147,7 +159,7 @@ function buildTimelineGrid(containerId, referenceDate) {
         } else if (slot.type === "extension-block") {
           // Sub-indicator rendering inside consecutive blocked hours instead of rendering an overlapping card duplicate
           slotsContentHTML += `
-                        <div onclick="openTaskModalForEdit(${JSON.stringify(task).replace(/"/g, '&quot;')})" class="cursor-pointer w-full px-3 py-1.5 rounded-md border border-dashed border-gray-200 bg-gray-50/50 text-xs text-gray-400 flex items-center gap-2 hover:bg-gray-100 transition">
+                        <div onclick="openTaskModalForEdit(${JSON.stringify(task).replace(/"/g, "&quot;")})" class="cursor-pointer w-full px-3 py-1.5 rounded-md border border-dashed border-gray-200 bg-gray-50/50 text-xs text-gray-400 flex items-center gap-2 hover:bg-gray-100 transition">
                             <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
                             Reserved for: <strong class="text-gray-600 truncate max-w-[200px]">${task["Task title"]}</strong>
                         </div>`;
@@ -336,7 +348,7 @@ function renderAnalytics() {
   activeCharts.timeSpent = new Chart(ctxTime, {
     type: "bar",
     data: {
-      labels: topTimeTasks.map((t) => t["Task title"]),
+      labels: topTimeTasks.map((t) => t["task category"]),
       datasets: [
         {
           label: "Duration (Hours)",
