@@ -1399,6 +1399,9 @@ video {
 .font-display {
   font-family: Fraunces, ui-serif, Georgia, serif;
 }
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -3474,6 +3477,9 @@ video {
 }
 .font-display {
   font-family: Fraunces, ui-serif, Georgia, serif;
+}
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 .text-2xl {
   font-size: 1.5rem;
