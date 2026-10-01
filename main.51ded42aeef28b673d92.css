@@ -1323,10 +1323,6 @@ video {
 .bg-accent\/15 {
   background-color: rgb(var(--accent) / 0.15);
 }
-.bg-amber-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 158 11 / var(--tw-bg-opacity, 1));
-}
 .bg-amber-500\/15 {
   background-color: rgb(245 158 11 / 0.15);
 }
@@ -1374,13 +1370,6 @@ video {
 .bg-card\/50 {
   background-color: rgb(var(--card) / 0.5);
 }
-.bg-cyan-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(6 182 212 / var(--tw-bg-opacity, 1));
-}
-.bg-cyan-500\/20 {
-  background-color: rgb(6 182 212 / 0.2);
-}
 .bg-destructive {
   --tw-bg-opacity: 1;
   background-color: rgb(var(--destructive) / var(--tw-bg-opacity, 1));
@@ -1414,6 +1403,13 @@ video {
 .bg-glow\/25 {
   background-color: rgb(var(--glow) / 0.25);
 }
+.bg-lime-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(132 204 22 / var(--tw-bg-opacity, 1));
+}
+.bg-lime-500\/20 {
+  background-color: rgb(132 204 22 / 0.2);
+}
 .bg-muted {
   --tw-bg-opacity: 1;
   background-color: rgb(var(--muted) / var(--tw-bg-opacity, 1));
@@ -1429,6 +1425,13 @@ video {
 }
 .bg-muted\/50 {
   background-color: rgb(var(--muted) / 0.5);
+}
+.bg-orange-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1));
+}
+.bg-orange-500\/20 {
+  background-color: rgb(249 115 22 / 0.2);
 }
 .bg-primary {
   --tw-bg-opacity: 1;
@@ -1446,6 +1449,10 @@ video {
 .bg-red-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(69 10 10 / var(--tw-bg-opacity, 1));
+}
+.bg-rose-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 63 94 / var(--tw-bg-opacity, 1));
 }
 .bg-rose-500\/20 {
   background-color: rgb(244 63 94 / 0.2);
@@ -1775,10 +1782,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(var(--card-foreground) / var(--tw-text-opacity, 1));
 }
-.text-cyan-300 {
-  --tw-text-opacity: 1;
-  color: rgb(103 232 249 / var(--tw-text-opacity, 1));
-}
 .text-destructive {
   --tw-text-opacity: 1;
   color: rgb(var(--destructive) / var(--tw-text-opacity, 1));
@@ -1799,6 +1802,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(240 171 252 / var(--tw-text-opacity, 1));
 }
+.text-lime-300 {
+  --tw-text-opacity: 1;
+  color: rgb(190 242 100 / var(--tw-text-opacity, 1));
+}
 .text-muted-foreground {
   --tw-text-opacity: 1;
   color: rgb(var(--muted-foreground) / var(--tw-text-opacity, 1));
@@ -1811,6 +1818,10 @@ video {
 }
 .text-muted-foreground\/80 {
   color: rgb(var(--muted-foreground) / 0.8);
+}
+.text-orange-300 {
+  --tw-text-opacity: 1;
+  color: rgb(253 186 116 / var(--tw-text-opacity, 1));
 }
 .text-primary {
   --tw-text-opacity: 1;
@@ -3901,10 +3912,6 @@ video {
 .bg-accent\/15 {
   background-color: rgb(var(--accent) / 0.15);
 }
-.bg-amber-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 158 11 / var(--tw-bg-opacity, 1));
-}
 .bg-amber-500\/15 {
   background-color: rgb(245 158 11 / 0.15);
 }
@@ -3952,13 +3959,6 @@ video {
 .bg-card\/50 {
   background-color: rgb(var(--card) / 0.5);
 }
-.bg-cyan-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(6 182 212 / var(--tw-bg-opacity, 1));
-}
-.bg-cyan-500\/20 {
-  background-color: rgb(6 182 212 / 0.2);
-}
 .bg-destructive {
   --tw-bg-opacity: 1;
   background-color: rgb(var(--destructive) / var(--tw-bg-opacity, 1));
@@ -3992,6 +3992,13 @@ video {
 .bg-glow\/25 {
   background-color: rgb(var(--glow) / 0.25);
 }
+.bg-lime-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(132 204 22 / var(--tw-bg-opacity, 1));
+}
+.bg-lime-500\/20 {
+  background-color: rgb(132 204 22 / 0.2);
+}
 .bg-muted {
   --tw-bg-opacity: 1;
   background-color: rgb(var(--muted) / var(--tw-bg-opacity, 1));
@@ -4007,6 +4014,13 @@ video {
 }
 .bg-muted\/50 {
   background-color: rgb(var(--muted) / 0.5);
+}
+.bg-orange-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1));
+}
+.bg-orange-500\/20 {
+  background-color: rgb(249 115 22 / 0.2);
 }
 .bg-primary {
   --tw-bg-opacity: 1;
@@ -4024,6 +4038,10 @@ video {
 .bg-red-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(69 10 10 / var(--tw-bg-opacity, 1));
+}
+.bg-rose-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 63 94 / var(--tw-bg-opacity, 1));
 }
 .bg-rose-500\/20 {
   background-color: rgb(244 63 94 / 0.2);
@@ -4353,10 +4371,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(var(--card-foreground) / var(--tw-text-opacity, 1));
 }
-.text-cyan-300 {
-  --tw-text-opacity: 1;
-  color: rgb(103 232 249 / var(--tw-text-opacity, 1));
-}
 .text-destructive {
   --tw-text-opacity: 1;
   color: rgb(var(--destructive) / var(--tw-text-opacity, 1));
@@ -4377,6 +4391,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(240 171 252 / var(--tw-text-opacity, 1));
 }
+.text-lime-300 {
+  --tw-text-opacity: 1;
+  color: rgb(190 242 100 / var(--tw-text-opacity, 1));
+}
 .text-muted-foreground {
   --tw-text-opacity: 1;
   color: rgb(var(--muted-foreground) / var(--tw-text-opacity, 1));
@@ -4389,6 +4407,10 @@ video {
 }
 .text-muted-foreground\/80 {
   color: rgb(var(--muted-foreground) / 0.8);
+}
+.text-orange-300 {
+  --tw-text-opacity: 1;
+  color: rgb(253 186 116 / var(--tw-text-opacity, 1));
 }
 .text-primary {
   --tw-text-opacity: 1;
