@@ -21,3 +21,4 @@
 - v2.0.9 changed the ui of to card and added date to task creating and edit form
 - v2.0.10 dev res admin opt added
 - v2.0.11 bugfix Fix validation date and time for form; Add change log for projects;
+- v2.0.12 added google calendar connectivity for priority task reminders
