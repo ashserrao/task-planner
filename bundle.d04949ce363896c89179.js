@@ -2553,7 +2553,7 @@
         function $t(e) {
           let { className: t } = e;
           return r.createElement("img", {
-            src: "/assets/logo no bg.svg",
+            src: "./assets/logo no bg.svg",
             alt: "Logo",
             className: "h-12 w-12 shrink-0",
           });
