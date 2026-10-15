@@ -3,18 +3,16 @@
   var e,
     t,
     a,
-    r = {
-      2074: (e, t, a) => {
+    r,
+    n,
+    l = {
+      8305: (e, t, a) => {
         var r = a(6540),
           n = a(5338),
           l = a(8664),
-          o = a(6221),
-          s = a(5042),
-          c = a(8697),
-          i = a(9230),
-          m = a(937),
-          d = a(4794);
-        const u = (e, t, a) => {
+          o = a(937),
+          s = a(4794);
+        const c = (e, t, a) => {
             const r = [];
             for (let n = 0; n < 6; n++) {
               const l = (Math.PI / 180) * (60 * n);
@@ -22,7 +20,7 @@
             }
             return r.join(" ");
           },
-          f = (e) => {
+          i = (e) => {
             let {
               animated: t = !1,
               hexRadius: a = 34,
@@ -36,25 +34,25 @@
                     l = Math.ceil(t / r) + 2,
                     o = Math.ceil(a / n) + 2,
                     s = t / 2,
-                    c = a / 2,
-                    i = Math.hypot(s, c),
+                    i = a / 2,
+                    d = Math.hypot(s, i),
                     m = [];
                   for (let t = -1; t < l; t++)
                     for (let a = -1; a < o; a++) {
                       const l = t * r,
                         o = a * n + (t % 2 != 0 ? n / 2 : 0),
-                        d = Math.hypot(l - s, o - c);
+                        u = Math.hypot(l - s, o - i);
                       m.push({
                         key: `${t}-${a}`,
-                        points: u(l, o, e - 2),
-                        delay: (d / i) * 1.6,
+                        points: c(l, o, e - 2),
+                        delay: (u / d) * 1.6,
                       });
                     }
                   return m;
                 }, [e, t, a]))(a, n, l),
               s = (0.6 * Math.min(n, l)) / Math.max(1e3, 714),
-              c = (n - 1e3 * s) / 2,
-              i = (l - 714 * s) / 2;
+              i = (n - 1e3 * s) / 2,
+              d = (l - 714 * s) / 2;
             return r.createElement(
               "div",
               { className: "absolute inset-0 z-0 pointer-events-none" },
@@ -89,7 +87,7 @@
                 }),
                 r.createElement(
                   "g",
-                  { transform: `translate(${c}, ${i}) scale(${s})` },
+                  { transform: `translate(${i}, ${d}) scale(${s})` },
                   r.createElement("path", {
                     d: "M 502.728 95 L 501.955 95 494.688 110.250 L 487.422 125.500 469.961 162.730 L 452.500 199.959 451.250 199.511 L 450 199.063 450 200.531 L 450 202 336.500 202 L 223 202 223.016 203.250 L 223.033 204.500 225.266 208.160 L 227.500 211.821 230.446 216.660 L 233.391 221.500 241.488 234 L 249.584 246.500 255.017 255.500 L 260.449 264.500 264.043 269.500 L 267.637 274.500 268.250 276 L 268.864 277.500 274.682 286.734 L 280.500 295.969 287.500 307.077 L 294.500 318.185 298.741 324.343 L 302.981 330.500 304.336 333.500 L 305.690 336.500 307.345 337.872 L 309 339.245 309 340.170 L 309 341.096 312.500 346.567 L 316 352.039 316 352.677 L 316 353.315 319.900 358.408 L 323.800 363.500 325.870 367.227 L 327.940 370.954 332.138 377.727 L 336.336 384.500 338.074 386.500 L 339.812 388.500 342.656 393.217 L 345.500 397.933 350.872 406.539 L 356.244 415.145 355.726 418.822 L 355.209 422.500 351.604 430.135 L 348 437.769 348 438.378 L 348 438.988 343.500 448.554 L 339 458.120 339 458.490 L 339 458.860 335.912 465.680 L 332.825 472.500 328.856 481 L 324.888 489.500 323.444 492.154 L 322 494.809 322 496.266 L 322 497.723 317.926 506.612 L 313.852 515.500 312.471 518.500 L 311.090 521.500 304.105 538 L 297.119 554.500 285.500 581 L 273.881 607.500 273.239 608.997 L 272.596 610.495 275.048 608.923 L 277.500 607.351 317.155 581.570 L 356.810 555.790 376.550 513.895 L 396.290 472 397.569 472 L 398.848 472 401.010 474.750 L 403.171 477.500 410.836 489.858 L 418.500 502.215 423.500 510.247 L 428.500 518.279 430.222 520.890 L 431.944 523.500 433.982 527 L 436.021 530.500 437.260 532.448 L 438.500 534.395 442.750 540.640 L 447 546.885 447 547.777 L 447 548.668 450.769 554.084 L 454.538 559.500 461.769 571.295 L 469 583.089 469 583.650 L 469 584.211 471.456 587.130 L 473.912 590.049 479.706 599.668 L 485.500 609.287 487.032 611.805 L 488.564 614.323 490.311 615.411 L 492.057 616.500 492.778 615.427 L 493.500 614.354 532.590 560.427 L 571.679 506.500 630.664 425 L 689.650 343.500 738.483 276 L 787.316 208.500 789.859 205.142 L 792.403 201.783 667.644 202.313 L 542.886 202.843 542.015 200.672 L 541.145 198.500 536.029 184 L 530.913 169.500 517.207 132.250 L 503.500 95.001 502.728 95 M 499.250 240.673 L 498.500 240.227 461.192 324.864 L 423.885 409.500 423.272 410.914 L 422.660 412.328 423.737 411.663 L 424.813 410.997 424.343 412.797 L 423.872 414.596 456.532 466.548 L 489.192 518.500 489.913 519.267 L 490.634 520.034 505.554 500.767 L 520.473 481.500 550.124 443.304 L 579.774 405.108 579.205 404.538 L 578.635 403.969 512.084 404.650 L 445.532 405.332 451.016 399.303 L 456.500 393.274 474.998 373.743 L 493.496 354.212 512.498 353.554 L 531.500 352.896 534.259 352.367 L 537.017 351.837 536.509 351.014 L 536 350.192 518 297.945 L 500 245.699 500 243.408 L 500 241.118 499.250 240.673 M 615.598 265 L 565 265 565 265.935 L 565 266.870 566.105 269.685 L 567.210 272.500 582.658 317.500 L 598.105 362.500 598.950 363.347 L 599.794 364.194 630.938 317.847 L 662.082 271.500 664.139 268.250 L 666.196 265 615.598 265 M 377.917 266.500 L 332.833 266.500 332.531 266.802 L 332.229 267.104 351.227 297.802 L 370.225 328.500 377.255 339.871 L 384.285 351.241 385.142 349.711 L 385.998 348.180 399.386 318.840 L 412.773 289.500 417.886 278.611 L 423 267.721 423 267.111 L 423 266.500 377.917 266.500 Z",
                     fill: "none",
@@ -102,24 +100,24 @@
               ),
             );
           };
-        var b = a(4571),
-          g = a(828),
-          p = a(2340),
-          h = a(5551),
-          x = a(4929),
-          y = a(7870),
-          E = a(697),
-          v = a(9095),
-          N = a(4164),
-          w = a(856);
-        function k() {
+        var d = a(4571),
+          m = a(828),
+          u = a(2340),
+          f = a(5551),
+          g = a(4929),
+          b = a(7870),
+          p = a(697),
+          h = a(9095),
+          x = a(4164),
+          E = a(856);
+        function y() {
           for (var e = arguments.length, t = new Array(e), a = 0; a < e; a++)
             t[a] = arguments[a];
-          return (0, w.QP)((0, N.$)(t));
+          return (0, E.QP)((0, x.$)(t));
         }
-        function C() {
+        function v() {
           return (
-            (C = Object.assign
+            (v = Object.assign
               ? Object.assign.bind()
               : function (e) {
                   for (var t = 1; t < arguments.length; t++) {
@@ -129,10 +127,10 @@
                   }
                   return e;
                 }),
-            C.apply(null, arguments)
+            v.apply(null, arguments)
           );
         }
-        const S = {
+        const N = {
             default: "bg-primary text-primary-foreground hover:bg-primary/90",
             secondary:
               "bg-secondary text-secondary-foreground hover:bg-secondary/80",
@@ -140,13 +138,13 @@
             ghost: "bg-transparent hover:bg-secondary/60",
             destructive: "bg-destructive text-white hover:bg-destructive/90",
           },
-          M = {
+          w = {
             default: "h-10 px-4 py-2",
             sm: "h-8 px-3 text-xs",
             lg: "h-11 px-6",
             icon: "h-8 w-8 p-0",
           },
-          A = (0, r.forwardRef)(function (e, t) {
+          k = (0, r.forwardRef)(function (e, t) {
             let {
               className: a,
               type: n = "button",
@@ -156,17 +154,17 @@
             } = e;
             return r.createElement(
               "button",
-              C(
+              v(
                 {
                   ref: t,
                   type: n,
-                  className: k(
+                  className: y(
                     "inline-flex items-center justify-center gap-2 rounded-lg text-sm font-semibold",
                     "transition-transform duration-200",
                     "disabled:cursor-not-allowed disabled:opacity-60",
                     "focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40",
-                    S[l] || S.default,
-                    M[o] || M.default,
+                    N[l] || N.default,
+                    w[o] || w.default,
                     a,
                   ),
                 },
@@ -174,31 +172,31 @@
               ),
             );
           }),
-          L = Array.from({ length: 24 }, (e, t) => t),
-          T = Array.from({ length: 96 }, (e, t) => t / 4),
-          D = T.map((e, t) => ({ time: e, index: t }));
-        function j(e) {
+          C = Array.from({ length: 24 }, (e, t) => t),
+          S = Array.from({ length: 96 }, (e, t) => t / 4),
+          A = S.map((e, t) => ({ time: e, index: t }));
+        function M(e) {
           const t = Math.max(0, Math.round(4 * Number(e.startHour || 0))),
             a = Math.max(0.25, Number(e.duration) || 1);
-          return [t, Math.min(D.length, t + Math.max(1, Math.ceil(4 * a)))];
+          return [t, Math.min(A.length, t + Math.max(1, Math.ceil(4 * a)))];
         }
-        function P(e) {
-          const [t, a] = j(e);
-          return [t / 4, Math.min(a / 4, L.length)];
+        function L(e) {
+          const [t, a] = M(e);
+          return [t / 4, Math.min(a / 4, C.length)];
         }
-        function _(e, t) {
+        function T(e, t) {
           if (e.date && t.date && e.date !== t.date) return !1;
-          const [a, r] = P(e),
-            [n, l] = P(t);
+          const [a, r] = L(e),
+            [n, l] = L(t);
           return a < l && n < r;
         }
-        function H(e) {
+        function D(e) {
           const t = ((Math.round(60 * Number(e)) % 1440) + 1440) % 1440,
             a = Math.floor(t / 60),
             r = a >= 12 ? "PM" : "AM";
           return `${a % 12 == 0 ? 12 : a % 12}:${String(t % 60).padStart(2, "0")} ${r}`;
         }
-        const B = [
+        const j = [
             {
               id: "work",
               name: "Work",
@@ -256,23 +254,23 @@
               solidBgColor: "bg-slate-500",
             },
           ],
-          O = B,
-          z = B[B.length - 1];
-        function $(e) {
-          if (!e) return z;
+          P = j,
+          O = j[j.length - 1];
+        function _(e) {
+          if (!e) return O;
           const t = String(e).trim().toLowerCase(),
-            a = B.find((e) => e.id === t);
+            a = j.find((e) => e.id === t);
           if (a) return a;
           const r = t.charAt(0).toUpperCase() + t.slice(1);
           return {
-            ...z,
+            ...O,
             id: t,
             name: r,
             label: r,
             solidBgColor: "bg-slate-500",
           };
         }
-        const F = {
+        const z = {
           low: {
             label: "Low",
             color: "text-slate-300",
@@ -289,12 +287,12 @@
             bgColor: "bg-rose-500/20",
           },
         };
-        function R(e) {
+        function B(e) {
           if (!e) return "";
           const t = String(e).trim();
           return t ? t.charAt(0).toUpperCase() + t.slice(1).toLowerCase() : "";
         }
-        function I(e) {
+        function H(e) {
           return "boolean" == typeof e
             ? e
             : "true" ===
@@ -302,17 +300,17 @@
                   .trim()
                   .toLowerCase();
         }
-        function G(e) {
+        function $(e) {
           return "" !== e && null != e && !isNaN(Number(e));
         }
-        function U(e) {
+        function F(e) {
           if (!e || "object" != typeof e) return null;
           const t =
-            !G(e["ticket id"]) &&
+            !$(e["ticket id"]) &&
             !e["Task title"] &&
             (a = e["Task description"]) &&
             !isNaN(new Date(a).getTime()) &&
-            G(e["task date time"]);
+            $(e["task date time"]);
           var a;
           const r = t
               ? {
@@ -334,7 +332,7 @@
             l = n ? new Date(n) : new Date(),
             o = !isNaN(l.getTime()),
             s = r["ticket id"] ?? r.ticket_id ?? r.ticketId,
-            c = G(s) ? Number(s) : void 0,
+            c = $(s) ? Number(s) : void 0,
             i = e.rowNumber ?? e.rowNumber;
           return {
             id:
@@ -353,8 +351,8 @@
             userType: (r["user type"] || r.userType || "").toString().trim(),
             logTime: (r["log time"] || r.logTime || "").toString().trim(),
             date: o
-              ? (0, b.GP)(l, "yyyy-MM-dd")
-              : (0, b.GP)(new Date(), "yyyy-MM-dd"),
+              ? (0, d.GP)(l, "yyyy-MM-dd")
+              : (0, d.GP)(new Date(), "yyyy-MM-dd"),
             startHour: o ? l.getHours() + l.getMinutes() / 60 : 0,
             name: (
               r["Task title"] ||
@@ -392,14 +390,14 @@
             notes: (r.notes || r["Task description"] || r.description || "")
               .toString()
               .trim(),
-            calendarSync: I(e["sync calendar"]),
-            reminderMinutes: G(e["reminder minutes"])
+            calendarSync: H(e["sync calendar"]),
+            reminderMinutes: $(e["reminder minutes"])
               ? Number(e["reminder minutes"])
               : 30,
             calendarEventId: (e["calendar event id"] || "").toString().trim(),
           };
         }
-        function W(e) {
+        function R(e) {
           if (!e || "object" != typeof e) return {};
           let t;
           if (e.date) {
@@ -425,20 +423,20 @@
               ? new Date().toISOString()
               : t.toISOString(),
             "task duration": Math.max(0.25, Number(e.duration) || 1),
-            "task priority": R(e.priority || "medium"),
-            "task category": R(e.category || "other"),
+            "task priority": B(e.priority || "medium"),
+            "task category": B(e.category || "other"),
             "ticket type": (e.ticketType || "task")
               .toString()
               .trim()
               .toLowerCase(),
-            "task status": R(e.status || "pending"),
+            "task status": B(e.status || "pending"),
             "user name": (e.userName || "ashserrao@ashtro.dev")
               .toString()
               .trim(),
             "user type": (e.userType || "admin").toString().trim(),
             "log time": e.logTime || new Date().toISOString(),
             "sync calendar": Boolean(e.calendarSync),
-            "reminder minutes": G(e.reminderMinutes)
+            "reminder minutes": $(e.reminderMinutes)
               ? Number(e.reminderMinutes)
               : 30,
           };
@@ -454,12 +452,12 @@
             a
           );
         }
-        const q =
+        const I =
           "https://script.google.com/macros/s/AKfycbzxrRvX7S2Jh6QOHeeTWaCzTiitdn9Y49CUcI4FZh9MJdnEC_VtF9k04jshmkRavUw/exec";
-        async function Z(e) {
+        async function U(e) {
           let t =
             arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-          const a = await fetch(q, {
+          const a = await fetch(I, {
             method: "POST",
             headers: { "Content-Type": "text/plain;charset=utf-8" },
             body: JSON.stringify({ action: e, ...t }),
@@ -470,145 +468,224 @@
             throw new Error(r.message || `API POST "${e}" failed`);
           return r;
         }
-        var J = a(9804),
-          V = a(180),
-          K = a(418),
-          Y = a(7213);
-        const Q = (0, r.createContext)(null),
-          X = {
-            success: {
-              icon: J.A,
-              title: "Success",
-              className: "notification-success",
-            },
-            failure: {
-              icon: V.A,
-              title: "Something went wrong",
-              className: "notification-failure",
-            },
-            warning: {
-              icon: K.A,
-              title: "Warning",
-              className: "notification-warning",
-            },
-            info: {
-              icon: Y.A,
-              title: "Information",
-              className: "notification-info",
-            },
+        const G = {
+            success: 4e3,
+            info: 5e3,
+            warning: 6e3,
+            error: 8e3,
+            loading: 1 / 0,
+          },
+          W = "taskplanner.notifications.prefs",
+          q = { popups: !0 };
+        function Z(e, t) {
+          try {
+            return JSON.parse(localStorage.getItem(e) || "null") ?? t;
+          } catch {
+            return t;
+          }
+        }
+        function J(e, t) {
+          try {
+            localStorage.setItem(e, JSON.stringify(t));
+          } catch {}
+        }
+        function V() {
+          try {
+            return crypto.randomUUID();
+          } catch {
+            return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
+          }
+        }
+        let Y = [],
+          K = [],
+          Q = null,
+          X = { ...q, ...Z(W, {}) },
+          ee = { toasts: Y, inbox: K, prefs: X };
+        const te = new Set(),
+          ae = new Map();
+        function re() {
+          ((ee = { toasts: Y, inbox: K, prefs: X }), te.forEach((e) => e()));
+        }
+        function ne(e) {
+          return (te.add(e), () => te.delete(e));
+        }
+        function le() {
+          return ee;
+        }
+        function oe(e, t) {
+          let a =
+            arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
+          const {
+            id: r = V(),
+            description: n,
+            duration: l = G[e] ?? G.info,
+            action: o,
+            save: s = !1,
+            href: c,
+          } = a;
+          s && me({ type: e, title: t, description: n, href: c });
+          const i = Y.find((e) => e.id === r);
+          if (!X.popups && "error" !== e) return (i && se(r), r);
+          const d = {
+            id: r,
+            type: e,
+            title: t,
+            description: n,
+            duration: l,
+            action: o,
+            open: !0,
+            version: (i?.version ?? 0) + 1,
           };
-        function ee(e) {
-          let { children: t } = e;
-          const [a, n] = (0, r.useState)([]),
-            l = (0, r.useCallback)((e) => {
-              n((t) => t.filter((t) => t.id !== e));
-            }, []),
-            o = (0, r.useCallback)(function (e, t) {
-              let a =
+          if (i)
+            (clearTimeout(ae.get(r)),
+              ae.delete(r),
+              (Y = Y.map((e) => (e.id === r ? d : e))));
+          else {
+            Y = [...Y, d];
+            const e = Y.filter((e) => e.open);
+            e.slice(0, Math.max(0, e.length - 4)).forEach((e) =>
+              se(e.id, { silent: !0 }),
+            );
+          }
+          return (re(), r);
+        }
+        function se(e) {
+          let { silent: t = !1 } =
+            arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+          const a = Y.filter((t) => t.open && (null == e || t.id === e));
+          if (0 === a.length) return;
+          const r = new Set(a.map((e) => e.id));
+          ((Y = Y.map((e) => (r.has(e.id) ? { ...e, open: !1 } : e))),
+            r.forEach((e) => {
+              (clearTimeout(ae.get(e)),
+                ae.set(
+                  e,
+                  setTimeout(() => {
+                    (ae.delete(e),
+                      (Y = Y.filter((t) => t.id !== e || t.open)),
+                      re());
+                  }, 200),
+                ));
+            }),
+            t || re());
+        }
+        function ce(e, t) {
+          return "function" == typeof e ? e(t) : e;
+        }
+        function ie() {
+          Q && J(Q, K);
+        }
+        function de(e) {
+          ((K = e), ie(), re());
+        }
+        function me(e) {
+          let { type: t = "info", title: a, description: r, href: n } = e;
+          const l = {
+            id: V(),
+            type: "loading" === t ? "info" : t,
+            title: String(a),
+            description: null == r ? void 0 : String(r),
+            href: n,
+            read: !1,
+            createdAt: Date.now(),
+          };
+          return (de([l, ...K].slice(0, 50)), l.id);
+        }
+        function ue(e) {
+          let t =
+            !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1];
+          de(K.map((a) => (a.id === e ? { ...a, read: t } : a)));
+        }
+        function fe() {
+          K.every((e) => e.read) ||
+            de(K.map((e) => (e.read ? e : { ...e, read: !0 })));
+        }
+        function ge(e) {
+          de(K.filter((t) => t.id !== e));
+        }
+        function be() {
+          de([]);
+        }
+        function pe(e) {
+          de(e);
+        }
+        function he(e) {
+          ((X = { ...X, ...e }),
+            J(W, X),
+            X.popups ||
+              Y.filter((e) => "error" !== e.type).forEach((e) => se(e.id)),
+            re());
+        }
+        "undefined" != typeof window &&
+          window.addEventListener("storage", (e) => {
+            Q && e.key === Q
+              ? ((K = Z(Q, [])), re())
+              : e.key === W && ((X = { ...q, ...Z(W, {}) }), re());
+          });
+        const xe = Object.assign((e, t) => oe("info", e, t), {
+          success: (e, t) => oe("success", e, t),
+          error: (e, t) => oe("error", e, t),
+          warning: (e, t) => oe("warning", e, t),
+          info: (e, t) => oe("info", e, t),
+          loading: (e, t) => oe("loading", e, t),
+          promise: function (e) {
+            let t =
+                arguments.length > 1 && void 0 !== arguments[1]
+                  ? arguments[1]
+                  : {},
+              a =
                 arguments.length > 2 && void 0 !== arguments[2]
                   ? arguments[2]
                   : {};
-              const r = {
-                id: `${Date.now()}-${Math.random()}`,
-                type: X[e] ? e : "info",
-                message: t,
-                duration: a.duration ?? 5e3,
-              };
-              return (n((e) => [...e, r]), r.id);
-            }, []);
-          (0, r.useEffect)(() => {
-            const e = a
-              .filter((e) => e.duration > 0)
-              .map((e) => window.setTimeout(() => l(e.id), e.duration));
-            return () => e.forEach(window.clearTimeout);
-          }, [a, l]);
-          const s = {
-            notify: o,
-            dismiss: l,
-            success: (e, t) => o("success", e, t),
-            failure: (e, t) => o("failure", e, t),
-            warning: (e, t) => o("warning", e, t),
-            info: (e, t) => o("info", e, t),
-          };
-          return r.createElement(
-            Q.Provider,
-            { value: s },
-            t,
-            r.createElement(
-              "div",
-              {
-                className: "notification-region",
-                role: "region",
-                "aria-label": "Notifications",
-              },
-              a.map((e) => {
-                const t = X[e.type],
-                  a = t.icon;
-                return r.createElement(
-                  "div",
-                  {
-                    className: k("notification", t.className),
-                    key: e.id,
-                    role: "failure" === e.type ? "alert" : "status",
-                  },
-                  r.createElement(a, {
-                    className: "notification-icon",
-                    "aria-hidden": "true",
-                  }),
-                  r.createElement(
-                    "div",
-                    { className: "notification-content" },
-                    r.createElement("strong", null, t.title),
-                    r.createElement("span", null, e.message),
-                  ),
-                  r.createElement(
-                    "button",
-                    {
-                      className: "notification-dismiss",
-                      type: "button",
-                      onClick: () => l(e.id),
-                      "aria-label": "Dismiss notification",
-                    },
-                    r.createElement(c.A, { size: 16, "aria-hidden": "true" }),
-                  ),
-                );
-              }),
-            ),
-          );
+            const r = oe("loading", t.loading ?? "Working…", a),
+              { save: n, href: l } = a,
+              o = Promise.resolve("function" == typeof e ? e() : e);
+            return (
+              o.then(
+                (e) => {
+                  oe("success", ce(t.success ?? "Done", e), {
+                    id: r,
+                    save: n,
+                    href: l,
+                  });
+                },
+                (e) => {
+                  oe(
+                    "error",
+                    ce(t.error ?? (e?.message || "Something went wrong"), e),
+                    { id: r, save: n, href: l },
+                  );
+                },
+              ),
+              o
+            );
+          },
+          dismiss: (e) => se(e),
+        });
+        function Ee() {
+          return (0, r.useSyncExternalStore)(ne, le, le);
         }
-        const te = "taskplanner:tasks",
-          ae = (0, r.createContext)(null);
-        function re() {
+        const ye = "taskplanner:tasks",
+          ve = (0, r.createContext)(null);
+        function Ne() {
           try {
-            const e = window.localStorage.getItem(te);
+            const e = window.localStorage.getItem(ye);
             return e ? JSON.parse(e) : [];
           } catch {
             return [];
           }
         }
-        function ne(e) {
+        function we(e) {
           let { children: t } = e;
-          const [a, n] = (0, r.useState)(re),
+          const [a, n] = (0, r.useState)(Ne),
             [l, o] = (0, r.useState)(() => new Date()),
-            { notify: s } = (function () {
-              const e = (0, r.useContext)(Q);
-              if (!e)
-                throw new Error(
-                  "useNotifications must be used within a NotificationProvider",
-                );
-              return e;
-            })(),
-            c = (0, r.useCallback)(
-              (e) => {
-                e?.calendarError &&
-                  s(
-                    "failure",
-                    `Google Calendar sync failed: ${e.calendarError}`,
-                  );
-              },
-              [s],
-            ),
-            i = (0, r.useCallback)(async () => {
+            s = (0, r.useCallback)((e) => {
+              e?.calendarError &&
+                xe.error(`Google Calendar sync failed: ${e.calendarError}`, {
+                  save: !0,
+                });
+            }, []),
+            c = (0, r.useCallback)(async () => {
               try {
                 const e = await (async function () {
                   const e = await (async function (e) {
@@ -618,7 +695,7 @@
                           ? arguments[1]
                           : {}),
                       }),
-                      a = await fetch(`${q}?${t.toString()}`);
+                      a = await fetch(`${I}?${t.toString()}`);
                     if (!a.ok)
                       throw new Error(`API GET "${e}" failed: ${a.status}`);
                     return a.json();
@@ -627,14 +704,13 @@
                     throw new Error(
                       "Unexpected response shape from timeline sheet",
                     );
-                  return e.map(U);
+                  return e.map(F);
                 })();
                 if (Array.isArray(e)) {
                   const t = e.filter(Boolean);
                   return (
                     n(t),
-                    s(
-                      "success",
+                    xe.success(
                       `Loaded ${t.length} task${1 === t.length ? "" : "s"} from the timeline.`,
                     ),
                     t
@@ -645,21 +721,21 @@
                   "Timeline sheet unavailable, using cached tasks:",
                   e,
                 ),
-                  s(
-                    "failure",
+                  xe.error(
                     e.message || "The timeline API could not be reached.",
+                    { save: !0 },
                   ));
               }
-            }, [s]);
+            }, []);
           ((0, r.useEffect)(() => {
-            i();
-          }, [i]),
+            c();
+          }, [c]),
             (0, r.useEffect)(() => {
               try {
-                window.localStorage.setItem(te, JSON.stringify(a));
+                window.localStorage.setItem(ye, JSON.stringify(a));
               } catch {}
             }, [a]));
-          const m = (0, r.useCallback)(
+          const i = (0, r.useCallback)(
               (e) =>
                 a
                   .filter((t) => t.date === e)
@@ -683,7 +759,7 @@
                 return (
                   n((e) => [...e, r]),
                   (function (e) {
-                    return Z("create", W(e));
+                    return U("create", R(e));
                   })(r)
                     .then((e) => {
                       const t =
@@ -706,23 +782,23 @@
                               : e,
                           ),
                         ),
-                        s("success", "Task created successfully."),
-                        c(e));
+                        xe.success("Task created successfully."),
+                        s(e));
                     })
                     .catch((e) => {
                       (console.warn("Failed to sync new task to sheet:", e),
-                        s(
-                          "failure",
+                        xe.error(
                           e.message ||
                             "The task could not be created in the timeline.",
+                          { save: !0 },
                         ));
                     }),
                   r
                 );
               },
-              [s, c],
+              [s],
             ),
-            u = (0, r.useCallback)(
+            m = (0, r.useCallback)(
               (e, t) => {
                 n((a) => {
                   const r = a.map((a) => (a.id === e ? { ...a, ...t } : a)),
@@ -734,7 +810,7 @@
                           arguments.length > 1 && void 0 !== arguments[1]
                             ? arguments[1]
                             : {};
-                        const a = W(t),
+                        const a = R(t),
                           r = t.rowNumber,
                           n = t.ticketId ?? t["ticket id"];
                         if (null == r)
@@ -747,30 +823,30 @@
                         return (
                           void 0 !== r && (l.rowNumber = r),
                           void 0 !== n && (l["ticket id"] = n),
-                          Z("update", l)
+                          U("update", l)
                         );
                       })(e, n)
                         .then((e) => {
-                          (s("success", "Task updated successfully."), c(e));
+                          (xe.success("Task updated successfully."), s(e));
                         })
                         .catch((e) => {
                           (console.warn(
                             "Failed to sync task update to sheet:",
                             e,
                           ),
-                            s(
-                              "failure",
+                            xe.error(
                               e.message ||
                                 "The task could not be updated in the timeline.",
+                              { save: !0 },
                             ));
                         }),
                     r
                   );
                 });
               },
-              [s, c],
+              [s],
             ),
-            f = (0, r.useCallback)(
+            u = (0, r.useCallback)(
               (e) => {
                 const t = a.find((t) => t.id === e);
                 (n((t) => t.filter((t) => t.id !== e)),
@@ -790,49 +866,50 @@
                     const n = { rowNumber: a };
                     return (
                       void 0 !== r && (n["ticket id"] = r),
-                      Z("delete", n)
+                      U("delete", n)
                     );
                   })(e, t || {})
-                    .then(() => s("success", "Task deleted successfully."))
+                    .then(() => xe.success("Task deleted successfully."))
                     .catch((e) => {
                       (console.warn("Failed to sync task delete to sheet:", e),
-                        s(
-                          "failure",
+                        xe.error(
                           e.message ||
                             "The task could not be deleted from the timeline.",
+                          { save: !0 },
                         ));
                     }));
               },
-              [a, s],
+              [a],
             ),
-            b = (0, r.useCallback)((e, t) => u(e, { startHour: t }), [u]),
+            f = (0, r.useCallback)((e, t) => m(e, { startHour: t }), [m]),
             g = (0, r.useCallback)(() => a, [a]),
-            p = (0, r.useMemo)(
+            b = (0, r.useMemo)(
               () => ({
                 selectedDate: l,
                 setSelectedDate: o,
-                getTasksForDate: m,
+                getTasksForDate: i,
                 getAllTasks: g,
                 addTask: d,
-                updateTask: u,
-                deleteTask: f,
-                moveTask: b,
-                refreshTasks: i,
+                updateTask: m,
+                deleteTask: u,
+                moveTask: f,
+                refreshTasks: c,
               }),
-              [l, m, g, d, u, f, b, i],
+              [l, i, g, d, m, u, f, c],
             );
-          return r.createElement(ae.Provider, { value: p }, t);
+          return r.createElement(ve.Provider, { value: b }, t);
         }
-        function le() {
-          const e = (0, r.useContext)(ae);
+        function ke() {
+          const e = (0, r.useContext)(ve);
           if (!e)
             throw new Error(
               "useTimeTracking must be used within a TimeTrackingProvider",
             );
           return e;
         }
-        var oe = a(4852);
-        const se = [
+        var Ce = a(8697),
+          Se = a(4852);
+        const Ae = [
             { value: 0, label: "At start time" },
             { value: 5, label: "5 minutes before" },
             { value: 10, label: "10 minutes before" },
@@ -841,11 +918,11 @@
             { value: 120, label: "2 hours before" },
             { value: 1440, label: "1 day before" },
           ],
-          ce = {
-            date: (0, b.GP)(new Date(), "yyyy-MM-dd"),
+          Me = {
+            date: (0, d.GP)(new Date(), "yyyy-MM-dd"),
             name: "",
             description: "",
-            category: B[0].id,
+            category: j[0].id,
             priority: "medium",
             startHour: 9,
             duration: 1,
@@ -853,9 +930,9 @@
             calendarSync: !1,
             reminderMinutes: 30,
           },
-          ie =
+          Le =
             "w-full rounded-lg border border-border bg-secondary/40 px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40";
-        function me(e) {
+        function Te(e) {
           let {
             open: t,
             task: a,
@@ -863,15 +940,15 @@
             defaultDate: l,
             existingTasks: o = [],
             onClose: s,
-            onSubmit: i,
-            onDelete: m,
+            onSubmit: c,
+            onDelete: i,
           } = e;
-          const [d, u] = (0, r.useState)(ce),
+          const [m, u] = (0, r.useState)(Me),
             [f, g] = (0, r.useState)("");
-          let p;
+          let b;
           try {
-            const e = le();
-            p = e.getAllTasks;
+            const e = ke();
+            b = e.getAllTasks;
           } catch (e) {}
           if (
             ((0, r.useEffect)(() => {
@@ -882,10 +959,10 @@
                     ? {
                         name: a.name || "",
                         description: a.description || "",
-                        category: a.category || B[0].id,
+                        category: a.category || j[0].id,
                         priority: a.priority || "medium",
                         date:
-                          a.date || l || (0, b.GP)(new Date(), "yyyy-MM-dd"),
+                          a.date || l || (0, d.GP)(new Date(), "yyyy-MM-dd"),
                         startHour: a.startHour ?? n ?? 9,
                         duration: a.duration || 1,
                         notes: a.notes || "",
@@ -893,8 +970,8 @@
                         reminderMinutes: a.reminderMinutes ?? 30,
                       }
                     : {
-                        ...ce,
-                        date: l || (0, b.GP)(new Date(), "yyyy-MM-dd"),
+                        ...Me,
+                        date: l || (0, d.GP)(new Date(), "yyyy-MM-dd"),
                         startHour: n ?? 9,
                       },
                 ));
@@ -902,7 +979,7 @@
             !t)
           )
             return null;
-          const h = (e) => (t) => {
+          const p = (e) => (t) => {
             const { value: a } = t.target;
             (g(""),
               u((t) => ({
@@ -943,20 +1020,20 @@
                     className:
                       "rounded-md p-1 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
                   },
-                  r.createElement(c.A, { className: "h-4 w-4" }),
+                  r.createElement(Ce.A, { className: "h-4 w-4" }),
                 ),
               ),
               r.createElement(
                 "form",
                 {
                   onSubmit: (e) => {
-                    if ((e.preventDefault(), !d.name.trim())) return;
-                    const t = ("function" == typeof p ? p() : o).find(
-                      (e) => e.id !== a?.id && _(d, e),
+                    if ((e.preventDefault(), !m.name.trim())) return;
+                    const t = ("function" == typeof b ? b() : o).find(
+                      (e) => e.id !== a?.id && T(m, e),
                     );
                     t
-                      ? g(`This overlaps with "${t.name}" (${H(t.startHour)}).`)
-                      : i(d);
+                      ? g(`This overlaps with "${t.name}" (${D(t.startHour)}).`)
+                      : c(m);
                   },
                   className: "space-y-3",
                 },
@@ -969,9 +1046,9 @@
                     "Name",
                   ),
                   r.createElement("input", {
-                    className: ie,
-                    value: d.name,
-                    onChange: h("name"),
+                    className: Le,
+                    value: m.name,
+                    onChange: p("name"),
                     placeholder: "Task name",
                     autoFocus: !0,
                     required: !0,
@@ -986,9 +1063,9 @@
                     "Description",
                   ),
                   r.createElement("input", {
-                    className: ie,
-                    value: d.description,
-                    onChange: h("description"),
+                    className: Le,
+                    value: m.description,
+                    onChange: p("description"),
                     placeholder: "Optional description",
                   }),
                 ),
@@ -1005,9 +1082,9 @@
                     ),
                     r.createElement("input", {
                       type: "date",
-                      className: ie,
-                      value: d.date,
-                      onChange: h("date"),
+                      className: Le,
+                      value: m.date,
+                      onChange: p("date"),
                       required: !0,
                     }),
                   ),
@@ -1022,11 +1099,11 @@
                     r.createElement(
                       "select",
                       {
-                        className: k(ie, "appearance-none"),
-                        value: d.category,
-                        onChange: h("category"),
+                        className: y(Le, "appearance-none"),
+                        value: m.category,
+                        onChange: p("category"),
                       },
-                      B.map((e) =>
+                      j.map((e) =>
                         r.createElement(
                           "option",
                           { key: e.id, value: e.id },
@@ -1046,11 +1123,11 @@
                     r.createElement(
                       "select",
                       {
-                        className: k(ie, "appearance-none"),
-                        value: d.priority,
-                        onChange: h("priority"),
+                        className: y(Le, "appearance-none"),
+                        value: m.priority,
+                        onChange: p("priority"),
                       },
-                      Object.entries(F).map((e) => {
+                      Object.entries(z).map((e) => {
                         let [t, a] = e;
                         return r.createElement(
                           "option",
@@ -1071,12 +1148,12 @@
                     r.createElement(
                       "select",
                       {
-                        className: k(ie, "appearance-none"),
-                        value: d.startHour,
-                        onChange: h("startHour"),
+                        className: y(Le, "appearance-none"),
+                        value: m.startHour,
+                        onChange: p("startHour"),
                       },
-                      T.map((e) =>
-                        r.createElement("option", { key: e, value: e }, H(e)),
+                      S.map((e) =>
+                        r.createElement("option", { key: e, value: e }, D(e)),
                       ),
                     ),
                   ),
@@ -1093,9 +1170,9 @@
                       min: 0.25,
                       max: 12,
                       step: 0.25,
-                      className: ie,
-                      value: d.duration,
-                      onChange: h("duration"),
+                      className: Le,
+                      value: m.duration,
+                      onChange: p("duration"),
                     }),
                   ),
                 ),
@@ -1114,9 +1191,9 @@
                     "Notes",
                   ),
                   r.createElement("textarea", {
-                    className: k(ie, "min-h-[70px] resize-none"),
-                    value: d.notes,
-                    onChange: h("notes"),
+                    className: y(Le, "min-h-[70px] resize-none"),
+                    value: m.notes,
+                    onChange: p("notes"),
                     placeholder: "Optional notes",
                   }),
                 ),
@@ -1135,16 +1212,16 @@
                     r.createElement("input", {
                       type: "checkbox",
                       className: "h-4 w-4 accent-current",
-                      checked: d.calendarSync,
+                      checked: m.calendarSync,
                       onChange: (e) =>
                         u((t) => ({ ...t, calendarSync: e.target.checked })),
                     }),
-                    r.createElement(oe.A, {
+                    r.createElement(Se.A, {
                       className: "h-4 w-4 text-muted-foreground",
                     }),
                     "Add to Google Calendar",
                   ),
-                  d.calendarSync &&
+                  m.calendarSync &&
                     r.createElement(
                       "div",
                       { className: "mt-3" },
@@ -1158,11 +1235,11 @@
                       r.createElement(
                         "select",
                         {
-                          className: k(ie, "appearance-none"),
-                          value: d.reminderMinutes,
-                          onChange: h("reminderMinutes"),
+                          className: y(Le, "appearance-none"),
+                          value: m.reminderMinutes,
+                          onChange: p("reminderMinutes"),
                         },
-                        se.map((e) =>
+                        Ae.map((e) =>
                           r.createElement(
                             "option",
                             { key: e.value, value: e.value },
@@ -1175,14 +1252,14 @@
                 r.createElement(
                   "div",
                   { className: "flex items-center justify-between pt-2" },
-                  a && m
+                  a && i
                     ? r.createElement(
-                        A,
+                        k,
                         {
                           type: "button",
                           variant: "destructive",
                           size: "sm",
-                          onClick: () => m(a.id),
+                          onClick: () => i(a.id),
                         },
                         "Delete",
                       )
@@ -1191,7 +1268,7 @@
                     "div",
                     { className: "flex gap-2" },
                     r.createElement(
-                      A,
+                      k,
                       {
                         type: "button",
                         variant: "ghost",
@@ -1201,7 +1278,7 @@
                       "Cancel",
                     ),
                     r.createElement(
-                      A,
+                      k,
                       { type: "submit", size: "sm" },
                       a ? "Save" : "Add task",
                     ),
@@ -1211,34 +1288,34 @@
             ),
           );
         }
-        const de = new Set(["completed", "done"]),
-          ue = (e) => de.has(String(e.status || "").toLowerCase());
-        function fe(e) {
+        const De = new Set(["completed", "done"]),
+          je = (e) => De.has(String(e.status || "").toLowerCase());
+        function Pe(e) {
           let t = 0,
             a = new Date();
           for (
-            e.has((0, b.GP)(a, "yyyy-MM-dd")) || (a = (0, g.e)(a, 1));
-            e.has((0, b.GP)(a, "yyyy-MM-dd"));
+            e.has((0, d.GP)(a, "yyyy-MM-dd")) || (a = (0, m.e)(a, 1));
+            e.has((0, d.GP)(a, "yyyy-MM-dd"));
           )
-            ((t += 1), (a = (0, g.e)(a, 1)));
+            ((t += 1), (a = (0, m.e)(a, 1)));
           return t;
         }
-        const be = function (e) {
+        const Oe = function (e) {
             let { onEditTask: t } = e;
             const {
                 getAllTasks: a,
                 addTask: n,
                 updateTask: l,
                 deleteTask: o,
-              } = le(),
+              } = ke(),
               s = (0, r.useMemo)(() => a?.() || [], [a]),
               c = (0, r.useMemo)(
                 () =>
-                  O.map((e) => {
+                  P.map((e) => {
                     const t = s.filter((t) => t.category === e.id),
                       a = new Set(
                         t
-                          .filter(ue)
+                          .filter(je)
                           .map((e) => e.date)
                           .filter(Boolean),
                       );
@@ -1246,25 +1323,25 @@
                       category: e,
                       tasks: t,
                       doneDateSet: a,
-                      streak: fe(a),
+                      streak: Pe(a),
                     };
                   }),
                 [s],
               ),
-              [i, m] = (0, r.useState)(() => c[0]?.category.id ?? null),
-              d = c.find((e) => e.category.id === i) ?? c[0],
-              [u, N] = (0, r.useState)(null),
-              w = new Date(),
-              C = (0, r.useMemo)(
-                () => (0, p.k)({ start: (0, g.e)(w, 29), end: w }),
+              [x, E] = (0, r.useState)(() => c[0]?.category.id ?? null),
+              v = c.find((e) => e.category.id === x) ?? c[0],
+              [N, w] = (0, r.useState)(null),
+              C = new Date(),
+              S = (0, r.useMemo)(
+                () => (0, u.k)({ start: (0, m.e)(C, 29), end: C }),
                 [],
               ),
-              S = C.slice(-7),
-              M = () => N(null);
+              A = S.slice(-7),
+              M = () => w(null);
             return r.createElement(
               "section",
               { id: "habits", className: "min-h-full bg-[#000000]" },
-              r.createElement(f, {
+              r.createElement(i, {
                 hexRadius: 60,
                 viewWidth: 900,
                 viewHeight: 600,
@@ -1290,7 +1367,7 @@
                     r.createElement(
                       "div",
                       { className: "flex items-center gap-2" },
-                      r.createElement(y.A, {
+                      r.createElement(b.A, {
                         className: "h-5 w-5 text-muted-foreground",
                       }),
                       r.createElement(
@@ -1319,14 +1396,14 @@
                         "grid grid-cols-1 gap-3 border-b border-border/50 p-3 sm:grid-cols-2 lg:grid-cols-3",
                     },
                     c.map((e) => {
-                      const t = e.category.id === d?.category.id;
+                      const t = e.category.id === v?.category.id;
                       return r.createElement(
                         "button",
                         {
                           type: "button",
                           key: e.category.id,
-                          onClick: () => m(e.category.id),
-                          className: k(
+                          onClick: () => E(e.category.id),
+                          className: y(
                             "rounded-lg border border-border/60 p-3 text-left transition-colors hover:bg-secondary/40",
                             t && "border-primary/50 bg-primary/10",
                           ),
@@ -1341,7 +1418,7 @@
                             "div",
                             { className: "flex min-w-0 items-center gap-2" },
                             r.createElement("span", {
-                              className: k(
+                              className: y(
                                 "h-2.5 w-2.5 flex-shrink-0 rounded-full",
                                 e.category?.solidBgColor || "",
                               ),
@@ -1361,20 +1438,20 @@
                               className:
                                 "flex flex-shrink-0 items-center gap-1 text-xs font-medium text-amber-500",
                             },
-                            r.createElement(y.A, { className: "h-3 w-3" }),
+                            r.createElement(b.A, { className: "h-3 w-3" }),
                             e.streak,
                           ),
                         ),
                         r.createElement(
                           "div",
                           { className: "mt-2 flex items-center gap-1" },
-                          S.map((t) => {
-                            const a = (0, b.GP)(t, "yyyy-MM-dd"),
+                          A.map((t) => {
+                            const a = (0, d.GP)(t, "yyyy-MM-dd"),
                               n = e.doneDateSet.has(a);
                             return r.createElement("span", {
                               key: a,
-                              title: (0, b.GP)(t, "MMM d"),
-                              className: k(
+                              title: (0, d.GP)(t, "MMM d"),
+                              className: y(
                                 "h-3.5 w-3.5 flex-1 rounded-sm",
                                 n
                                   ? e.category?.solidBgColor || ""
@@ -1386,7 +1463,7 @@
                       );
                     }),
                   ),
-                  d &&
+                  v &&
                     r.createElement(
                       "div",
                       { className: "p-4" },
@@ -1402,15 +1479,15 @@
                           r.createElement(
                             "h4",
                             { className: "font-medium text-card-foreground" },
-                            d.category.label,
+                            v.category.label,
                           ),
                           r.createElement(
                             "p",
                             { className: "text-sm text-muted-foreground" },
-                            d.streak,
+                            v.streak,
                             "-day streak •",
                             " ",
-                            d.doneDateSet.size,
+                            v.doneDateSet.size,
                             " check-ins in last",
                             " ",
                             30,
@@ -1418,23 +1495,23 @@
                           ),
                         ),
                         r.createElement(
-                          A,
+                          k,
                           {
                             size: "sm",
                             onClick: () =>
                               ((e) => {
-                                const t = (0, b.GP)(new Date(), "yyyy-MM-dd"),
+                                const t = (0, d.GP)(new Date(), "yyyy-MM-dd"),
                                   a = e.tasks.find((e) => e.date === t);
                                 a
                                   ? l(a.id, { status: "completed" })
-                                  : N({
+                                  : w({
                                       task: null,
                                       category: e.category.id,
                                       date: t,
                                     });
-                              })(d),
+                              })(v),
                           },
-                          r.createElement(E.A, { className: "mr-2 h-4 w-4" }),
+                          r.createElement(p.A, { className: "mr-2 h-4 w-4" }),
                           "Log today",
                         ),
                       ),
@@ -1444,17 +1521,17 @@
                           className:
                             "grid grid-cols-10 gap-1.5 sm:grid-cols-[repeat(15,minmax(0,1fr))] lg:grid-cols-[repeat(30,minmax(0,1fr))]",
                         },
-                        C.map((e) => {
-                          const t = (0, b.GP)(e, "yyyy-MM-dd"),
-                            a = d.doneDateSet.has(t),
-                            n = (0, h.r)(e, w);
+                        S.map((e) => {
+                          const t = (0, d.GP)(e, "yyyy-MM-dd"),
+                            a = v.doneDateSet.has(t),
+                            n = (0, f.r)(e, C);
                           return r.createElement("div", {
                             key: t,
-                            title: `${(0, b.GP)(e, "EEE, MMM d")}${a ? " • done" : ""}`,
-                            className: k(
+                            title: `${(0, d.GP)(e, "EEE, MMM d")}${a ? " • done" : ""}`,
+                            className: y(
                               "aspect-square rounded-sm",
                               a
-                                ? d.category?.solidBgColor || ""
+                                ? v.category?.solidBgColor || ""
                                 : "bg-muted/30",
                               n && "ring-1 ring-primary",
                             ),
@@ -1467,7 +1544,7 @@
                           className:
                             "mt-4 flex items-center gap-1.5 text-sm font-medium text-card-foreground",
                         },
-                        r.createElement(v.A, {
+                        r.createElement(h.A, {
                           className: "h-4 w-4 text-muted-foreground",
                         }),
                         "Recent entries",
@@ -1478,7 +1555,7 @@
                           className:
                             "mt-2 max-h-64 overflow-y-auto rounded-lg border border-border/50",
                         },
-                        0 === d.tasks.length &&
+                        0 === v.tasks.length &&
                           r.createElement(
                             "div",
                             {
@@ -1487,7 +1564,7 @@
                             },
                             "No entries logged for this habit yet.",
                           ),
-                        [...d.tasks]
+                        [...v.tasks]
                           .sort((e, t) => (e.date < t.date ? 1 : -1))
                           .slice(0, 20)
                           .map((e) =>
@@ -1502,7 +1579,7 @@
                                 "span",
                                 { className: "text-muted-foreground" },
                                 e.date &&
-                                  (0, b.GP)((0, x.H)(e.date), "EEE, MMM d"),
+                                  (0, d.GP)((0, g.H)(e.date), "EEE, MMM d"),
                               ),
                               r.createElement(
                                 "span",
@@ -1512,9 +1589,9 @@
                               r.createElement(
                                 "span",
                                 {
-                                  className: k(
+                                  className: y(
                                     "flex-shrink-0 rounded-full border px-2 py-0.5 text-xs capitalize",
-                                    ue(e)
+                                    je(e)
                                       ? "border-emerald-500/30 bg-emerald-500/15 text-emerald-500"
                                       : "border-border bg-secondary/40 text-muted-foreground",
                                   ),
@@ -1527,20 +1604,20 @@
                     ),
                 ),
               ),
-              r.createElement(me, {
-                open: Boolean(u),
-                task: u?.task ?? null,
-                defaultCategory: u?.category,
-                defaultDate: u?.date,
-                existingTasks: d?.tasks ?? [],
+              r.createElement(Te, {
+                open: Boolean(N),
+                task: N?.task ?? null,
+                defaultCategory: N?.category,
+                defaultDate: N?.date,
+                existingTasks: v?.tasks ?? [],
                 onClose: M,
                 onSubmit: (e) => {
-                  if (u?.task) l(u.task.id, e);
+                  if (N?.task) l(N.task.id, e);
                   else {
-                    const t = e.date || u?.date;
+                    const t = e.date || N?.date;
                     n(t, {
                       ...e,
-                      category: u?.category,
+                      category: N?.category,
                       status: e.status || "completed",
                     });
                   }
@@ -1552,21 +1629,1186 @@
               }),
             );
           },
-          ge = () => {
+          _e = () => {
             const [e, t] = (0, r.useState)([]);
             return r.createElement(
               "section",
               { id: "home", className: "relative min-h-full overflow-hidden" },
-              r.createElement(f, {
+              r.createElement(i, {
                 hexRadius: 60,
                 viewWidth: 900,
                 viewHeight: 600,
               }),
-              r.createElement(be, null),
+              r.createElement(Oe, null),
             );
           };
-        var pe = a(6110);
-        const he = function () {
+        var ze = a(9436),
+          Be = a(5042),
+          He = a(9230);
+        function $e() {
+          return (
+            ($e = Object.assign
+              ? Object.assign.bind()
+              : function (e) {
+                  for (var t = 1; t < arguments.length; t++) {
+                    var a = arguments[t];
+                    for (var r in a)
+                      ({}).hasOwnProperty.call(a, r) && (e[r] = a[r]);
+                  }
+                  return e;
+                }),
+            $e.apply(null, arguments)
+          );
+        }
+        const Fe = (0, r.createContext)(null);
+        function Re(e) {
+          let { children: t } = e;
+          const [a, n] = (0, r.useState)(!1),
+            l = (0, r.useRef)(null);
+          return (
+            (0, r.useEffect)(() => {
+              if (a)
+                return (
+                  document.addEventListener("mousedown", e),
+                  document.addEventListener("touchstart", e),
+                  () => {
+                    (document.removeEventListener("mousedown", e),
+                      document.removeEventListener("touchstart", e));
+                  }
+                );
+              function e(e) {
+                l.current && !l.current.contains(e.target) && n(!1);
+              }
+            }, [a]),
+            r.createElement(
+              Fe.Provider,
+              { value: { open: a, setOpen: n } },
+              r.createElement(
+                "div",
+                { ref: l, className: "relative inline-block" },
+                t,
+              ),
+            )
+          );
+        }
+        function Ie(e) {
+          let { asChild: t, children: a, ...n } = e;
+          const { open: l, setOpen: o } = (0, r.useContext)(Fe),
+            s = (e) => {
+              (a.props.onClick?.(e), n.onClick?.(e), o(!l));
+            };
+          return t
+            ? (0, r.cloneElement)(a, { ...n, onClick: s })
+            : r.createElement(
+                "button",
+                $e({ type: "button" }, n, { onClick: s }),
+                a,
+              );
+        }
+        function Ue(e) {
+          let { align: t = "start", className: a, children: n } = e;
+          const { open: l } = (0, r.useContext)(Fe);
+          return l
+            ? r.createElement(
+                "div",
+                {
+                  className: y(
+                    "absolute z-50 mt-2 min-w-[10rem] rounded-lg border border-border bg-card p-1 shadow-xl",
+                    "end" === t ? "right-0" : "left-0",
+                    a,
+                  ),
+                },
+                n,
+              )
+            : null;
+        }
+        function Ge(e) {
+          let { className: t, onClick: a, children: n, ...l } = e;
+          const { setOpen: o } = (0, r.useContext)(Fe);
+          return r.createElement(
+            "button",
+            $e(
+              {
+                type: "button",
+                className: y(
+                  "flex w-full items-center rounded-md px-2 py-1.5 text-left text-sm text-foreground transition-colors hover:bg-secondary",
+                  t,
+                ),
+                onClick: (e) => {
+                  (a?.(e), o(!1));
+                },
+              },
+              l,
+            ),
+            n,
+          );
+        }
+        function We(e) {
+          let { className: t } = e;
+          return r.createElement("div", {
+            className: y("my-1 h-px bg-border", t),
+          });
+        }
+        var qe = a(990);
+        function Ze() {
+          return (
+            (Ze = Object.assign
+              ? Object.assign.bind()
+              : function (e) {
+                  for (var t = 1; t < arguments.length; t++) {
+                    var a = arguments[t];
+                    for (var r in a)
+                      ({}).hasOwnProperty.call(a, r) && (e[r] = a[r]);
+                  }
+                  return e;
+                }),
+            Ze.apply(null, arguments)
+          );
+        }
+        const Je = qe.bL,
+          Ve = qe.l9;
+        function Ye(e) {
+          let { className: t, children: a, side: n = "right", ...l } = e;
+          return r.createElement(
+            qe.ZL,
+            null,
+            r.createElement(qe.hJ, {
+              className:
+                "fixed inset-0 z-50 bg-black/60 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+            }),
+            r.createElement(
+              qe.UC,
+              Ze(
+                {
+                  className: y(
+                    "fixed z-50 flex flex-col gap-4 bg-background text-foreground shadow-lg transition ease-in-out",
+                    "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+                    "right" === n &&
+                      "inset-y-0 right-0 h-full w-3/4 border-l border-border data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+                    "left" === n &&
+                      "inset-y-0 left-0 h-full w-3/4 border-r border-border data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
+                    t,
+                  ),
+                },
+                l,
+              ),
+              a,
+              r.createElement(
+                qe.bm,
+                {
+                  className:
+                    "absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40",
+                },
+                r.createElement(Ce.A, { className: "h-4 w-4" }),
+                r.createElement("span", { className: "sr-only" }, "Close"),
+              ),
+            ),
+          );
+        }
+        function Ke(e) {
+          let { className: t, ...a } = e;
+          return r.createElement(
+            qe.hE,
+            Ze({ className: y("font-semibold text-foreground", t) }, a),
+          );
+        }
+        function Qe(e) {
+          let { className: t, ...a } = e;
+          return r.createElement(
+            qe.VY,
+            Ze({ className: y("text-sm text-muted-foreground", t) }, a),
+          );
+        }
+        qe.bm;
+        var Xe = a(1316),
+          et = a(5700);
+        function tt() {
+          return (
+            (tt = Object.assign
+              ? Object.assign.bind()
+              : function (e) {
+                  for (var t = 1; t < arguments.length; t++) {
+                    var a = arguments[t];
+                    for (var r in a)
+                      ({}).hasOwnProperty.call(a, r) && (e[r] = a[r]);
+                  }
+                  return e;
+                }),
+            tt.apply(null, arguments)
+          );
+        }
+        const at = et.bL,
+          rt = et.l9;
+        function nt(e) {
+          let {
+            className: t,
+            align: a = "center",
+            sideOffset: n = 4,
+            ...l
+          } = e;
+          return r.createElement(
+            et.ZL,
+            null,
+            r.createElement(
+              et.UC,
+              tt(
+                {
+                  align: a,
+                  sideOffset: n,
+                  className: y(
+                    "z-50 w-72 origin-[--radix-popover-content-transform-origin] rounded-lg border border-border bg-card p-4 text-card-foreground shadow-xl outline-none",
+                    "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
+                    "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+                    t,
+                  ),
+                },
+                l,
+              ),
+            ),
+          );
+        }
+        et.bm;
+        var lt = a(8376),
+          ot = a(5773),
+          st = a(8007);
+        const ct = (0, r.createContext)(null),
+          it = "taskplanner.auth.session",
+          dt = "taskplanner.auth.users",
+          mt = {
+            username: "demo",
+            email: "demo@ashtro.dev",
+            password: "Demo@123",
+            firstName: "Demo",
+            lastName: "User",
+          };
+        function ut() {
+          try {
+            const e = JSON.parse(localStorage.getItem(dt) || "[]");
+            return [mt, ...e];
+          } catch {
+            return [mt];
+          }
+        }
+        function ft() {
+          try {
+            return JSON.parse(localStorage.getItem(it) || "null");
+          } catch {
+            return null;
+          }
+        }
+        function gt(e) {
+          let { children: t } = e;
+          const [a, n] = (0, r.useState)(ft);
+          (0, r.useEffect)(() => {
+            a
+              ? localStorage.setItem(it, JSON.stringify(a))
+              : localStorage.removeItem(it);
+          }, [a]);
+          const l = (0, r.useCallback)((e, t) => {
+              const a = e?.trim().toLowerCase(),
+                r = ut().find(
+                  (e) =>
+                    (e.username?.toLowerCase() === a ||
+                      e.email?.toLowerCase() === a) &&
+                    e.password === t,
+                );
+              if (!r)
+                return {
+                  success: !1,
+                  error: "Invalid username/email or password.",
+                };
+              const { password: l, ...o } = r;
+              return (n(o), { success: !0 });
+            }, []),
+            o = (0, r.useCallback)((e) => {
+              const t = e.email?.trim().toLowerCase();
+              if (ut().some((e) => e.email?.toLowerCase() === t))
+                return {
+                  success: !1,
+                  error: "An account with that email already exists.",
+                };
+              const a = { ...e, username: t, email: t },
+                r = JSON.parse(localStorage.getItem(dt) || "[]");
+              (r.push(a), localStorage.setItem(dt, JSON.stringify(r)));
+              const { password: l, ...o } = a;
+              return (n(o), { success: !0 });
+            }, []),
+            s = (0, r.useCallback)(() => {
+              n(null);
+            }, []),
+            c = (0, r.useMemo)(
+              () => ({
+                user: a,
+                isAuthenticated: Boolean(a),
+                login: l,
+                signup: o,
+                logout: s,
+              }),
+              [a, l, o, s],
+            );
+          return r.createElement(ct.Provider, { value: c }, t);
+        }
+        function bt() {
+          const e = (0, r.useContext)(ct);
+          if (!e)
+            throw new Error("useAuth must be used within an AuthProvider");
+          return e;
+        }
+        var pt = a(9804),
+          ht = a(7946),
+          xt = a(418),
+          Et = a(7213),
+          yt = a(1104);
+        const vt = {
+          success: {
+            label: "Success",
+            icon: pt.A,
+            iconClass: "bg-emerald-500/15 text-emerald-400",
+            barClass: "bg-emerald-500",
+          },
+          error: {
+            label: "Error",
+            icon: ht.A,
+            iconClass: "bg-rose-500/15 text-rose-400",
+            barClass: "bg-rose-500",
+          },
+          warning: {
+            label: "Warning",
+            icon: xt.A,
+            iconClass: "bg-amber-500/15 text-amber-400",
+            barClass: "bg-amber-500",
+          },
+          info: {
+            label: "Info",
+            icon: Et.A,
+            iconClass: "bg-sky-500/15 text-sky-400",
+            barClass: "bg-sky-500",
+          },
+          loading: {
+            label: "In progress",
+            icon: yt.A,
+            iconClass: "bg-brand-soft text-brand-fg [&_svg]:animate-spin",
+            barClass: "bg-brand",
+          },
+        };
+        function Nt(e) {
+          return vt[e] ?? vt.info;
+        }
+        function wt() {
+          const { toasts: e } = Ee(),
+            [t, a] = (0, r.useState)(!1),
+            [n, l] = (0, r.useState)(!1),
+            [o, s] = (0, r.useState)(
+              () => "undefined" != typeof document && document.hidden,
+            );
+          ((0, r.useEffect)(() => {
+            const e = () => s(document.hidden);
+            return (
+              document.addEventListener("visibilitychange", e),
+              () => document.removeEventListener("visibilitychange", e)
+            );
+          }, []),
+            (0, r.useEffect)(() => {
+              0 === e.length && (a(!1), l(!1));
+            }, [e.length]));
+          const c = t || n || o;
+          return r.createElement(
+            "section",
+            {
+              "aria-label": "Notifications",
+              className:
+                "pointer-events-none fixed inset-x-0 bottom-0 z-[100] flex justify-center p-4 md:inset-x-auto md:right-0 md:p-6",
+            },
+            r.createElement(
+              "ol",
+              {
+                className: "flex w-full flex-col gap-2 md:w-[380px]",
+                onMouseEnter: () => a(!0),
+                onMouseLeave: () => a(!1),
+                onFocus: () => l(!0),
+                onBlur: (e) => {
+                  e.currentTarget.contains(e.relatedTarget) || l(!1);
+                },
+              },
+              e.map((e) =>
+                r.createElement(kt, { key: e.id, toast: e, paused: c }),
+              ),
+            ),
+          );
+        }
+        function kt(e) {
+          let { toast: t, paused: a } = e;
+          const { icon: n, iconClass: l, barClass: o } = Nt(t.type),
+            s = Number.isFinite(t.duration),
+            c = () => xe.dismiss(t.id);
+          return r.createElement(
+            "li",
+            {
+              role: "error" === t.type ? "alert" : "status",
+              "aria-atomic": "true",
+              "data-state": t.open ? "open" : "closed",
+              onKeyDown: (e) => {
+                "Escape" === e.key && c();
+              },
+              className: y(
+                "pointer-events-auto relative flex w-full items-start gap-3 overflow-hidden rounded-xl p-4 pr-11 shadow-lg",
+                "bg-card ring-1 ring-border",
+                "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-bottom-4 md:data-[state=open]:slide-in-from-right-8",
+                "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:fill-mode-forwards",
+              ),
+            },
+            r.createElement(
+              "span",
+              {
+                "aria-hidden": "true",
+                className: y(
+                  "flex h-8 w-8 shrink-0 items-center justify-center rounded-full",
+                  l,
+                ),
+              },
+              r.createElement(n, { className: "h-[18px] w-[18px]" }),
+            ),
+            r.createElement(
+              "div",
+              { className: "min-w-0 flex-1 pt-1" },
+              r.createElement(
+                "p",
+                {
+                  className:
+                    "text-sm font-semibold leading-snug text-foreground",
+                },
+                t.title,
+              ),
+              t.description &&
+                r.createElement(
+                  "p",
+                  { className: "mt-1 text-sm text-muted-foreground" },
+                  t.description,
+                ),
+              t.action &&
+                r.createElement(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: () => {
+                      (t.action.onClick?.(), c());
+                    },
+                    className:
+                      "-ml-2 mt-2 rounded-md px-2 py-1 text-sm font-semibold text-brand-fg outline-none transition-colors hover:bg-brand-soft focus-visible:ring-[3px] focus-visible:ring-brand-fg/40",
+                  },
+                  t.action.label,
+                ),
+            ),
+            r.createElement(
+              "button",
+              {
+                type: "button",
+                onClick: c,
+                "aria-label": "Dismiss notification",
+                className:
+                  "absolute right-2 top-2 rounded-md p-1.5 text-muted-foreground outline-none transition-colors hover:bg-white/10 hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-brand-fg/40",
+              },
+              r.createElement(Ce.A, { className: "h-4 w-4" }),
+            ),
+            s &&
+              t.open &&
+              r.createElement("span", {
+                key: t.version,
+                "aria-hidden": "true",
+                onAnimationEnd: (e) => {
+                  e.target === e.currentTarget && c();
+                },
+                className: y(
+                  "absolute bottom-0 left-0 h-[3px] w-full origin-left opacity-70",
+                  o,
+                ),
+                style: {
+                  animation: `toast-timer ${t.duration}ms linear forwards`,
+                  animationPlayState: a ? "paused" : "running",
+                },
+              }),
+          );
+        }
+        function Ct(e) {
+          let { children: t } = e;
+          const { user: a } = bt(),
+            n = a?.email ?? a?.username ?? null;
+          return (
+            (0, r.useLayoutEffect)(() => {
+              !(function (e) {
+                let t =
+                  arguments.length > 1 && void 0 !== arguments[1]
+                    ? arguments[1]
+                    : [];
+                const a = e ? `taskplanner.notifications.inbox.${e}` : null;
+                if (a !== Q) {
+                  if (((Q = a), Q)) {
+                    const e = Z(Q, null);
+                    Array.isArray(e)
+                      ? (K = e)
+                      : ((K = t.map((e) => ({
+                          id: V(),
+                          read: !1,
+                          createdAt: Date.now(),
+                          ...e,
+                        }))),
+                        ie());
+                  } else K = [];
+                  re();
+                }
+              })(
+                n,
+                n
+                  ? [
+                      {
+                        type: "info",
+                        title: "Welcome to Ashtro Planner",
+                        description:
+                          "Plan your day in the Time Planner and track progress in Project Track.",
+                        href: "/time-planner",
+                        createdAt: Date.now() - 12e4,
+                      },
+                    ]
+                  : [],
+              );
+            }, [n]),
+            r.createElement(r.Fragment, null, t, r.createElement(wt, null))
+          );
+        }
+        function St() {
+          const { inbox: e, prefs: t } = Ee(),
+            a = (0, r.useMemo)(() => e.filter((e) => !e.read).length, [e]);
+          return {
+            notifications: e,
+            unreadCount: a,
+            prefs: t,
+            notify: xe,
+            addNotification: me,
+            markRead: (e) => ue(e, !0),
+            markUnread: (e) => ue(e, !1),
+            markAllRead: fe,
+            remove: ge,
+            clearAll: be,
+            restore: pe,
+            setPrefs: he,
+          };
+        }
+        const At = [
+          ["year", 31536e6],
+          ["month", 2592e6],
+          ["week", 6048e5],
+          ["day", 864e5],
+          ["hour", 36e5],
+          ["minute", 6e4],
+        ];
+        function Mt(e) {
+          let {
+            items: t,
+            onNavigate: a,
+            emptyTitle: n = "You're all caught up",
+            emptyDescription: l = "New notifications will show up here.",
+            className: o,
+          } = e;
+          const s = (function () {
+            let e =
+              arguments.length > 0 && void 0 !== arguments[0]
+                ? arguments[0]
+                : 6e4;
+            const [t, a] = (0, r.useState)(Date.now);
+            return (
+              (0, r.useEffect)(() => {
+                const t = setInterval(() => a(Date.now()), e);
+                return () => clearInterval(t);
+              }, [e]),
+              t
+            );
+          })();
+          return 0 === t.length
+            ? r.createElement(
+                "div",
+                {
+                  className:
+                    "flex flex-col items-center gap-2 px-6 py-10 text-center",
+                },
+                r.createElement(
+                  "span",
+                  {
+                    className:
+                      "flex h-11 w-11 items-center justify-center rounded-full bg-brand-soft text-brand-fg",
+                  },
+                  r.createElement(lt.A, { className: "h-5 w-5" }),
+                ),
+                r.createElement("p", { className: "text-sm font-semibold" }, n),
+                r.createElement(
+                  "p",
+                  { className: "text-xs text-muted-foreground" },
+                  l,
+                ),
+              )
+            : r.createElement(
+                "ul",
+                { className: y("divide-y divide-border", o) },
+                t.map((e) =>
+                  r.createElement(Lt, {
+                    key: e.id,
+                    item: e,
+                    now: s,
+                    onNavigate: a,
+                  }),
+                ),
+              );
+        }
+        function Lt(e) {
+          let { item: t, now: a, onNavigate: n } = e;
+          const { markRead: l, markUnread: o, remove: c } = St(),
+            { icon: i, iconClass: d, label: m } = Nt(t.type),
+            u = !t.read,
+            f = r.createElement(
+              r.Fragment,
+              null,
+              r.createElement(
+                "span",
+                {
+                  "aria-hidden": "true",
+                  className: y(
+                    "mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full",
+                    d,
+                  ),
+                },
+                r.createElement(i, { className: "h-4 w-4" }),
+              ),
+              r.createElement(
+                "span",
+                { className: "min-w-0 flex-1" },
+                r.createElement(
+                  "span",
+                  { className: "sr-only" },
+                  u ? "Unread" : "Read",
+                  " ",
+                  m.toLowerCase(),
+                  " notification:",
+                  " ",
+                ),
+                r.createElement(
+                  "span",
+                  {
+                    className: y(
+                      "block text-sm leading-snug",
+                      u ? "font-semibold" : "font-medium text-muted-foreground",
+                    ),
+                  },
+                  t.title,
+                ),
+                t.description &&
+                  r.createElement(
+                    "span",
+                    {
+                      className:
+                        "mt-0.5 line-clamp-2 block text-xs text-muted-foreground",
+                    },
+                    t.description,
+                  ),
+                r.createElement(
+                  "time",
+                  {
+                    dateTime: new Date(t.createdAt).toISOString(),
+                    title: new Date(t.createdAt).toLocaleString(),
+                    className: "mt-1 block text-xs text-muted-foreground/80",
+                  },
+                  (function (e) {
+                    const t =
+                        e -
+                        (arguments.length > 1 && void 0 !== arguments[1]
+                          ? arguments[1]
+                          : Date.now()),
+                      a = new Intl.RelativeTimeFormat(void 0, {
+                        numeric: "auto",
+                      });
+                    for (const [e, r] of At)
+                      if (Math.abs(t) >= r)
+                        return a.format(Math.round(t / r), e);
+                    return "just now";
+                  })(t.createdAt, a),
+                ),
+              ),
+            ),
+            g = y(
+              "flex w-full items-start gap-3 py-3 pl-4 pr-20 text-left outline-none transition-colors",
+              "hover:bg-white/5 focus-visible:bg-white/5",
+              u && "bg-brand-soft/60",
+            );
+          return r.createElement(
+            "li",
+            { className: "group relative" },
+            t.href
+              ? r.createElement(
+                  s.N_,
+                  {
+                    to: t.href,
+                    className: g,
+                    onClick: () => {
+                      (l(t.id), n?.());
+                    },
+                  },
+                  f,
+                )
+              : r.createElement(
+                  "button",
+                  { type: "button", className: g, onClick: () => l(t.id) },
+                  f,
+                ),
+            u &&
+              r.createElement("span", {
+                "aria-hidden": "true",
+                className:
+                  "pointer-events-none absolute right-4 top-4 h-2 w-2 rounded-full bg-brand-fg group-focus-within:opacity-0 group-hover:opacity-0",
+              }),
+            r.createElement(
+              "div",
+              {
+                className:
+                  "absolute right-2 top-2 flex gap-0.5 opacity-0 transition-opacity focus-within:opacity-100 group-hover:opacity-100 [@media(hover:none)]:opacity-100",
+              },
+              r.createElement(
+                Tt,
+                {
+                  label: u ? "Mark as read" : "Mark as unread",
+                  onClick: () => (u ? l(t.id) : o(t.id)),
+                },
+                u ? r.createElement(ot.A, null) : r.createElement(st.A, null),
+              ),
+              r.createElement(
+                Tt,
+                { label: "Remove notification", onClick: () => c(t.id) },
+                r.createElement(Ce.A, null),
+              ),
+            ),
+          );
+        }
+        function Tt(e) {
+          let { label: t, onClick: a, children: n } = e;
+          return r.createElement(
+            "button",
+            {
+              type: "button",
+              onClick: a,
+              "aria-label": t,
+              title: t,
+              className:
+                "rounded-md p-1.5 text-muted-foreground outline-none transition-colors hover:bg-white/10 hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-brand-fg/40 [&_svg]:h-4 [&_svg]:w-4",
+            },
+            n,
+          );
+        }
+        const Dt = [
+          { value: "all", label: "All" },
+          { value: "unread", label: "Unread" },
+        ];
+        function jt() {
+          const [e, t] = (0, r.useState)(!1),
+            [a, n] = (0, r.useState)("all"),
+            { notifications: l, unreadCount: o, markAllRead: c } = St(),
+            i = "unread" === a ? l.filter((e) => !e.read) : l;
+          return r.createElement(
+            at,
+            { open: e, onOpenChange: t },
+            r.createElement(
+              rt,
+              { asChild: !0 },
+              r.createElement(
+                k,
+                {
+                  variant: "ghost",
+                  size: "icon",
+                  className: "relative h-9 w-9 rounded-full",
+                  "aria-label":
+                    o > 0 ? `Notifications, ${o} unread` : "Notifications",
+                },
+                r.createElement(ze.A, { className: "h-5 w-5" }),
+                o > 0 &&
+                  r.createElement(
+                    "span",
+                    {
+                      "aria-hidden": "true",
+                      className:
+                        "absolute -right-0.5 -top-0.5 flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-brand-strong px-1 text-[10px] font-semibold leading-none text-white ring-2 ring-background",
+                    },
+                    o > 9 ? "9+" : o,
+                  ),
+              ),
+            ),
+            r.createElement(
+              nt,
+              {
+                align: "end",
+                sideOffset: 8,
+                collisionPadding: 16,
+                className:
+                  "w-[min(24rem,calc(100vw-2rem))] overflow-hidden p-0",
+              },
+              r.createElement(
+                "div",
+                {
+                  className:
+                    "flex items-center justify-between gap-3 border-b border-border px-4 py-3",
+                },
+                r.createElement(
+                  "div",
+                  { className: "flex items-center gap-2" },
+                  r.createElement(
+                    "h2",
+                    { className: "text-sm font-semibold" },
+                    "Notifications",
+                  ),
+                  o > 0 &&
+                    r.createElement(
+                      "span",
+                      {
+                        className:
+                          "rounded-full bg-brand-soft px-2 py-0.5 text-xs font-medium text-brand-fg",
+                      },
+                      o,
+                      " new",
+                    ),
+                ),
+                r.createElement(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: c,
+                    disabled: 0 === o,
+                    className:
+                      "inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium text-brand-fg outline-none transition-colors hover:bg-brand-soft focus-visible:ring-[3px] focus-visible:ring-brand-fg/40 disabled:pointer-events-none disabled:opacity-50",
+                  },
+                  r.createElement(Xe.A, { className: "h-3.5 w-3.5" }),
+                  "Mark all as read",
+                ),
+              ),
+              r.createElement(
+                "div",
+                {
+                  role: "group",
+                  "aria-label": "Filter notifications",
+                  className: "flex gap-1 border-b border-border px-3 py-2",
+                },
+                Dt.map((e) =>
+                  r.createElement(
+                    "button",
+                    {
+                      key: e.value,
+                      type: "button",
+                      "aria-pressed": a === e.value,
+                      onClick: () => n(e.value),
+                      className: y(
+                        "rounded-md px-2.5 py-1 text-xs font-medium outline-none transition-colors focus-visible:ring-[3px] focus-visible:ring-brand-fg/40",
+                        a === e.value
+                          ? "bg-white/10 text-foreground"
+                          : "text-muted-foreground hover:text-foreground",
+                      ),
+                    },
+                    e.label,
+                  ),
+                ),
+              ),
+              r.createElement(
+                "div",
+                { className: "max-h-[min(24rem,60vh)] overflow-y-auto" },
+                r.createElement(Mt, {
+                  items: i,
+                  onNavigate: () => t(!1),
+                  emptyTitle:
+                    "unread" === a ? "No unread notifications" : void 0,
+                }),
+              ),
+              r.createElement(
+                "div",
+                { className: "border-t border-border p-2" },
+                r.createElement(
+                  s.N_,
+                  {
+                    to: "/notifications",
+                    onClick: () => t(!1),
+                    className:
+                      "block rounded-md px-3 py-2 text-center text-sm font-medium text-brand-fg outline-none transition-colors hover:bg-brand-soft focus-visible:ring-[3px] focus-visible:ring-brand-fg/40",
+                  },
+                  "View all notifications",
+                ),
+              ),
+            ),
+          );
+        }
+        var Pt = a(1805),
+          Ot = a(6220),
+          _t = a(7849),
+          zt = a(7298),
+          Bt = a(7774);
+        const Ht = [
+          { label: "home", to: "/", icon: Pt.A },
+          { label: "time-planner", to: "/time-planner", icon: Ot.A },
+          { label: "project-track", to: "/project-track", icon: _t.A },
+          { label: "todo-list", to: "/todo-list", icon: zt.A },
+          { label: "nec-doc", to: "/nec-doc", icon: Bt.A },
+          { label: "dev-res-admin", to: "/dev-res-admin", icon: Bt.A },
+        ];
+        function $t(e) {
+          let { className: t } = e;
+          return r.createElement("img", {
+            src: "/assets/logo no bg.svg",
+            alt: "Logo",
+            className: "h-12 w-12 shrink-0",
+          });
+        }
+        function Ft() {
+          const [e, t] = (0, r.useState)(!1),
+            a = (0, s.Zp)(),
+            { user: n, logout: l } = bt(),
+            o =
+              [n?.firstName, n?.lastName].filter(Boolean).join(" ") ||
+              n?.username ||
+              "Guest",
+            c =
+              o
+                .split(/\s+/)
+                .map((e) => e[0])
+                .join("")
+                .slice(0, 2)
+                .toUpperCase() || "?";
+          function i() {
+            (t(!1),
+              l(),
+              xe.info("You've been signed out"),
+              a("/login", { replace: !0 }));
+          }
+          return r.createElement(
+            "nav",
+            {
+              role: "navigation",
+              "aria-label": "Primary",
+              className:
+                "sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md",
+            },
+            r.createElement(
+              "div",
+              {
+                className:
+                  "mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-2.5 md:px-6 lg:px-8",
+              },
+              r.createElement(
+                s.N_,
+                {
+                  to: "/",
+                  className: "flex min-w-0 items-center gap-2.5",
+                  "aria-label": "Ashtro Planner",
+                },
+                r.createElement($t, null),
+                r.createElement(
+                  "span",
+                  {
+                    className:
+                      "truncate font-display text-lg font-semibold tracking-tight text-brand-gradient",
+                  },
+                  "Ashtro Planner",
+                ),
+              ),
+              r.createElement(
+                "ul",
+                { className: "hidden items-center gap-1 lg:flex" },
+                Ht.map((e) =>
+                  r.createElement(
+                    "li",
+                    { key: e.label },
+                    r.createElement(
+                      s.k2,
+                      {
+                        to: e.to,
+                        end: !0,
+                        className: (e) => {
+                          let { isActive: t } = e;
+                          return y(
+                            "inline-flex items-center rounded-md px-3 py-2 text-sm capitalize text-muted-foreground transition-colors",
+                            "hover:text-foreground",
+                            t && "bg-white/10 font-medium text-glow",
+                          );
+                        },
+                      },
+                      e.label,
+                    ),
+                  ),
+                ),
+              ),
+              r.createElement(
+                "div",
+                { className: "flex shrink-0 items-center gap-2" },
+                r.createElement(jt, null),
+                r.createElement(
+                  Re,
+                  null,
+                  r.createElement(
+                    Ie,
+                    { asChild: !0 },
+                    r.createElement(
+                      k,
+                      {
+                        variant: "ghost",
+                        size: "icon",
+                        className: "h-9 w-9 rounded-full",
+                        "aria-label": "Open profile menu",
+                      },
+                      r.createElement(
+                        "span",
+                        {
+                          className:
+                            "flex h-8 w-8 items-center justify-center rounded-full bg-brand-strong text-xs font-semibold text-white",
+                        },
+                        c,
+                      ),
+                    ),
+                  ),
+                  r.createElement(
+                    Ue,
+                    { align: "end", className: "w-56" },
+                    r.createElement(
+                      "div",
+                      {
+                        className:
+                          "flex flex-col px-2 py-1.5 text-sm font-medium",
+                      },
+                      r.createElement("span", { className: "truncate" }, o),
+                      r.createElement(
+                        "span",
+                        {
+                          className:
+                            "truncate text-xs font-normal text-muted-foreground",
+                        },
+                        n?.email,
+                      ),
+                    ),
+                    r.createElement(We, null),
+                    r.createElement(
+                      Ge,
+                      {
+                        className: "gap-2",
+                        onClick: () => a("/notifications"),
+                      },
+                      r.createElement(ze.A, {
+                        className: "h-4 w-4 text-muted-foreground",
+                      }),
+                      "Notifications",
+                    ),
+                    r.createElement(We, null),
+                    r.createElement(
+                      Ge,
+                      { className: "gap-2", onClick: i },
+                      r.createElement(Be.A, {
+                        className: "h-4 w-4 text-muted-foreground",
+                      }),
+                      "Sign out",
+                    ),
+                  ),
+                ),
+                r.createElement(
+                  Je,
+                  { open: e, onOpenChange: t },
+                  r.createElement(
+                    Ve,
+                    { asChild: !0 },
+                    r.createElement(
+                      k,
+                      {
+                        variant: "outline",
+                        size: "icon",
+                        className: "h-9 w-9 lg:hidden",
+                        "aria-label": "Open menu",
+                      },
+                      r.createElement(He.A, { className: "h-5 w-5" }),
+                    ),
+                  ),
+                  r.createElement(
+                    Ye,
+                    { side: "left", className: "w-[18rem] gap-0 p-0" },
+                    r.createElement(
+                      Ke,
+                      { className: "sr-only" },
+                      "Navigation menu",
+                    ),
+                    r.createElement(
+                      Qe,
+                      { className: "sr-only" },
+                      "Site navigation links",
+                    ),
+                    r.createElement(
+                      "div",
+                      { className: "border-b border-border px-4 pb-3 pt-4" },
+                      r.createElement(
+                        "div",
+                        { className: "flex items-center gap-2" },
+                        r.createElement($t, null),
+                        r.createElement(
+                          "span",
+                          {
+                            className:
+                              "font-display text-base font-semibold tracking-tight",
+                          },
+                          "Ashtro Planner",
+                        ),
+                      ),
+                    ),
+                    r.createElement(
+                      "div",
+                      { className: "flex flex-col gap-1 p-2" },
+                      Ht.map((e) =>
+                        r.createElement(
+                          s.k2,
+                          {
+                            key: e.label,
+                            to: e.to,
+                            end: !0,
+                            className: (e) => {
+                              let { isActive: t } = e;
+                              return y(
+                                "flex items-center gap-3 rounded-md px-3 py-2 text-sm capitalize transition-colors",
+                                t
+                                  ? "bg-brand-gradient text-white"
+                                  : "text-muted-foreground hover:bg-secondary hover:text-foreground",
+                              );
+                            },
+                            onClick: () => t(!1),
+                          },
+                          r.createElement(e.icon, {
+                            className: "h-4 w-4 shrink-0",
+                          }),
+                          e.label,
+                        ),
+                      ),
+                    ),
+                    r.createElement(
+                      "div",
+                      { className: "mt-auto border-t border-border p-2" },
+                      r.createElement(
+                        "button",
+                        {
+                          type: "button",
+                          onClick: i,
+                          className:
+                            "flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
+                        },
+                        r.createElement(Be.A, {
+                          className: "h-4 w-4 shrink-0",
+                        }),
+                        "Sign out",
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            r.createElement("div", {
+              className: "h-[2px] w-full bg-brand-gradient-accent",
+            }),
+          );
+        }
+        var Rt = a(6110);
+        const It = function () {
             return r.createElement(
               "aside",
               {
@@ -1600,7 +2842,7 @@
                     className:
                       "animate-glow-pulse flex size-11 items-center justify-center rounded-xl border border-glow/40 bg-badge",
                   },
-                  r.createElement(pe.A, {
+                  r.createElement(Rt.A, {
                     className: "size-5 text-badge-foreground",
                   }),
                 ),
@@ -1680,7 +2922,7 @@
               ),
             );
           },
-          xe = function (e) {
+          Ut = function (e) {
             let { children: t } = e;
             return r.createElement(
               "main",
@@ -1688,7 +2930,7 @@
                 className:
                   "relative flex min-h-svh items-center justify-center overflow-hidden bg-background p-4 sm:p-6",
               },
-              r.createElement(f, {
+              r.createElement(i, {
                 hexRadius: 40,
                 viewWidth: 1200,
                 viewHeight: 800,
@@ -1712,7 +2954,7 @@
                   className:
                     "animate-fade-up grid w-full max-w-4xl overflow-hidden rounded-3xl border border-border bg-card shadow-2xl shadow-black/40 lg:grid-cols-2",
                 },
-                r.createElement(he, null),
+                r.createElement(It, null),
                 r.createElement(
                   "section",
                   {
@@ -1724,11 +2966,11 @@
               ),
             );
           };
-        var ye = a(3540),
-          Ee = a(3160);
-        function ve() {
+        var Gt = a(3540),
+          Wt = a(3160);
+        function qt() {
           return (
-            (ve = Object.assign
+            (qt = Object.assign
               ? Object.assign.bind()
               : function (e) {
                   for (var t = 1; t < arguments.length; t++) {
@@ -1738,10 +2980,10 @@
                   }
                   return e;
                 }),
-            ve.apply(null, arguments)
+            qt.apply(null, arguments)
           );
         }
-        const Ne = (0, r.forwardRef)(function (e, t) {
+        const Zt = (0, r.forwardRef)(function (e, t) {
           let {
             label: a,
             icon: n,
@@ -1751,17 +2993,17 @@
             ...c
           } = e;
           const i = (0, r.useId)(),
-            m = s ?? i,
-            d = "password" === l,
+            d = s ?? i,
+            m = "password" === l,
             [u, f] = (0, r.useState)(!1),
-            b = d ? (u ? "text" : "password") : l;
+            g = m ? (u ? "text" : "password") : l;
           return r.createElement(
             "div",
             { className: "group flex flex-col gap-1.5" },
             r.createElement(
               "label",
               {
-                htmlFor: m,
+                htmlFor: d,
                 className:
                   "text-xs font-medium uppercase tracking-wider text-muted-foreground/80",
               },
@@ -1781,24 +3023,24 @@
                 ),
               r.createElement(
                 "input",
-                ve(
+                qt(
                   {
                     ref: t,
-                    id: m,
-                    type: b,
-                    className: k(
+                    id: d,
+                    type: g,
+                    className: y(
                       "w-full rounded-lg border border-input bg-secondary/40 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/40",
                       "transition-all duration-200 outline-none",
                       "focus:border-accent/60 focus:bg-secondary/70 focus:ring-2 focus:ring-accent/25",
                       n ? "pl-10" : "pl-3.5",
-                      d ? "pr-10" : "pr-3.5",
+                      m ? "pr-10" : "pr-3.5",
                       o,
                     ),
                   },
                   c,
                 ),
               ),
-              d &&
+              m &&
                 r.createElement(
                   "button",
                   {
@@ -1809,13 +3051,13 @@
                       "absolute right-2.5 top-1/2 -translate-y-1/2 rounded-md p-1 text-muted-foreground/60 transition-colors hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40",
                   },
                   u
-                    ? r.createElement(ye.A, { className: "size-4" })
-                    : r.createElement(Ee.A, { className: "size-4" }),
+                    ? r.createElement(Gt.A, { className: "size-4" })
+                    : r.createElement(Wt.A, { className: "size-4" }),
                 ),
             ),
           );
         });
-        function we() {
+        function Jt() {
           return r.createElement(
             "svg",
             {
@@ -1841,7 +3083,7 @@
             }),
           );
         }
-        function ke() {
+        function Vt() {
           return r.createElement(
             "svg",
             {
@@ -1879,7 +3121,7 @@
             }),
           );
         }
-        function Ce() {
+        function Yt() {
           return r.createElement(
             "svg",
             {
@@ -1905,17 +3147,17 @@
             }),
           );
         }
-        const Se = [
-          { name: "Google", icon: r.createElement(we, null) },
-          { name: "GitLab", icon: r.createElement(ke, null) },
-          { name: "Windows", icon: r.createElement(Ce, null) },
+        const Kt = [
+          { name: "Google", icon: r.createElement(Jt, null) },
+          { name: "GitLab", icon: r.createElement(Vt, null) },
+          { name: "Windows", icon: r.createElement(Yt, null) },
         ];
-        function Me(e) {
+        function Qt(e) {
           let { action: t } = e;
           return r.createElement(
             "div",
             { className: "grid grid-cols-3 gap-2 sm:gap-3" },
-            Se.map((e) =>
+            Kt.map((e) =>
               r.createElement(
                 "button",
                 {
@@ -1935,115 +3177,31 @@
             ),
           );
         }
-        const Ae = function (e) {
-            let { children: t } = e;
-            return r.createElement(
-              "div",
-              { className: "my-6 flex items-center gap-4" },
-              r.createElement("span", { className: "h-px flex-1 bg-border" }),
-              r.createElement(
-                "span",
-                {
-                  className:
-                    "text-xs uppercase tracking-widest text-muted-foreground/60",
-                },
-                t,
-              ),
-              r.createElement("span", { className: "h-px flex-1 bg-border" }),
-            );
-          },
-          Le = (0, r.createContext)(null),
-          Te = "taskplanner.auth.session",
-          De = "taskplanner.auth.users",
-          je = {
-            username: "demo",
-            email: "demo@ashtro.dev",
-            password: "Demo@123",
-            firstName: "Demo",
-            lastName: "User",
-          };
-        function Pe() {
-          try {
-            const e = JSON.parse(localStorage.getItem(De) || "[]");
-            return [je, ...e];
-          } catch {
-            return [je];
-          }
-        }
-        function _e() {
-          try {
-            return JSON.parse(localStorage.getItem(Te) || "null");
-          } catch {
-            return null;
-          }
-        }
-        function He(e) {
+        const Xt = function (e) {
           let { children: t } = e;
-          const [a, n] = (0, r.useState)(_e);
-          (0, r.useEffect)(() => {
-            a
-              ? localStorage.setItem(Te, JSON.stringify(a))
-              : localStorage.removeItem(Te);
-          }, [a]);
-          const l = (0, r.useCallback)((e, t) => {
-              const a = e?.trim().toLowerCase(),
-                r = Pe().find(
-                  (e) =>
-                    (e.username?.toLowerCase() === a ||
-                      e.email?.toLowerCase() === a) &&
-                    e.password === t,
-                );
-              if (!r)
-                return {
-                  success: !1,
-                  error: "Invalid username/email or password.",
-                };
-              const { password: l, ...o } = r;
-              return (n(o), { success: !0 });
-            }, []),
-            o = (0, r.useCallback)((e) => {
-              const t = e.email?.trim().toLowerCase();
-              if (Pe().some((e) => e.email?.toLowerCase() === t))
-                return {
-                  success: !1,
-                  error: "An account with that email already exists.",
-                };
-              const a = { ...e, username: t, email: t },
-                r = JSON.parse(localStorage.getItem(De) || "[]");
-              (r.push(a), localStorage.setItem(De, JSON.stringify(r)));
-              const { password: l, ...o } = a;
-              return (n(o), { success: !0 });
-            }, []),
-            s = (0, r.useCallback)(() => {
-              n(null);
-            }, []),
-            c = (0, r.useMemo)(
-              () => ({
-                user: a,
-                isAuthenticated: Boolean(a),
-                login: l,
-                signup: o,
-                logout: s,
-              }),
-              [a, l, o, s],
-            );
-          return r.createElement(Le.Provider, { value: c }, t);
-        }
-        function Be() {
-          const e = (0, r.useContext)(Le);
-          if (!e)
-            throw new Error("useAuth must be used within an AuthProvider");
-          return e;
-        }
-        var Oe = a(8686),
-          ze = a(7078),
-          $e = a(8723),
-          Fe = a(8656);
-        const Re = function () {
+          return r.createElement(
+            "div",
+            { className: "my-6 flex items-center gap-4" },
+            r.createElement("span", { className: "h-px flex-1 bg-border" }),
+            r.createElement(
+              "span",
+              {
+                className:
+                  "text-xs uppercase tracking-widest text-muted-foreground/60",
+              },
+              t,
+            ),
+            r.createElement("span", { className: "h-px flex-1 bg-border" }),
+          );
+        };
+        var ea = a(8686),
+          ta = a(7078),
+          aa = a(8656);
+        const ra = function () {
             const [e, t] = (0, r.useState)(!1),
               [a, n] = (0, r.useState)(""),
-              { login: l } = Be(),
-              o = (0, d.Zp)();
+              { login: l } = bt(),
+              o = (0, s.Zp)();
             return r.createElement(
               "div",
               { className: "w-full max-w-md" },
@@ -2072,7 +3230,7 @@
                   "Don't have an account?",
                   " ",
                   r.createElement(
-                    d.N_,
+                    s.N_,
                     {
                       to: "/signup",
                       className:
@@ -2100,7 +3258,7 @@
                   className: "animate-fade-up mt-8",
                   style: { animationDelay: "0.08s" },
                 },
-                r.createElement(Me, { action: "Sign in" }),
+                r.createElement(Qt, { action: "Sign in" }),
               ),
               r.createElement(
                 "div",
@@ -2108,7 +3266,7 @@
                   className: "animate-fade-up",
                   style: { animationDelay: "0.14s" },
                 },
-                r.createElement(Ae, null, "or continue with"),
+                r.createElement(Xt, null, "or continue with"),
               ),
               r.createElement(
                 "form",
@@ -2128,24 +3286,24 @@
                   className: "animate-fade-up flex flex-col gap-4",
                   style: { animationDelay: "0.2s" },
                 },
-                r.createElement(Ne, {
+                r.createElement(Zt, {
                   label: "Username or email",
                   name: "identifier",
                   placeholder: "jane.doe or jane@company.com",
                   autoComplete: "username",
-                  icon: r.createElement(Oe.A, { className: "size-4" }),
+                  icon: r.createElement(ea.A, { className: "size-4" }),
                   required: !0,
                 }),
                 r.createElement(
                   "div",
                   { className: "flex flex-col gap-1.5" },
-                  r.createElement(Ne, {
+                  r.createElement(Zt, {
                     label: "Password",
                     name: "password",
                     type: "password",
                     placeholder: "••••••••",
                     autoComplete: "current-password",
-                    icon: r.createElement(ze.A, { className: "size-4" }),
+                    icon: r.createElement(ta.A, { className: "size-4" }),
                     required: !0,
                   }),
                   r.createElement(
@@ -2165,7 +3323,7 @@
                       "Remember me",
                     ),
                     r.createElement(
-                      d.N_,
+                      s.N_,
                       {
                         to: "#",
                         className:
@@ -2182,7 +3340,7 @@
                     a,
                   ),
                 r.createElement(
-                  A,
+                  k,
                   {
                     type: "submit",
                     disabled: e,
@@ -2193,7 +3351,7 @@
                     ? r.createElement(
                         r.Fragment,
                         null,
-                        r.createElement($e.A, {
+                        r.createElement(yt.A, {
                           className: "size-4 animate-spin",
                         }),
                         " Signing in…",
@@ -2208,24 +3366,24 @@
                     "animate-fade-up mt-6 flex items-center justify-center gap-1.5 text-xs text-muted-foreground/70",
                   style: { animationDelay: "0.26s" },
                 },
-                r.createElement(Fe.A, { className: "size-3.5" }),
+                r.createElement(aa.A, { className: "size-3.5" }),
                 "Protected by Ashtro Dev single sign-on",
               ),
             );
           },
-          Ie = function () {
-            return r.createElement(xe, null, r.createElement(Re, null));
+          na = function () {
+            return r.createElement(Ut, null, r.createElement(ra, null));
           };
-        var Ge = a(9869),
-          Ue = a(6017);
-        function We() {
+        var la = a(9869),
+          oa = a(6017);
+        function sa() {
           const [e, t] = (0, r.useState)(!1),
             [a, n] = (0, r.useState)(""),
             [l, o] = (0, r.useState)(""),
-            [s, c] = (0, r.useState)(""),
-            i = s.length > 0 && l !== s,
-            { signup: m } = Be(),
-            u = (0, d.Zp)();
+            [c, i] = (0, r.useState)(""),
+            d = c.length > 0 && l !== c,
+            { signup: m } = bt(),
+            u = (0, s.Zp)();
           return r.createElement(
             "div",
             { className: "w-full max-w-md" },
@@ -2254,7 +3412,7 @@
                 "Already have an account?",
                 " ",
                 r.createElement(
-                  d.N_,
+                  s.N_,
                   {
                     to: "/login",
                     className:
@@ -2270,7 +3428,7 @@
                 className: "animate-fade-up mt-8",
                 style: { animationDelay: "0.08s" },
               },
-              r.createElement(Me, { action: "Sign up" }),
+              r.createElement(Qt, { action: "Sign up" }),
             ),
             r.createElement(
               "div",
@@ -2278,13 +3436,13 @@
                 className: "animate-fade-up",
                 style: { animationDelay: "0.14s" },
               },
-              r.createElement(Ae, null, "or sign up with email"),
+              r.createElement(Xt, null, "or sign up with email"),
             ),
             r.createElement(
               "form",
               {
                 onSubmit: function (e) {
-                  if ((e.preventDefault(), n(""), i)) return;
+                  if ((e.preventDefault(), n(""), d)) return;
                   const a = new FormData(e.currentTarget),
                     r = {
                       firstName: a.get("firstName")?.toString() ?? "",
@@ -2305,15 +3463,15 @@
               r.createElement(
                 "div",
                 { className: "grid grid-cols-1 gap-4 sm:grid-cols-2" },
-                r.createElement(Ne, {
+                r.createElement(Zt, {
                   label: "First name",
                   name: "firstName",
                   placeholder: "Jane",
                   autoComplete: "given-name",
-                  icon: r.createElement(Oe.A, { className: "size-4" }),
+                  icon: r.createElement(ea.A, { className: "size-4" }),
                   required: !0,
                 }),
-                r.createElement(Ne, {
+                r.createElement(Zt, {
                   label: "Last name",
                   name: "lastName",
                   placeholder: "Doe",
@@ -2321,31 +3479,31 @@
                   required: !0,
                 }),
               ),
-              r.createElement(Ne, {
+              r.createElement(Zt, {
                 label: "Email",
                 name: "email",
                 type: "email",
                 placeholder: "jane@company.com",
                 autoComplete: "email",
-                icon: r.createElement(Fe.A, { className: "size-4" }),
+                icon: r.createElement(aa.A, { className: "size-4" }),
                 required: !0,
               }),
-              r.createElement(Ne, {
+              r.createElement(Zt, {
                 label: "Phone",
                 name: "phone",
                 type: "tel",
                 placeholder: "+1 (555) 000-0000",
                 autoComplete: "tel",
-                icon: r.createElement(Ge.A, { className: "size-4" }),
+                icon: r.createElement(la.A, { className: "size-4" }),
                 required: !0,
               }),
-              r.createElement(Ne, {
+              r.createElement(Zt, {
                 label: "Password",
                 name: "password",
                 type: "password",
                 placeholder: "••••••••",
                 autoComplete: "new-password",
-                icon: r.createElement(ze.A, { className: "size-4" }),
+                icon: r.createElement(ta.A, { className: "size-4" }),
                 value: l,
                 onChange: (e) => o(e.target.value),
                 required: !0,
@@ -2353,19 +3511,19 @@
               r.createElement(
                 "div",
                 { className: "flex flex-col gap-1" },
-                r.createElement(Ne, {
+                r.createElement(Zt, {
                   label: "Confirm password",
                   name: "confirmPassword",
                   type: "password",
                   placeholder: "••••••••",
                   autoComplete: "new-password",
-                  icon: r.createElement(Ue.A, { className: "size-4" }),
-                  value: s,
-                  onChange: (e) => c(e.target.value),
-                  "aria-invalid": i,
+                  icon: r.createElement(oa.A, { className: "size-4" }),
+                  value: c,
+                  onChange: (e) => i(e.target.value),
+                  "aria-invalid": d,
                   required: !0,
                 }),
-                i &&
+                d &&
                   r.createElement(
                     "span",
                     { className: "text-xs text-destructive" },
@@ -2379,10 +3537,10 @@
                   a,
                 ),
               r.createElement(
-                A,
+                k,
                 {
                   type: "submit",
-                  disabled: e || i,
+                  disabled: e || d,
                   className:
                     "mt-2 h-11 w-full bg-primary text-primary-foreground shadow-[0_10px_30px_-12px_rgba(122,41,56,0.9)] transition-transform hover:-translate-y-0.5 hover:bg-primary/90",
                 },
@@ -2390,7 +3548,7 @@
                   ? r.createElement(
                       r.Fragment,
                       null,
-                      r.createElement($e.A, {
+                      r.createElement(yt.A, {
                         className: "size-4 animate-spin",
                       }),
                       " Creating account…",
@@ -2406,7 +3564,7 @@
                 "By creating an account you agree to our",
                 " ",
                 r.createElement(
-                  d.N_,
+                  s.N_,
                   {
                     to: "#",
                     className: "text-accent underline-offset-4 hover:underline",
@@ -2417,7 +3575,7 @@
                 "and",
                 " ",
                 r.createElement(
-                  d.N_,
+                  s.N_,
                   {
                     to: "#",
                     className: "text-accent underline-offset-4 hover:underline",
@@ -2429,55 +3587,54 @@
             ),
           );
         }
-        function qe() {
-          return r.createElement(xe, null, r.createElement(We, null));
+        function ca() {
+          return r.createElement(Ut, null, r.createElement(sa, null));
         }
-        var Ze = a(7849),
-          Je = a(5892),
-          Ve = a(2708);
-        const Ke = new Set(["completed", "done"]),
-          Ye = (e) => Ke.has(String(e.status || "").toLowerCase()),
-          Qe = function (e) {
+        var ia = a(5892),
+          da = a(2708);
+        const ma = new Set(["completed", "done"]),
+          ua = (e) => ma.has(String(e.status || "").toLowerCase()),
+          fa = function (e) {
             let { onEditTask: t } = e;
             const {
                 getAllTasks: a,
                 addTask: n,
                 updateTask: l,
                 deleteTask: o,
-              } = le(),
+              } = ke(),
               s = (0, r.useMemo)(() => a?.() || [], [a]),
               c = (0, r.useMemo)(
                 () =>
-                  O.map((e) => {
+                  P.map((e) => {
                     const t = s.filter((t) => t.category === e.id),
-                      a = t.filter(Ye).length,
+                      a = t.filter(ua).length,
                       r = t.length ? Math.round((a / t.length) * 100) : 0;
                     return { category: e, tasks: t, completed: a, progress: r };
                   }),
                 [s],
               ),
-              [i, m] = (0, r.useState)(() => c[0]?.category.id ?? null),
-              d = c.find((e) => e.category.id === i) ?? c[0],
-              [u, g] = (0, r.useState)(null),
-              [p, h] = (0, r.useState)(null),
-              y = (0, r.useMemo)(
+              [m, u] = (0, r.useState)(() => c[0]?.category.id ?? null),
+              f = c.find((e) => e.category.id === m) ?? c[0],
+              [b, h] = (0, r.useState)(null),
+              [x, E] = (0, r.useState)(null),
+              v = (0, r.useMemo)(
                 () =>
-                  d
-                    ? [...d.tasks].sort(
+                  f
+                    ? [...f.tasks].sort(
                         (e, t) =>
-                          (e.date ? (0, x.H)(e.date).getTime() : 0) +
+                          (e.date ? (0, g.H)(e.date).getTime() : 0) +
                           36e5 * (e.startHour || 0) -
-                          ((t.date ? (0, x.H)(t.date).getTime() : 0) +
+                          ((t.date ? (0, g.H)(t.date).getTime() : 0) +
                             36e5 * (t.startHour || 0)),
                       )
                     : [],
-                [d],
+                [f],
               ),
-              v = () => g(null);
+              N = () => h(null);
             return r.createElement(
               "section",
               { id: "projects", className: "min-h-full bg-[#000000]" },
-              r.createElement(f, {
+              r.createElement(i, {
                 hexRadius: 60,
                 viewWidth: 900,
                 viewHeight: 600,
@@ -2503,7 +3660,7 @@
                     r.createElement(
                       "div",
                       { className: "flex items-center gap-2" },
-                      r.createElement(Ze.A, {
+                      r.createElement(_t.A, {
                         className: "h-5 w-5 text-muted-foreground",
                       }),
                       r.createElement(
@@ -2545,14 +3702,14 @@
                             completed: n,
                             progress: l,
                           } = e;
-                          const o = t.id === d?.category.id;
+                          const o = t.id === f?.category.id;
                           return r.createElement(
                             "button",
                             {
                               type: "button",
                               key: t.id,
-                              onClick: () => m(t.id),
-                              className: k(
+                              onClick: () => u(t.id),
+                              className: y(
                                 "w-full rounded-lg border border-border/60 p-3 text-left transition-colors hover:bg-secondary/40",
                                 o && "border-primary/50 bg-primary/10",
                               ),
@@ -2561,7 +3718,7 @@
                               "div",
                               { className: "flex items-center gap-2" },
                               r.createElement("span", {
-                                className: k(
+                                className: y(
                                   "h-2.5 w-2.5 flex-shrink-0 rounded-full",
                                   t?.solidBgColor || "",
                                 ),
@@ -2598,7 +3755,7 @@
                                   "mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-muted/40",
                               },
                               r.createElement("div", {
-                                className: k(
+                                className: y(
                                   "h-full rounded-full",
                                   t?.solidBgColor || "",
                                 ),
@@ -2612,7 +3769,7 @@
                     r.createElement(
                       "div",
                       { className: "flex flex-col" },
-                      d
+                      f
                         ? r.createElement(
                             r.Fragment,
                             null,
@@ -2626,9 +3783,9 @@
                                 "div",
                                 { className: "flex items-center gap-2" },
                                 r.createElement("span", {
-                                  className: k(
+                                  className: y(
                                     "h-3 w-3 flex-shrink-0 rounded-full",
-                                    d.category?.solidBgColor || "",
+                                    f.category?.solidBgColor || "",
                                   ),
                                 }),
                                 r.createElement(
@@ -2640,7 +3797,7 @@
                                       className:
                                         "font-medium text-card-foreground",
                                     },
-                                    d.category.label,
+                                    f.category.label,
                                   ),
                                   r.createElement(
                                     "p",
@@ -2648,29 +3805,29 @@
                                       className:
                                         "text-sm text-muted-foreground",
                                     },
-                                    d.completed,
+                                    f.completed,
                                     "/",
-                                    d.tasks.length,
+                                    f.tasks.length,
                                     " tasks complete •",
                                     " ",
-                                    d.progress,
+                                    f.progress,
                                     "%",
                                   ),
                                 ),
                               ),
                               r.createElement(
-                                A,
+                                k,
                                 {
                                   size: "sm",
                                   onClick: () => {
-                                    g({
+                                    h({
                                       task: null,
-                                      category: d?.category.id,
-                                      date: (0, b.GP)(new Date(), "yyyy-MM-dd"),
+                                      category: f?.category.id,
+                                      date: (0, d.GP)(new Date(), "yyyy-MM-dd"),
                                     });
                                   },
                                 },
-                                r.createElement(E.A, {
+                                r.createElement(p.A, {
                                   className: "mr-2 h-4 w-4",
                                 }),
                                 "Add task",
@@ -2682,7 +3839,7 @@
                                 className:
                                   "max-h-[calc(100dvh-17rem)] overflow-y-auto",
                               },
-                              0 === y.length &&
+                              0 === v.length &&
                                 r.createElement(
                                   "div",
                                   {
@@ -2691,10 +3848,10 @@
                                   },
                                   "No tasks under this project yet.",
                                 ),
-                              y.map((e) => {
-                                const [a, n] = P(e),
-                                  l = p === e.id,
-                                  s = Ye(e);
+                              v.map((e) => {
+                                const [a, n] = L(e),
+                                  l = x === e.id,
+                                  s = ua(e);
                                 return r.createElement(
                                   "div",
                                   {
@@ -2708,7 +3865,7 @@
                                     r.createElement(
                                       "p",
                                       {
-                                        className: k(
+                                        className: y(
                                           "truncate text-sm font-medium text-card-foreground",
                                           s &&
                                             "text-muted-foreground line-through",
@@ -2723,10 +3880,10 @@
                                           "truncate text-xs text-muted-foreground",
                                       },
                                       e.date &&
-                                        `${(0, b.GP)((0, x.H)(e.date), "MMM d, yyyy")} • `,
-                                      H(a),
+                                        `${(0, d.GP)((0, g.H)(e.date), "MMM d, yyyy")} • `,
+                                      D(a),
                                       " – ",
-                                      H(n),
+                                      D(n),
                                       e.priority && ` • ${e.priority} priority`,
                                     ),
                                   ),
@@ -2752,13 +3909,13 @@
                                         onClick: () =>
                                           ((e) => {
                                             if (t) return t(e);
-                                            g({ task: e, hour: e.startHour });
+                                            h({ task: e, hour: e.startHour });
                                           })(e),
                                         "aria-label": `Edit ${e.name}`,
                                         className:
                                           "flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
                                       },
-                                      r.createElement(Je.A, {
+                                      r.createElement(ia.A, {
                                         className: "h-3.5 w-3.5",
                                       }),
                                     ),
@@ -2769,24 +3926,24 @@
                                         onClick: () => {
                                           return (
                                             (t = e.id),
-                                            void (p === t
-                                              ? (o(t), h(null))
-                                              : h(t))
+                                            void (x === t
+                                              ? (o(t), E(null))
+                                              : E(t))
                                           );
                                           var t;
                                         },
-                                        onBlur: () => h(null),
+                                        onBlur: () => E(null),
                                         "aria-label": l
                                           ? `Confirm delete ${e.name}`
                                           : `Delete ${e.name}`,
-                                        className: k(
+                                        className: y(
                                           "flex h-7 w-7 items-center justify-center rounded-md transition-colors",
                                           l
                                             ? "bg-destructive/20 text-destructive"
                                             : "text-muted-foreground hover:bg-secondary hover:text-foreground",
                                         ),
                                       },
-                                      r.createElement(Ve.A, {
+                                      r.createElement(da.A, {
                                         className: "h-3.5 w-3.5",
                                       }),
                                     ),
@@ -2807,42 +3964,41 @@
                   ),
                 ),
               ),
-              r.createElement(me, {
-                open: Boolean(u),
-                task: u?.task ?? null,
-                defaultHour: u?.hour,
-                defaultCategory: u?.category,
-                defaultDate: u?.date,
-                existingTasks: d?.tasks ?? [],
-                onClose: v,
+              r.createElement(Te, {
+                open: Boolean(b),
+                task: b?.task ?? null,
+                defaultHour: b?.hour,
+                defaultCategory: b?.category,
+                defaultDate: b?.date,
+                existingTasks: f?.tasks ?? [],
+                onClose: N,
                 onSubmit: (e) => {
-                  if (u?.task) l(u.task.id, e);
+                  if (b?.task) l(b.task.id, e);
                   else {
-                    const t = e.date || u?.date;
-                    n(t, { ...e, category: u?.category });
+                    const t = e.date || b?.date;
+                    n(t, { ...e, category: b?.category });
                   }
-                  v();
+                  N();
                 },
                 onDelete: (e) => {
-                  (o(e), v());
+                  (o(e), N());
                 },
               }),
             );
           };
-        var Xe = a(3999),
-          et = a(250),
-          tt = a(7677),
-          at = a(1436),
-          rt = a(5773),
-          nt = a(5731),
-          lt = a(4718),
-          ot = a(8309),
-          st = a(7235),
-          ct = a(2102),
-          it = a(5107);
-        function mt() {
+        var ga = a(3999),
+          ba = a(250),
+          pa = a(7677),
+          ha = a(1436),
+          xa = a(5731),
+          Ea = a(4718),
+          ya = a(8309),
+          va = a(7235),
+          Na = a(2102),
+          wa = a(5107);
+        function ka() {
           return (
-            (mt = Object.assign
+            (ka = Object.assign
               ? Object.assign.bind()
               : function (e) {
                   for (var t = 1; t < arguments.length; t++) {
@@ -2852,24 +4008,24 @@
                   }
                   return e;
                 }),
-            mt.apply(null, arguments)
+            ka.apply(null, arguments)
           );
         }
-        const dt = {
+        const Ca = {
           default: "bg-primary text-primary-foreground",
           secondary: "bg-secondary text-secondary-foreground",
           outline: "border border-border text-foreground",
           destructive: "bg-destructive text-white",
         };
-        function ut(e) {
+        function Sa(e) {
           let { variant: t = "default", className: a, ...n } = e;
           return r.createElement(
             "span",
-            mt(
+            ka(
               {
-                className: k(
+                className: y(
                   "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium transition-colors",
-                  dt[t] || dt.default,
+                  Ca[t] || Ca.default,
                   a,
                 ),
               },
@@ -2877,9 +4033,9 @@
             ),
           );
         }
-        function ft() {
+        function Aa() {
           return (
-            (ft = Object.assign
+            (Aa = Object.assign
               ? Object.assign.bind()
               : function (e) {
                   for (var t = 1; t < arguments.length; t++) {
@@ -2889,125 +4045,21 @@
                   }
                   return e;
                 }),
-            ft.apply(null, arguments)
+            Aa.apply(null, arguments)
           );
         }
-        const bt = (0, r.createContext)(null);
-        function gt(e) {
-          let { children: t } = e;
-          const [a, n] = (0, r.useState)(!1),
-            l = (0, r.useRef)(null);
-          return (
-            (0, r.useEffect)(() => {
-              if (a)
-                return (
-                  document.addEventListener("mousedown", e),
-                  document.addEventListener("touchstart", e),
-                  () => {
-                    (document.removeEventListener("mousedown", e),
-                      document.removeEventListener("touchstart", e));
-                  }
-                );
-              function e(e) {
-                l.current && !l.current.contains(e.target) && n(!1);
-              }
-            }, [a]),
-            r.createElement(
-              bt.Provider,
-              { value: { open: a, setOpen: n } },
-              r.createElement(
-                "div",
-                { ref: l, className: "relative inline-block" },
-                t,
-              ),
-            )
-          );
-        }
-        function pt(e) {
-          let { asChild: t, children: a, ...n } = e;
-          const { open: l, setOpen: o } = (0, r.useContext)(bt),
-            s = (e) => {
-              (a.props.onClick?.(e), n.onClick?.(e), o(!l));
-            };
-          return t
-            ? (0, r.cloneElement)(a, { ...n, onClick: s })
-            : r.createElement(
-                "button",
-                ft({ type: "button" }, n, { onClick: s }),
-                a,
-              );
-        }
-        function ht(e) {
-          let { align: t = "start", className: a, children: n } = e;
-          const { open: l } = (0, r.useContext)(bt);
-          return l
-            ? r.createElement(
-                "div",
-                {
-                  className: k(
-                    "absolute z-50 mt-2 min-w-[10rem] rounded-lg border border-border bg-card p-1 shadow-xl",
-                    "end" === t ? "right-0" : "left-0",
-                    a,
-                  ),
-                },
-                n,
-              )
-            : null;
-        }
-        function xt(e) {
-          let { className: t, onClick: a, children: n, ...l } = e;
-          const { setOpen: o } = (0, r.useContext)(bt);
-          return r.createElement(
-            "button",
-            ft(
-              {
-                type: "button",
-                className: k(
-                  "flex w-full items-center rounded-md px-2 py-1.5 text-left text-sm text-foreground transition-colors hover:bg-secondary",
-                  t,
-                ),
-                onClick: (e) => {
-                  (a?.(e), o(!1));
-                },
-              },
-              l,
-            ),
-            n,
-          );
-        }
-        function yt(e) {
-          let { className: t } = e;
-          return r.createElement("div", {
-            className: k("my-1 h-px bg-border", t),
-          });
-        }
-        function Et() {
-          return (
-            (Et = Object.assign
-              ? Object.assign.bind()
-              : function (e) {
-                  for (var t = 1; t < arguments.length; t++) {
-                    var a = arguments[t];
-                    for (var r in a)
-                      ({}).hasOwnProperty.call(a, r) && (e[r] = a[r]);
-                  }
-                  return e;
-                }),
-            Et.apply(null, arguments)
-          );
-        }
-        const vt = (0, r.createContext)(null);
-        function Nt(e) {
+        const Ma = (0, r.createContext)(null);
+        function La(e) {
           let { open: t, onOpenChange: a, children: n } = e;
           return r.createElement(
-            vt.Provider,
+            Ma.Provider,
             { value: { open: t, onOpenChange: a } },
             n,
           );
         }
-        function wt(e) {
+        function Ta(e) {
           let { asChild: t, children: a, ...n } = e;
-          const { open: l, onOpenChange: o } = (0, r.useContext)(vt),
+          const { open: l, onOpenChange: o } = (0, r.useContext)(Ma),
             s = (e) => {
               (a.props?.onClick?.(e), n.onClick?.(e), o?.(!l));
             };
@@ -3015,20 +4067,20 @@
             ? (0, r.cloneElement)(a, { ...n, onClick: s })
             : r.createElement(
                 "button",
-                Et({ type: "button" }, n, { onClick: s }),
+                Aa({ type: "button" }, n, { onClick: s }),
                 a,
               );
         }
-        function kt(e) {
+        function Da(e) {
           let { children: t } = e;
-          const { open: a } = (0, r.useContext)(vt);
+          const { open: a } = (0, r.useContext)(Ma);
           return a ? r.createElement(r.Fragment, null, t) : null;
         }
-        var Ct = a(3627),
-          St = a(4979);
-        function Mt() {
+        var ja = a(3627),
+          Pa = a(4979);
+        function Oa() {
           return (
-            (Mt = Object.assign
+            (Oa = Object.assign
               ? Object.assign.bind()
               : function (e) {
                   for (var t = 1; t < arguments.length; t++) {
@@ -3038,19 +4090,19 @@
                   }
                   return e;
                 }),
-            Mt.apply(null, arguments)
+            Oa.apply(null, arguments)
           );
         }
-        function At(e) {
+        function _a(e) {
           let { task: t, onEdit: a, isDraggable: n = !0 } = e;
           const [l, o] = (0, r.useState)(!1),
-            { updateTask: s, deleteTask: c } = le(),
-            i = $(t.category),
-            m = (function (e) {
-              if (!e) return F.medium;
+            { updateTask: s, deleteTask: c } = ke(),
+            i = _(t.category),
+            d = (function (e) {
+              if (!e) return z.medium;
               const t = String(e).trim().toLowerCase();
               return (
-                F[t] || {
+                z[t] || {
                   label: t.charAt(0).toUpperCase() + t.slice(1),
                   color: "text-slate-300",
                   bgColor: "bg-slate-500/20",
@@ -3058,14 +4110,14 @@
               );
             })(t.priority),
             {
-              attributes: d,
+              attributes: m,
               listeners: u,
               setNodeRef: f,
-              transform: b,
-              transition: g,
+              transform: g,
+              transition: b,
               isDragging: p,
-            } = (0, Ct.gl)({ id: t.id, disabled: !n }),
-            h = { transform: St.Ks.Transform.toString(b), transition: g },
+            } = (0, ja.gl)({ id: t.id, disabled: !n }),
+            h = { transform: Pa.Ks.Transform.toString(g), transition: b },
             x = (e) => {
               s(t.id, { status: e });
             };
@@ -3074,7 +4126,7 @@
             {
               ref: f,
               style: h,
-              className: k(
+              className: y(
                 "task-card group relative rounded-xl border border-border bg-card p-4 transition-all",
                 p && "opacity-50 shadow-2xl",
                 "completed" === t.status && "opacity-60",
@@ -3086,11 +4138,11 @@
               n &&
                 r.createElement(
                   "button",
-                  Mt({}, d, u, {
+                  Oa({}, m, u, {
                     className:
                       "mt-1 cursor-grab opacity-100 transition-opacity touch-none xl:opacity-0 xl:group-hover:opacity-100",
                   }),
-                  r.createElement(at.A, {
+                  r.createElement(ha.A, {
                     className: "h-5 w-5 text-muted-foreground",
                   }),
                 ),
@@ -3106,7 +4158,7 @@
                           : "pending";
                     x(e);
                   },
-                  className: k(
+                  className: y(
                     "mt-1 flex h-5 w-5 items-center justify-center rounded-full border-2 transition-colors",
                     "completed" === t.status
                       ? "border-emerald-500 bg-emerald-500 text-white"
@@ -3116,9 +4168,9 @@
                   ),
                 },
                 "completed" === t.status &&
-                  r.createElement(rt.A, { className: "h-3 w-3" }),
+                  r.createElement(ot.A, { className: "h-3 w-3" }),
                 "ongoing" === t.status &&
-                  r.createElement(nt.A, {
+                  r.createElement(xa.A, {
                     className: "h-2.5 w-2.5 fill-amber-500 text-amber-500",
                   }),
               ),
@@ -3134,7 +4186,7 @@
                     r.createElement(
                       "h4",
                       {
-                        className: k(
+                        className: y(
                           "font-medium text-card-foreground truncate",
                           "completed" === t.status && "line-through",
                         ),
@@ -3152,58 +4204,58 @@
                       ),
                   ),
                   r.createElement(
-                    gt,
+                    Re,
                     null,
                     r.createElement(
-                      pt,
+                      Ie,
                       { asChild: !0 },
                       r.createElement(
-                        A,
+                        k,
                         {
                           variant: "ghost",
                           size: "icon",
                           className:
                             "h-8 w-8 opacity-100 transition-opacity xl:opacity-0 xl:group-hover:opacity-100",
                         },
-                        r.createElement(lt.A, { className: "h-4 w-4" }),
+                        r.createElement(Ea.A, { className: "h-4 w-4" }),
                       ),
                     ),
                     r.createElement(
-                      ht,
+                      Ue,
                       { align: "end" },
                       r.createElement(
-                        xt,
+                        Ge,
                         { onClick: () => a(t) },
-                        r.createElement(Je.A, { className: "mr-2 h-4 w-4" }),
+                        r.createElement(ia.A, { className: "mr-2 h-4 w-4" }),
                         "Edit",
                       ),
-                      r.createElement(yt, null),
+                      r.createElement(We, null),
                       r.createElement(
-                        xt,
+                        Ge,
                         { onClick: () => x("pending") },
-                        r.createElement(ot.A, { className: "mr-2 h-4 w-4" }),
+                        r.createElement(ya.A, { className: "mr-2 h-4 w-4" }),
                         "Mark as Pending",
                       ),
                       r.createElement(
-                        xt,
+                        Ge,
                         { onClick: () => x("ongoing") },
-                        r.createElement(nt.A, { className: "mr-2 h-4 w-4" }),
+                        r.createElement(xa.A, { className: "mr-2 h-4 w-4" }),
                         "Mark as Ongoing",
                       ),
                       r.createElement(
-                        xt,
+                        Ge,
                         { onClick: () => x("completed") },
-                        r.createElement(rt.A, { className: "mr-2 h-4 w-4" }),
+                        r.createElement(ot.A, { className: "mr-2 h-4 w-4" }),
                         "Mark as Completed",
                       ),
-                      r.createElement(yt, null),
+                      r.createElement(We, null),
                       r.createElement(
-                        xt,
+                        Ge,
                         {
                           onClick: () => c(t.id),
                           className: "text-destructive",
                         },
-                        r.createElement(Ve.A, { className: "mr-2 h-4 w-4" }),
+                        r.createElement(da.A, { className: "mr-2 h-4 w-4" }),
                         "Delete",
                       ),
                     ),
@@ -3215,7 +4267,7 @@
                   void 0 !== t.ticketId &&
                     null !== t.ticketId &&
                     r.createElement(
-                      ut,
+                      Sa,
                       {
                         variant: "outline",
                         className:
@@ -3225,20 +4277,20 @@
                       t.ticketId,
                     ),
                   r.createElement(
-                    ut,
+                    Sa,
                     {
                       variant: "secondary",
-                      className: k("text-xs", i?.bgColor, i?.color),
+                      className: y("text-xs", i?.bgColor, i?.color),
                     },
                     i?.name || "Other",
                   ),
                   r.createElement(
-                    ut,
+                    Sa,
                     {
                       variant: "secondary",
-                      className: k("text-xs", m?.bgColor, m?.color),
+                      className: y("text-xs", d?.bgColor, d?.color),
                     },
-                    m?.label || "Medium",
+                    d?.label || "Medium",
                   ),
                   r.createElement(
                     "div",
@@ -3246,26 +4298,26 @@
                       className:
                         "flex items-center gap-1 text-xs text-muted-foreground",
                     },
-                    r.createElement(st.A, { className: "h-3 w-3" }),
+                    r.createElement(va.A, { className: "h-3 w-3" }),
                     r.createElement(
                       "span",
                       null,
-                      H(t.startHour),
+                      D(t.startHour),
                       " -",
                       " ",
-                      H(t.startHour + t.duration),
+                      D(t.startHour + t.duration),
                     ),
                   ),
                 ),
                 t.notes &&
                   r.createElement(
-                    Nt,
+                    La,
                     { open: l, onOpenChange: o },
                     r.createElement(
-                      wt,
+                      Ta,
                       { asChild: !0 },
                       r.createElement(
-                        A,
+                        k,
                         {
                           variant: "ghost",
                           size: "sm",
@@ -3276,7 +4328,7 @@
                           ? r.createElement(
                               r.Fragment,
                               null,
-                              r.createElement(ct.A, {
+                              r.createElement(Na.A, {
                                 className: "mr-1 h-3 w-3",
                               }),
                               "Hide notes",
@@ -3284,7 +4336,7 @@
                           : r.createElement(
                               r.Fragment,
                               null,
-                              r.createElement(it.A, {
+                              r.createElement(wa.A, {
                                 className: "mr-1 h-3 w-3",
                               }),
                               "Show notes",
@@ -3292,7 +4344,7 @@
                       ),
                     ),
                     r.createElement(
-                      kt,
+                      Da,
                       null,
                       r.createElement(
                         "div",
@@ -3307,16 +4359,16 @@
               ),
             ),
             r.createElement("div", {
-              className: k(
+              className: y(
                 "absolute left-0 top-4 bottom-4 w-1 rounded-full",
                 i?.solidBgColor || "",
               ),
             }),
           );
         }
-        const Lt = new Set(["completed", "done"]),
-          Tt = (e) => Lt.has(String(e.status || "").toLowerCase()),
-          Dt = function (e) {
+        const za = new Set(["completed", "done"]),
+          Ba = (e) => za.has(String(e.status || "").toLowerCase()),
+          Ha = function (e) {
             let { onEditTask: t, onAddTask: a } = e;
             const {
                 selectedDate: n,
@@ -3324,31 +4376,31 @@
                 getTasksForDate: o,
                 addTask: s,
                 updateTask: c,
-                deleteTask: i,
-              } = le(),
-              m = (0, b.GP)(n, "yyyy-MM-dd"),
-              d = (0, h.r)(n, new Date()),
-              [u, p] = (0, r.useState)(null),
-              y = (0, r.useMemo)(() => o(m), [o, m]),
+                deleteTask: u,
+              } = ke(),
+              b = (0, d.GP)(n, "yyyy-MM-dd"),
+              h = (0, f.r)(n, new Date()),
+              [x, E] = (0, r.useState)(null),
+              y = (0, r.useMemo)(() => o(b), [o, b]),
               v = (0, r.useMemo)(
                 () =>
                   [...y].sort((e, t) => {
-                    const a = Tt(e) ? 1 : 0,
-                      r = Tt(t) ? 1 : 0;
+                    const a = Ba(e) ? 1 : 0,
+                      r = Ba(t) ? 1 : 0;
                     return a !== r ? a - r : e.startHour - t.startHour;
                   }),
                 [y],
               ),
-              N = y.filter(Tt).length,
+              N = y.filter(Ba).length,
               w = (e) => {
                 if (t) return t(e);
-                p({ task: e, hour: e.startHour });
+                E({ task: e, hour: e.startHour });
               },
-              k = () => p(null);
+              C = () => E(null);
             return r.createElement(
               "section",
               { id: "todo", className: "min-h-full bg-[#000000]" },
-              r.createElement(f, {
+              r.createElement(i, {
                 hexRadius: 60,
                 viewWidth: 900,
                 viewHeight: 600,
@@ -3382,7 +4434,7 @@
                       r.createElement(
                         "p",
                         { className: "text-sm text-muted-foreground" },
-                        (0, b.GP)(n, "EEEE, MMMM d"),
+                        (0, d.GP)(n, "EEEE, MMMM d"),
                         " • ",
                         N,
                         "/",
@@ -3397,18 +4449,18 @@
                         "button",
                         {
                           type: "button",
-                          onClick: () => l((e) => (0, g.e)(e, 1)),
+                          onClick: () => l((e) => (0, m.e)(e, 1)),
                           "aria-label": "Previous day",
                           className:
                             "flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
                         },
-                        r.createElement(et.A, { className: "h-4 w-4" }),
+                        r.createElement(ba.A, { className: "h-4 w-4" }),
                       ),
                       r.createElement("input", {
                         type: "date",
-                        value: m,
+                        value: b,
                         onChange: (e) => {
-                          e.target.value && l((0, x.H)(e.target.value));
+                          e.target.value && l((0, g.H)(e.target.value));
                         },
                         className:
                           "h-8 rounded-lg border border-border bg-secondary/40 px-2 text-sm text-foreground [color-scheme:dark] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40",
@@ -3417,16 +4469,16 @@
                         "button",
                         {
                           type: "button",
-                          onClick: () => l((e) => (0, Xe.f)(e, 1)),
+                          onClick: () => l((e) => (0, ga.f)(e, 1)),
                           "aria-label": "Next day",
                           className:
                             "flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
                         },
-                        r.createElement(tt.A, { className: "h-4 w-4" }),
+                        r.createElement(pa.A, { className: "h-4 w-4" }),
                       ),
-                      !d &&
+                      !h &&
                         r.createElement(
-                          A,
+                          k,
                           {
                             variant: "ghost",
                             size: "sm",
@@ -3436,15 +4488,15 @@
                         ),
                     ),
                     r.createElement(
-                      A,
+                      k,
                       {
                         size: "sm",
                         onClick: () => {
                           if (a) return a(new Date().getHours());
-                          p({ task: null, hour: new Date().getHours() });
+                          E({ task: null, hour: new Date().getHours() });
                         },
                       },
-                      r.createElement(E.A, { className: "mr-2 h-4 w-4" }),
+                      r.createElement(p.A, { className: "mr-2 h-4 w-4" }),
                       "Add task",
                     ),
                   ),
@@ -3478,7 +4530,7 @@
                       "div",
                       { className: "space-y-2 p-3 sm:p-4" },
                       v.map((e) =>
-                        r.createElement(At, {
+                        r.createElement(_a, {
                           key: e.id,
                           task: e,
                           onEdit: w,
@@ -3489,26 +4541,26 @@
                   ),
                 ),
               ),
-              r.createElement(me, {
-                open: Boolean(u),
-                task: u?.task ?? null,
-                defaultHour: u?.hour,
-                defaultDate: m,
+              r.createElement(Te, {
+                open: Boolean(x),
+                task: x?.task ?? null,
+                defaultHour: x?.hour,
+                defaultDate: b,
                 existingTasks: y,
-                onClose: k,
+                onClose: C,
                 onSubmit: (e) => {
-                  (u?.task ? c(u.task.id, e) : s(e.date || m, e), k());
+                  (x?.task ? c(x.task.id, e) : s(e.date || b, e), C());
                 },
                 onDelete: (e) => {
-                  (i(e), k());
+                  (u(e), C());
                 },
               }),
             );
           };
-        var jt = a(2307),
-          Pt = a(3128),
-          _t = a(3375);
-        const Ht = function (e) {
+        var $a = a(2307),
+          Fa = a(3128),
+          Ra = a(3375);
+        const Ia = function (e) {
           let { onEditTask: t, onAddTask: a } = e;
           const {
               selectedDate: n,
@@ -3516,75 +4568,75 @@
               getTasksForDate: o,
               moveTask: s,
               addTask: c,
-              updateTask: i,
-              deleteTask: m,
-            } = le(),
-            d = (0, b.GP)(n, "yyyy-MM-dd"),
-            u = (0, h.r)(n, new Date()),
-            [p, y] = (0, r.useState)(null),
-            v = (e) => {
-              if (a) return a(e);
-              y({ task: null, hour: e });
-            },
+              updateTask: u,
+              deleteTask: b,
+            } = ke(),
+            h = (0, d.GP)(n, "yyyy-MM-dd"),
+            x = (0, f.r)(n, new Date()),
+            [E, v] = (0, r.useState)(null),
             N = (e) => {
-              if (t) return t(e);
-              y({ task: e, hour: e.startHour });
+              if (a) return a(e);
+              v({ task: null, hour: e });
             },
-            w = () => y(null),
-            C = (0, _t.FR)(
-              (0, _t.MS)(_t.AN, { activationConstraint: { distance: 8 } }),
-              (0, _t.MS)(_t.uN),
+            w = (e) => {
+              if (t) return t(e);
+              v({ task: e, hour: e.startHour });
+            },
+            C = () => v(null),
+            S = (0, Ra.FR)(
+              (0, Ra.MS)(Ra.AN, { activationConstraint: { distance: 8 } }),
+              (0, Ra.MS)(Ra.uN),
             ),
-            S = (0, r.useMemo)(() => o(d), [o, d]),
-            M = (0, r.useMemo)(() => {
+            L = (0, r.useMemo)(() => o(h), [o, h]),
+            j = (0, r.useMemo)(() => {
               const e = {};
               return (
-                D.forEach((t) => {
+                A.forEach((t) => {
                   let { index: a } = t;
-                  e[a] = S.filter(
+                  e[a] = L.filter(
                     (e) => Math.round(4 * Number(e.startHour || 0)) === a,
                   );
                 }),
                 e
               );
-            }, [S]),
-            L = (0, r.useMemo)(() => {
+            }, [L]),
+            P = (0, r.useMemo)(() => {
               const e = new Map();
               return (
-                S.forEach((t) => {
-                  const [a, r] = j(t);
+                L.forEach((t) => {
+                  const [a, r] = M(t);
                   for (let n = a; n < r; n++)
                     e.has(n) || e.set(n, { task: t, isStart: n === a });
                 }),
                 e
               );
-            }, [S]),
-            T =
+            }, [L]),
+            O =
               4 * new Date().getHours() +
               Math.floor(new Date().getMinutes() / 15);
           return r.createElement(
             "section",
             { id: "home", className: "min-h-full bg-[#000000]" },
-            r.createElement(f, {
+            r.createElement(i, {
               hexRadius: 60,
               viewWidth: 900,
               viewHeight: 600,
             }),
             r.createElement(
-              _t.Mp,
+              Ra.Mp,
               {
-                sensors: C,
-                collisionDetection: _t.fp,
+                sensors: S,
+                collisionDetection: Ra.fp,
                 onDragEnd: (e) => {
                   const { active: t, over: a } = e;
                   if (!a) return;
                   const r = t.id,
                     n = parseInt(a.id, 10);
                   if (isNaN(n)) return;
-                  const l = S.find((e) => e.id === r);
+                  const l = L.find((e) => e.id === r);
                   if (!l) return;
                   const o = { ...l, startHour: n / 4 };
-                  S.some((e) => e.id !== r && _(o, e)) || s(r, n / 4);
+                  L.some((e) => e.id !== r && T(o, e)) || s(r, n / 4);
                 },
               },
               r.createElement(
@@ -3616,9 +4668,9 @@
                       r.createElement(
                         "p",
                         { className: "text-sm text-muted-foreground" },
-                        (0, b.GP)(n, "EEEE, MMMM d"),
+                        (0, d.GP)(n, "EEEE, MMMM d"),
                         " • ",
-                        S.length,
+                        L.length,
                         " tasks scheduled",
                       ),
                     ),
@@ -3632,18 +4684,18 @@
                         "button",
                         {
                           type: "button",
-                          onClick: () => l((e) => (0, g.e)(e, 1)),
+                          onClick: () => l((e) => (0, m.e)(e, 1)),
                           "aria-label": "Previous day",
                           className:
                             "flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
                         },
-                        r.createElement(et.A, { className: "h-4 w-4" }),
+                        r.createElement(ba.A, { className: "h-4 w-4" }),
                       ),
                       r.createElement("input", {
                         type: "date",
-                        value: d,
+                        value: h,
                         onChange: (e) => {
-                          e.target.value && l((0, x.H)(e.target.value));
+                          e.target.value && l((0, g.H)(e.target.value));
                         },
                         className:
                           "h-8 rounded-lg border border-border bg-secondary/40 px-2 text-sm text-foreground [color-scheme:dark] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40",
@@ -3652,16 +4704,16 @@
                         "button",
                         {
                           type: "button",
-                          onClick: () => l((e) => (0, Xe.f)(e, 1)),
+                          onClick: () => l((e) => (0, ga.f)(e, 1)),
                           "aria-label": "Next day",
                           className:
                             "flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
                         },
-                        r.createElement(tt.A, { className: "h-4 w-4" }),
+                        r.createElement(pa.A, { className: "h-4 w-4" }),
                       ),
-                      !u &&
+                      !x &&
                         r.createElement(
-                          A,
+                          k,
                           {
                             variant: "ghost",
                             size: "sm",
@@ -3671,21 +4723,21 @@
                         ),
                     ),
                     r.createElement(
-                      A,
+                      k,
                       {
                         size: "sm",
                         onClick: () =>
-                          v(
+                          N(
                             ((e) => {
-                              for (let t = 0; t < D.length; t++) {
-                                const a = (e + t) % D.length;
-                                if (!L.has(a)) return D[a].time;
+                              for (let t = 0; t < A.length; t++) {
+                                const a = (e + t) % A.length;
+                                if (!P.has(a)) return A[a].time;
                               }
-                              return D[e]?.time ?? 9;
-                            })(T),
+                              return A[e]?.time ?? 9;
+                            })(O),
                           ),
                       },
-                      r.createElement(E.A, { className: "mr-2 h-4 w-4" }),
+                      r.createElement(p.A, { className: "mr-2 h-4 w-4" }),
                       "Add task",
                     ),
                   ),
@@ -3695,19 +4747,19 @@
                       className:
                         "max-h-[calc(100dvh-13rem)] overflow-y-auto sm:max-h-[calc(100dvh-15rem)]",
                     },
-                    D.map((e) => {
+                    A.map((e) => {
                       let { time: t, index: a } = e;
-                      const n = M[a] || [],
-                        l = L.get(a),
+                      const n = j[a] || [],
+                        l = P.get(a),
                         o = l && !l.isStart,
                         s =
-                          T === a && (0, b.GP)(new Date(), "yyyy-MM-dd") === d;
+                          O === a && (0, d.GP)(new Date(), "yyyy-MM-dd") === h;
                       return r.createElement(
                         "div",
                         {
                           key: a,
                           id: a.toString(),
-                          className: k(
+                          className: y(
                             "group relative flex border-b border-border/50 last:border-0",
                             s && "bg-primary/5",
                           ),
@@ -3715,7 +4767,7 @@
                         r.createElement(
                           "div",
                           {
-                            className: k(
+                            className: y(
                               "w-20 flex-shrink-0 border-r border-border/50 p-2 text-right",
                               s && "text-primary font-medium",
                             ),
@@ -3723,7 +4775,7 @@
                           r.createElement(
                             "span",
                             { className: "text-xs sm:text-sm" },
-                            H(t),
+                            D(t),
                           ),
                         ),
                         s &&
@@ -3751,16 +4803,16 @@
                               "min-h-[56px] flex-1 p-2 sm:min-h-[64px] sm:p-3",
                           },
                           r.createElement(
-                            Ct.gB,
-                            { items: n.map((e) => e.id), strategy: Ct._G },
+                            ja.gB,
+                            { items: n.map((e) => e.id), strategy: ja._G },
                             r.createElement(
                               "div",
                               { className: "space-y-2" },
                               n.map((e) =>
-                                r.createElement(At, {
+                                r.createElement(_a, {
                                   key: e.id,
                                   task: e,
-                                  onEdit: N,
+                                  onEdit: w,
                                 }),
                               ),
                             ),
@@ -3774,9 +4826,9 @@
                                   "flex h-8 items-center gap-2 rounded-lg border border-dashed border-border/60 bg-muted/20 px-3 text-xs text-muted-foreground",
                               },
                               r.createElement("span", {
-                                className: k(
+                                className: y(
                                   "h-1.5 w-1.5 rounded-full",
-                                  $(l.task.category)?.solidBgColor || "",
+                                  _(l.task.category)?.solidBgColor || "",
                                 ),
                               }),
                               l.task.name,
@@ -3785,19 +4837,19 @@
                           0 === n.length &&
                             !o &&
                             r.createElement(
-                              A,
+                              k,
                               {
                                 variant: "ghost",
                                 size: "sm",
-                                onClick: () => v(t),
+                                onClick: () => N(t),
                                 className:
                                   "h-8 w-full border border-dashed border-border text-muted-foreground opacity-100 transition-opacity hover:text-foreground xl:opacity-0 xl:group-hover:opacity-100",
                               },
-                              r.createElement(E.A, {
+                              r.createElement(p.A, {
                                 className: "mr-2 h-4 w-4",
                               }),
                               "Add task at ",
-                              H(t),
+                              D(t),
                             ),
                         ),
                       );
@@ -3805,33 +4857,33 @@
                   ),
                 ),
               ),
-              r.createElement(me, {
-                open: Boolean(p),
-                task: p?.task ?? null,
-                defaultHour: p?.hour,
-                defaultDate: d,
-                existingTasks: S,
-                onClose: w,
+              r.createElement(Te, {
+                open: Boolean(E),
+                task: E?.task ?? null,
+                defaultHour: E?.hour,
+                defaultDate: h,
+                existingTasks: L,
+                onClose: C,
                 onSubmit: (e) => {
-                  (p?.task ? i(p.task.id, e) : c(e.date || d, e), w());
+                  (E?.task ? u(E.task.id, e) : c(e.date || h, e), C());
                 },
                 onDelete: (e) => {
-                  (m(e), w());
+                  (b(e), C());
                 },
               }),
             ),
           );
         };
-        var Bt = a(2150),
-          Ot = a(7423),
-          zt = a(4883),
-          $t = a(2528),
-          Ft = a(2483),
-          Rt = a(1359),
-          It = a(5855),
-          Gt = a(2138);
-        const Ut = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-          Wt = [
+        var Ua = a(2150),
+          Ga = a(7423),
+          Wa = a(4883),
+          qa = a(2528),
+          Za = a(2483),
+          Ja = a(1359),
+          Va = a(5855),
+          Ya = a(2138);
+        const Ka = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+          Qa = [
             "January",
             "February",
             "March",
@@ -3845,44 +4897,44 @@
             "November",
             "December",
           ],
-          qt = function (e) {
+          Xa = function (e) {
             let { onNavigateToTimeline: t } = e;
             const {
                 selectedDate: a,
                 setSelectedDate: n,
                 getTasksForDate: l,
-              } = le(),
-              [o, s] = (0, r.useState)(() => (0, Bt.w)(a || new Date())),
-              [c, i] = (0, r.useState)(a || new Date()),
-              m = (0, r.useMemo)(() => {
-                const e = (0, $t.k)((0, Bt.w)(o)),
-                  t = (0, Ft.$)((0, Rt.p)(o));
-                return (0, p.k)({ start: e, end: t });
+              } = ke(),
+              [o, s] = (0, r.useState)(() => (0, Ua.w)(a || new Date())),
+              [c, m] = (0, r.useState)(a || new Date()),
+              g = (0, r.useMemo)(() => {
+                const e = (0, qa.k)((0, Ua.w)(o)),
+                  t = (0, Za.$)((0, Ja.p)(o));
+                return (0, u.k)({ start: e, end: t });
               }, [o]),
-              d = (0, r.useMemo)(() => {
+              b = (0, r.useMemo)(() => {
                 const e = {};
                 return (
-                  m.forEach((t) => {
-                    const a = (0, b.GP)(t, "yyyy-MM-dd");
+                  g.forEach((t) => {
+                    const a = (0, d.GP)(t, "yyyy-MM-dd");
                     e[a] = l(a) || [];
                   }),
                   e
                 );
-              }, [m, l]),
-              u = (0, b.GP)(c, "yyyy-MM-dd"),
-              g = d[u] || [],
+              }, [g, l]),
+              p = (0, d.GP)(c, "yyyy-MM-dd"),
+              h = b[p] || [],
               x = (e) => {
                 (n(e), t && t());
               },
-              y = new Date().getFullYear(),
-              E = (0, r.useMemo)(
-                () => Array.from({ length: 21 }, (e, t) => y - 10 + t),
-                [y],
+              E = new Date().getFullYear(),
+              v = (0, r.useMemo)(
+                () => Array.from({ length: 21 }, (e, t) => E - 10 + t),
+                [E],
               );
             return r.createElement(
               "section",
               { id: "calendar", className: "min-h-full bg-[#000000]" },
-              r.createElement(f, {
+              r.createElement(i, {
                 hexRadius: 60,
                 viewWidth: 900,
                 viewHeight: 600,
@@ -3916,7 +4968,7 @@
                       r.createElement(
                         "p",
                         { className: "text-sm text-muted-foreground" },
-                        (0, b.GP)(o, "MMMM yyyy"),
+                        (0, d.GP)(o, "MMMM yyyy"),
                       ),
                     ),
                     r.createElement(
@@ -3929,12 +4981,12 @@
                         "button",
                         {
                           type: "button",
-                          onClick: () => s((e) => (0, Ot.a)(e, 1)),
+                          onClick: () => s((e) => (0, Ga.a)(e, 1)),
                           "aria-label": "Previous month",
                           className:
                             "flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
                         },
-                        r.createElement(et.A, { className: "h-4 w-4" }),
+                        r.createElement(ba.A, { className: "h-4 w-4" }),
                       ),
                       r.createElement(
                         "select",
@@ -3947,7 +4999,7 @@
                           className:
                             "h-8 rounded-lg border border-border bg-secondary/40 px-2 text-sm text-foreground [color-scheme:dark] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40",
                         },
-                        Wt.map((e, t) =>
+                        Qa.map((e, t) =>
                           r.createElement("option", { key: e, value: t }, e),
                         ),
                       ),
@@ -3962,7 +5014,7 @@
                           className:
                             "h-8 rounded-lg border border-border bg-secondary/40 px-2 text-sm text-foreground [color-scheme:dark] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40",
                         },
-                        E.map((e) =>
+                        v.map((e) =>
                           r.createElement("option", { key: e, value: e }, e),
                         ),
                       ),
@@ -3970,20 +5022,20 @@
                         "button",
                         {
                           type: "button",
-                          onClick: () => s((e) => (0, zt.P)(e, 1)),
+                          onClick: () => s((e) => (0, Wa.P)(e, 1)),
                           "aria-label": "Next month",
                           className:
                             "flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
                         },
-                        r.createElement(tt.A, { className: "h-4 w-4" }),
+                        r.createElement(pa.A, { className: "h-4 w-4" }),
                       ),
-                      !(0, It.t)(o, new Date()) &&
+                      !(0, Va.t)(o, new Date()) &&
                         r.createElement(
-                          A,
+                          k,
                           {
                             variant: "ghost",
                             size: "sm",
-                            onClick: () => s((0, Bt.w)(new Date())),
+                            onClick: () => s((0, Ua.w)(new Date())),
                           },
                           "This month",
                         ),
@@ -4004,7 +5056,7 @@
                           className:
                             "grid grid-cols-7 border-b border-border/50",
                         },
-                        Ut.map((e) =>
+                        Ka.map((e) =>
                           r.createElement(
                             "div",
                             {
@@ -4019,20 +5071,20 @@
                       r.createElement(
                         "div",
                         { className: "grid grid-cols-7" },
-                        m.map((e) => {
-                          const t = (0, b.GP)(e, "yyyy-MM-dd"),
-                            a = (0, It.t)(e, o),
-                            n = (0, h.r)(e, c),
-                            l = (0, Gt.c)(e),
-                            { dots: s, overflow: m } = ((e) => {
-                              const t = d[e] || [],
+                        g.map((e) => {
+                          const t = (0, d.GP)(e, "yyyy-MM-dd"),
+                            a = (0, Va.t)(e, o),
+                            n = (0, f.r)(e, c),
+                            l = (0, Ya.c)(e),
+                            { dots: s, overflow: i } = ((e) => {
+                              const t = b[e] || [],
                                 a = new Set(),
                                 r = [];
                               for (const e of t)
                                 if (
                                   !a.has(e.category) &&
                                   (a.add(e.category),
-                                  r.push($(e.category)),
+                                  r.push(_(e.category)),
                                   r.length >= 4)
                                 )
                                   break;
@@ -4049,13 +5101,13 @@
                               key: t,
                               onClick: () =>
                                 ((e) => {
-                                  i(e);
+                                  m(e);
                                 })(e),
                               onDoubleClick: () => x(e),
                               title: u
-                                ? `${s.length + m} task${s.length + m === 1 ? "" : "s"} • double-click to open timeline`
+                                ? `${s.length + i} task${s.length + i === 1 ? "" : "s"} • double-click to open timeline`
                                 : "Double-click to open timeline",
-                              className: k(
+                              className: y(
                                 "group relative flex h-16 min-w-0 flex-col items-start gap-1 border-b border-r border-border/50 p-1.5 text-left transition-colors last:border-r-0 hover:bg-secondary/40 sm:h-24 sm:p-2",
                                 !a && "opacity-40",
                                 n &&
@@ -4065,14 +5117,14 @@
                             r.createElement(
                               "span",
                               {
-                                className: k(
+                                className: y(
                                   "flex h-6 w-6 items-center justify-center rounded-full text-xs",
                                   l &&
                                     "bg-primary font-semibold text-primary-foreground",
                                   !l && "text-foreground",
                                 ),
                               },
-                              (0, b.GP)(e, "d"),
+                              (0, d.GP)(e, "d"),
                             ),
                             u &&
                               r.createElement(
@@ -4084,13 +5136,13 @@
                                 s.map((e, t) =>
                                   r.createElement("span", {
                                     key: t,
-                                    className: k(
+                                    className: y(
                                       "h-1.5 w-1.5 rounded-full",
                                       e?.solidBgColor || "",
                                     ),
                                   }),
                                 ),
-                                m > 0 &&
+                                i > 0 &&
                                   r.createElement(
                                     "span",
                                     {
@@ -4098,7 +5150,7 @@
                                         "text-[10px] leading-none text-muted-foreground",
                                     },
                                     "+",
-                                    m,
+                                    i,
                                   ),
                               ),
                           );
@@ -4114,14 +5166,14 @@
                         r.createElement(
                           "h4",
                           { className: "font-medium text-card-foreground" },
-                          (0, b.GP)(c, "EEEE, MMMM d"),
+                          (0, d.GP)(c, "EEEE, MMMM d"),
                         ),
                         r.createElement(
                           "p",
                           { className: "text-sm text-muted-foreground" },
-                          g.length,
+                          h.length,
                           " task",
-                          1 === g.length ? "" : "s",
+                          1 === h.length ? "" : "s",
                           " scheduled",
                         ),
                       ),
@@ -4131,14 +5183,14 @@
                           className:
                             "flex-1 space-y-2 overflow-y-auto p-4 lg:max-h-[calc(100dvh-17rem)]",
                         },
-                        0 === g.length &&
+                        0 === h.length &&
                           r.createElement(
                             "p",
                             { className: "text-sm text-muted-foreground" },
                             "No tasks for this day.",
                           ),
-                        g.map((e) => {
-                          const t = $(e.category);
+                        h.map((e) => {
+                          const t = _(e.category);
                           return r.createElement(
                             "div",
                             {
@@ -4147,7 +5199,7 @@
                                 "flex items-center gap-2 rounded-lg border border-border/60 bg-muted/20 px-3 py-2",
                             },
                             r.createElement("span", {
-                              className: k(
+                              className: y(
                                 "h-2 w-2 flex-shrink-0 rounded-full",
                                 t?.solidBgColor || "",
                               ),
@@ -4176,7 +5228,7 @@
                         "div",
                         { className: "border-t border-border/50 p-3" },
                         r.createElement(
-                          A,
+                          k,
                           {
                             size: "sm",
                             className: "w-full",
@@ -4191,16 +5243,16 @@
               ),
             );
           };
-        var Zt = a(6632),
-          Jt = a(3241),
-          Vt = a(8645);
-        const Kt = "all",
-          Yt = {
+        var er = a(6632),
+          tr = a(3241),
+          ar = a(8645);
+        const rr = "all",
+          nr = {
             high: "bg-destructive/15 text-destructive border-destructive/30",
             medium: "bg-amber-500/15 text-amber-500 border-amber-500/30",
             low: "bg-emerald-500/15 text-emerald-500 border-emerald-500/30",
           },
-          Qt = {
+          lr = {
             completed:
               "bg-emerald-500/15 text-emerald-500 border-emerald-500/30",
             done: "bg-emerald-500/15 text-emerald-500 border-emerald-500/30",
@@ -4210,7 +5262,7 @@
             cancelled:
               "bg-muted text-muted-foreground border-border line-through",
           };
-        function Xt(e) {
+        function or(e) {
           let { value: t, styleMap: a } = e;
           if (!t)
             return r.createElement(
@@ -4222,7 +5274,7 @@
           return r.createElement(
             "span",
             {
-              className: k(
+              className: y(
                 "inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium capitalize",
                 a[n] || "bg-secondary/40 text-foreground border-border",
               ),
@@ -4230,79 +5282,79 @@
             t,
           );
         }
-        const ea = function (e) {
+        const sr = function (e) {
             let { onEditTask: t, onAddTask: a } = e;
             const {
                 getAllTasks: n,
                 addTask: l,
                 updateTask: o,
                 deleteTask: s,
-              } = le(),
-              [i, m] = (0, r.useState)(null),
-              [d, u] = (0, r.useState)(null),
-              [g, p] = (0, r.useState)(Kt),
-              [h, y] = (0, r.useState)(Kt),
-              [v, N] = (0, r.useState)(Kt),
+              } = ke(),
+              [c, m] = (0, r.useState)(null),
+              [u, f] = (0, r.useState)(null),
+              [b, h] = (0, r.useState)(rr),
+              [x, E] = (0, r.useState)(rr),
+              [v, N] = (0, r.useState)(rr),
               [w, C] = (0, r.useState)(""),
-              [S, M] = (0, r.useState)(""),
-              [L, T] = (0, r.useState)("asc"),
-              D = (0, r.useMemo)(() => n?.() || [], [n]),
-              j = (0, r.useMemo)(() => {
+              [S, A] = (0, r.useState)(""),
+              [M, T] = (0, r.useState)("asc"),
+              j = (0, r.useMemo)(() => n?.() || [], [n]),
+              P = (0, r.useMemo)(() => {
                 const e = new Map();
                 return (
-                  D.forEach((t) => {
-                    e.has(t.category) || e.set(t.category, $(t.category));
+                  j.forEach((t) => {
+                    e.has(t.category) || e.set(t.category, _(t.category));
                   }),
                   Array.from(e.entries())
                 );
-              }, [D]),
-              _ = (0, r.useMemo)(
+              }, [j]),
+              O = (0, r.useMemo)(
                 () =>
-                  Array.from(new Set(D.map((e) => e.priority).filter(Boolean))),
-                [D],
+                  Array.from(new Set(j.map((e) => e.priority).filter(Boolean))),
+                [j],
               ),
-              B = (0, r.useMemo)(
-                () =>
-                  Array.from(new Set(D.map((e) => e.status).filter(Boolean))),
-                [D],
-              ),
-              O = g !== Kt || h !== Kt || v !== Kt || w || S,
               z = (0, r.useMemo)(
                 () =>
-                  D.filter(
+                  Array.from(new Set(j.map((e) => e.status).filter(Boolean))),
+                [j],
+              ),
+              B = b !== rr || x !== rr || v !== rr || w || S,
+              H = (0, r.useMemo)(
+                () =>
+                  j.filter(
                     (e) =>
                       !(
-                        (g !== Kt && e.category !== g) ||
-                        (h !== Kt && e.priority !== h) ||
-                        (v !== Kt && e.status !== v) ||
+                        (b !== rr && e.category !== b) ||
+                        (x !== rr && e.priority !== x) ||
+                        (v !== rr && e.status !== v) ||
                         (w && e.date < w) ||
                         (S && e.date > S)
                       ),
                   ),
-                [D, g, h, v, w, S],
+                [j, b, x, v, w, S],
               ),
-              F = (0, r.useMemo)(() => {
-                const e = z.map((e) => ({
+              $ = (0, r.useMemo)(() => {
+                const e = H.map((e) => ({
                   task: e,
                   sortKey:
-                    (e.date ? (0, x.H)(e.date).getTime() : 0) +
+                    (e.date ? (0, g.H)(e.date).getTime() : 0) +
                     36e5 * (e.startHour || 0),
                 }));
                 return (
                   e.sort((e, t) =>
-                    "asc" === L ? e.sortKey - t.sortKey : t.sortKey - e.sortKey,
+                    "asc" === M ? e.sortKey - t.sortKey : t.sortKey - e.sortKey,
                   ),
                   e.map((e) => {
                     let { task: t } = e;
                     return t;
                   })
                 );
-              }, [z, L]),
-              R = () => m(null);
+              }, [H, M]),
+              F = () => m(null);
             return r.createElement(
               "section",
               { id: "list", className: "min-h-full bg-[#000000]" },
-              r.createElement(f, {
+              r.createElement(i, {
                 hexRadius: 60,
                 viewWidth: 900,
                 viewHeight: 600,
@@ -4336,14 +5388,14 @@
                       r.createElement(
                         "p",
                         { className: "text-sm text-muted-foreground" },
-                        F.length,
+                        $.length,
                         " of ",
-                        D.length,
+                        j.length,
                         " tasks",
                       ),
                     ),
                     r.createElement(
-                      A,
+                      k,
                       {
                         size: "sm",
                         onClick: () => {
@@ -4351,11 +5403,11 @@
                           m({
                             task: null,
                             hour: new Date().getHours(),
-                            date: (0, b.GP)(new Date(), "yyyy-MM-dd"),
+                            date: (0, d.GP)(new Date(), "yyyy-MM-dd"),
                           });
                         },
                       },
-                      r.createElement(E.A, { className: "mr-2 h-4 w-4" }),
+                      r.createElement(p.A, { className: "mr-2 h-4 w-4" }),
                       "Add task",
                     ),
                   ),
@@ -4368,17 +5420,17 @@
                     r.createElement(
                       "select",
                       {
-                        value: g,
-                        onChange: (e) => p(e.target.value),
+                        value: b,
+                        onChange: (e) => h(e.target.value),
                         className:
                           "h-8 rounded-lg border border-border bg-secondary/40 px-2 text-sm text-foreground [color-scheme:dark] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40",
                       },
                       r.createElement(
                         "option",
-                        { value: Kt },
+                        { value: rr },
                         "All categories",
                       ),
-                      j.map((e) => {
+                      P.map((e) => {
                         let [t, a] = e;
                         return r.createElement(
                           "option",
@@ -4390,17 +5442,17 @@
                     r.createElement(
                       "select",
                       {
-                        value: h,
-                        onChange: (e) => y(e.target.value),
+                        value: x,
+                        onChange: (e) => E(e.target.value),
                         className:
                           "h-8 rounded-lg border border-border bg-secondary/40 px-2 text-sm text-foreground capitalize [color-scheme:dark] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40",
                       },
                       r.createElement(
                         "option",
-                        { value: Kt },
+                        { value: rr },
                         "All priorities",
                       ),
-                      _.map((e) =>
+                      O.map((e) =>
                         r.createElement(
                           "option",
                           { key: e, value: e, className: "capitalize" },
@@ -4416,8 +5468,8 @@
                         className:
                           "h-8 rounded-lg border border-border bg-secondary/40 px-2 text-sm text-foreground capitalize [color-scheme:dark] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40",
                       },
-                      r.createElement("option", { value: Kt }, "All statuses"),
-                      B.map((e) =>
+                      r.createElement("option", { value: rr }, "All statuses"),
+                      z.map((e) =>
                         r.createElement(
                           "option",
                           { key: e, value: e, className: "capitalize" },
@@ -4444,7 +5496,7 @@
                       r.createElement("input", {
                         type: "date",
                         value: S,
-                        onChange: (e) => M(e.target.value),
+                        onChange: (e) => A(e.target.value),
                         "aria-label": "To date",
                         className:
                           "h-8 rounded-lg border border-border bg-secondary/40 px-2 text-sm text-foreground [color-scheme:dark] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40",
@@ -4459,28 +5511,28 @@
                           "flex h-8 items-center gap-1.5 rounded-lg border border-border px-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
                         "aria-label":
                           "Sort by date " +
-                          ("asc" === L ? "ascending" : "descending"),
+                          ("asc" === M ? "ascending" : "descending"),
                       },
-                      "asc" === L
-                        ? r.createElement(Zt.A, { className: "h-3.5 w-3.5" })
-                        : r.createElement(Jt.A, { className: "h-3.5 w-3.5" }),
+                      "asc" === M
+                        ? r.createElement(er.A, { className: "h-3.5 w-3.5" })
+                        : r.createElement(tr.A, { className: "h-3.5 w-3.5" }),
                       "Date",
-                      r.createElement(Vt.A, {
+                      r.createElement(ar.A, {
                         className: "h-3 w-3 opacity-50",
                       }),
                     ),
-                    O &&
+                    B &&
                       r.createElement(
                         "button",
                         {
                           type: "button",
                           onClick: () => {
-                            (p(Kt), y(Kt), N(Kt), C(""), M(""));
+                            (h(rr), E(rr), N(rr), C(""), A(""));
                           },
                           className:
                             "flex h-8 items-center gap-1 rounded-lg px-2 text-sm text-muted-foreground transition-colors hover:text-foreground",
                         },
-                        r.createElement(c.A, { className: "h-3.5 w-3.5" }),
+                        r.createElement(Ce.A, { className: "h-3.5 w-3.5" }),
                         "Clear filters",
                       ),
                   ),
@@ -4504,21 +5556,21 @@
                   r.createElement(
                     "div",
                     { className: "max-h-[calc(100dvh-17rem)] overflow-y-auto" },
-                    0 === F.length &&
+                    0 === $.length &&
                       r.createElement(
                         "div",
                         {
                           className:
                             "p-6 text-center text-sm text-muted-foreground",
                         },
-                        0 === D.length
+                        0 === j.length
                           ? "No tasks yet."
                           : "No tasks match the current filters.",
                       ),
-                    F.map((e) => {
-                      const a = $(e.category),
-                        [n, l] = P(e),
-                        o = d === e.id;
+                    $.map((e) => {
+                      const a = _(e.category),
+                        [n, l] = L(e),
+                        o = u === e.id;
                       return r.createElement(
                         "div",
                         {
@@ -4530,7 +5582,7 @@
                           "div",
                           { className: "flex min-w-0 items-center gap-2" },
                           r.createElement("span", {
-                            className: k(
+                            className: y(
                               "h-2 w-2 flex-shrink-0 rounded-full lg:hidden",
                               a?.solidBgColor || "",
                             ),
@@ -4551,15 +5603,15 @@
                             r.createElement(
                               "span",
                               { className: "mr-1.5" },
-                              (0, b.GP)((0, x.H)(e.date), "MMM d, yyyy"),
+                              (0, d.GP)((0, g.H)(e.date), "MMM d, yyyy"),
                             ),
-                          r.createElement("span", null, H(n), " – ", H(l)),
+                          r.createElement("span", null, D(n), " – ", D(l)),
                         ),
                         r.createElement(
                           "div",
                           { className: "hidden items-center gap-1.5 lg:flex" },
                           r.createElement("span", {
-                            className: k(
+                            className: y(
                               "h-1.5 w-1.5 flex-shrink-0 rounded-full",
                               a?.solidBgColor || "",
                             ),
@@ -4576,17 +5628,17 @@
                         r.createElement(
                           "div",
                           null,
-                          r.createElement(Xt, {
+                          r.createElement(or, {
                             value: e.priority,
-                            styleMap: Yt,
+                            styleMap: nr,
                           }),
                         ),
                         r.createElement(
                           "div",
                           null,
-                          r.createElement(Xt, {
+                          r.createElement(or, {
                             value: e.status,
-                            styleMap: Qt,
+                            styleMap: lr,
                           }),
                         ),
                         r.createElement(
@@ -4607,7 +5659,7 @@
                               className:
                                 "flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
                             },
-                            r.createElement(Je.A, { className: "h-3.5 w-3.5" }),
+                            r.createElement(ia.A, { className: "h-3.5 w-3.5" }),
                           ),
                           r.createElement(
                             "button",
@@ -4616,22 +5668,22 @@
                               onClick: () => {
                                 return (
                                   (t = e.id),
-                                  void (d === t ? (s(t), u(null)) : u(t))
+                                  void (u === t ? (s(t), f(null)) : f(t))
                                 );
                                 var t;
                               },
-                              onBlur: () => u(null),
+                              onBlur: () => f(null),
                               "aria-label": o
                                 ? `Confirm delete ${e.name}`
                                 : `Delete ${e.name}`,
-                              className: k(
+                              className: y(
                                 "flex h-7 w-7 items-center justify-center rounded-md transition-colors",
                                 o
                                   ? "bg-destructive/20 text-destructive"
                                   : "text-muted-foreground hover:bg-secondary hover:text-foreground",
                               ),
                             },
-                            r.createElement(Ve.A, { className: "h-3.5 w-3.5" }),
+                            r.createElement(da.A, { className: "h-3.5 w-3.5" }),
                           ),
                         ),
                       );
@@ -4639,31 +5691,31 @@
                   ),
                 ),
               ),
-              r.createElement(me, {
-                open: Boolean(i),
-                task: i?.task ?? null,
-                defaultHour: i?.hour,
-                defaultDate: i?.date,
-                existingTasks: D,
-                onClose: R,
+              r.createElement(Te, {
+                open: Boolean(c),
+                task: c?.task ?? null,
+                defaultHour: c?.hour,
+                defaultDate: c?.date,
+                existingTasks: j,
+                onClose: F,
                 onSubmit: (e) => {
-                  (i?.task
-                    ? o(i.task.id, e)
-                    : null === i?.task && e.date && l(e.date, e),
-                    R());
+                  (c?.task
+                    ? o(c.task.id, e)
+                    : null === c?.task && e.date && l(e.date, e),
+                    F());
                 },
                 onDelete: (e) => {
-                  (s(e), R());
+                  (s(e), F());
                 },
               }),
             );
           },
-          ta = [
-            { id: "timeline", label: "Timeline", icon: st.A },
-            { id: "calendar", label: "Calendar", icon: jt.A },
-            { id: "list", label: "List", icon: Pt.A },
+          cr = [
+            { id: "timeline", label: "Timeline", icon: va.A },
+            { id: "calendar", label: "Calendar", icon: $a.A },
+            { id: "list", label: "List", icon: Fa.A },
           ],
-          aa = function () {
+          ir = function () {
             const [e, t] = (0, r.useState)("timeline");
             return r.createElement(
               "div",
@@ -4683,7 +5735,7 @@
                       className:
                         "flex w-full items-center gap-1 rounded-xl border border-border bg-card p-1 sm:inline-flex sm:w-auto",
                     },
-                    ta.map((a) => {
+                    cr.map((a) => {
                       let { id: n, label: l, icon: o } = a;
                       const s = e === n;
                       return r.createElement(
@@ -4693,7 +5745,7 @@
                           type: "button",
                           onClick: () => t(n),
                           "aria-pressed": s,
-                          className: k(
+                          className: y(
                             "flex min-w-0 flex-1 items-center justify-center gap-1 rounded-lg px-2 py-1.5 text-xs font-medium transition-colors sm:flex-none sm:gap-2 sm:px-3 sm:text-sm",
                             s
                               ? "bg-primary text-primary-foreground"
@@ -4707,20 +5759,21 @@
                   ),
                 ),
               ),
-              "timeline" === e && r.createElement(Ht, null),
+              "timeline" === e && r.createElement(Ia, null),
               "calendar" === e &&
-                r.createElement(qt, {
+                r.createElement(Xa, {
                   onNavigateToTimeline: () => t("timeline"),
                 }),
-              "list" === e && r.createElement(ea, null),
+              "list" === e && r.createElement(sr, null),
             );
           };
-        var ra = a(4485),
-          na = a(9754),
-          la = a(131);
-        const oa =
+        var dr = a(6221),
+          mr = a(4485),
+          ur = a(9754),
+          fr = a(131);
+        const gr =
             "https://script.google.com/macros/s/AKfycbwpiIoQE77nRCv6AKTJqzfWRWEJj_HxcFd6Y8HCpbYbKksj6Ynub7_DFIV_YsVPj1g5/exec",
-          sa = async (e, t) => {
+          br = async (e, t) => {
             if (!e.ok) throw new Error(t);
             let a;
             try {
@@ -4731,22 +5784,22 @@
             if (a && !Array.isArray(a) && a.error) throw new Error(a.error);
             return a;
           },
-          ca = async (e, t) => {
-            const a = await fetch(oa, {
+          pr = async (e, t) => {
+            const a = await fetch(gr, {
                 method: "POST",
                 headers: { "Content-Type": "text/plain;charset=utf-8" },
                 body: JSON.stringify(e),
               }),
-              r = await sa(a, t);
+              r = await br(a, t);
             if (!1 === r?.success)
               throw new Error(
                 "That resource no longer exists in the sheet. Refresh and try again.",
               );
             return r;
           };
-        function ia() {
+        function hr() {
           return (
-            (ia = Object.assign
+            (hr = Object.assign
               ? Object.assign.bind()
               : function (e) {
                   for (var t = 1; t < arguments.length; t++) {
@@ -4756,63 +5809,63 @@
                   }
                   return e;
                 }),
-            ia.apply(null, arguments)
+            hr.apply(null, arguments)
           );
         }
-        const ma = "Dev Resource",
-          da = (e) =>
+        const xr = "Dev Resource",
+          Er = (e) =>
             Array.isArray(e)
               ? e.filter(Boolean)
               : String(e ?? "")
                   .split(",")
                   .map((e) => e.trim())
                   .filter(Boolean),
-          ua = (e) => {
+          yr = (e) => {
             try {
               return new URL(e).hostname.replace(/^www\./, "");
             } catch {
               return "";
             }
           },
-          fa = (e) => {
-            const t = ua(e);
+          vr = (e) => {
+            const t = yr(e);
             if (!t) return e || "Untitled";
             const a = t.split(".")[0];
             return a.charAt(0).toUpperCase() + a.slice(1);
           },
-          ba = (e) =>
+          Nr = (e) =>
             e
               ? new Date(e).toLocaleDateString(void 0, {
                   month: "short",
                   year: "numeric",
                 })
               : "",
-          ga = (e, t) => {
+          wr = (e, t) => {
             const a = e.resource_timestamp
               ? new Date(e.resource_timestamp).getTime()
               : 0;
             return {
               id: e.resource_url || `row-${e._row ?? t}`,
               title:
-                String(e.resource_title || "").trim() || fa(e.resource_url),
-              types: da(e.resource_type),
-              subCategories: da(e.resource_sub_category),
+                String(e.resource_title || "").trim() || vr(e.resource_url),
+              types: Er(e.resource_type),
+              subCategories: Er(e.resource_sub_category),
               url: e.resource_url || "",
               description: e.resource_desc || "",
               rating: Number(e.resource_rating) || 0,
               addedAt: Number.isNaN(a) ? 0 : a,
             };
           },
-          pa = (e) =>
-            e.url && e.types.some((e) => e.toLowerCase() === ma.toLowerCase()),
-          ha = (e, t) => ({
+          kr = (e) =>
+            e.url && e.types.some((e) => e.toLowerCase() === xr.toLowerCase()),
+          Cr = (e, t) => ({
             resource_title: e.title.trim(),
             resource_type: t,
             resource_sub_category: e.subCategories,
             resource_desc: e.description,
             resource_rating: "" === e.rating ? "" : Number(e.rating),
           }),
-          xa = {
+          Sr = {
             newest: {
               label: "Newest first",
               fn: (e, t) => t.addedAt - e.addedAt,
@@ -4826,12 +5879,12 @@
               fn: (e, t) => e.title.localeCompare(t.title),
             },
           },
-          ya = {
+          Ar = {
             h1: (e) => {
               let { node: t, children: a, ...n } = e;
               return r.createElement(
                 "h1",
-                ia(
+                hr(
                   {
                     className:
                       "text-2xl font-display font-semibold text-white mt-6 mb-3 first:mt-0",
@@ -4845,7 +5898,7 @@
               let { node: t, children: a, ...n } = e;
               return r.createElement(
                 "h2",
-                ia(
+                hr(
                   {
                     className:
                       "text-xl font-display font-semibold text-white mt-6 mb-3 first:mt-0",
@@ -4859,7 +5912,7 @@
               let { node: t, children: a, ...n } = e;
               return r.createElement(
                 "h3",
-                ia(
+                hr(
                   {
                     className:
                       "text-lg font-display font-semibold text-white mt-5 mb-2 first:mt-0",
@@ -4873,7 +5926,7 @@
               let { node: t, children: a, ...n } = e;
               return r.createElement(
                 "h4",
-                ia(
+                hr(
                   {
                     className:
                       "text-base font-semibold text-white mt-4 mb-2 first:mt-0",
@@ -4887,14 +5940,14 @@
               let { node: t, ...a } = e;
               return r.createElement(
                 "p",
-                ia({ className: "mb-4 last:mb-0" }, a),
+                hr({ className: "mb-4 last:mb-0" }, a),
               );
             },
             a: (e) => {
               let { node: t, children: a, ...n } = e;
               return r.createElement(
                 "a",
-                ia(
+                hr(
                   {
                     target: "_blank",
                     rel: "noopener noreferrer",
@@ -4910,25 +5963,25 @@
               let { node: t, ...a } = e;
               return r.createElement(
                 "strong",
-                ia({ className: "font-semibold text-white" }, a),
+                hr({ className: "font-semibold text-white" }, a),
               );
             },
             em: (e) => {
               let { node: t, ...a } = e;
-              return r.createElement("em", ia({ className: "italic" }, a));
+              return r.createElement("em", hr({ className: "italic" }, a));
             },
             del: (e) => {
               let { node: t, ...a } = e;
               return r.createElement(
                 "del",
-                ia({ className: "line-through opacity-70" }, a),
+                hr({ className: "line-through opacity-70" }, a),
               );
             },
             ul: (e) => {
               let { node: t, className: a, ...n } = e;
               return r.createElement(
                 "ul",
-                ia(
+                hr(
                   {
                     className: a?.includes("contains-task-list")
                       ? "mb-4 space-y-1"
@@ -4942,7 +5995,7 @@
               let { node: t, ...a } = e;
               return r.createElement(
                 "ol",
-                ia(
+                hr(
                   {
                     className:
                       "list-decimal pl-6 mb-4 space-y-1 marker:text-[#8cfcfb]",
@@ -4953,13 +6006,13 @@
             },
             li: (e) => {
               let { node: t, ...a } = e;
-              return r.createElement("li", ia({ className: "pl-1" }, a));
+              return r.createElement("li", hr({ className: "pl-1" }, a));
             },
             input: (e) => {
               let { node: t, ...a } = e;
               return r.createElement(
                 "input",
-                ia(
+                hr(
                   {
                     className: "mr-2 align-middle accent-[#8cfcfb]",
                     disabled: !0,
@@ -4972,7 +6025,7 @@
               let { node: t, ...a } = e;
               return r.createElement(
                 "blockquote",
-                ia(
+                hr(
                   {
                     className:
                       "border-l-4 border-[#8cfcfb]/50 pl-4 my-4 italic text-[#c2ccaa]/90",
@@ -4985,14 +6038,14 @@
               let { node: t, ...a } = e;
               return r.createElement(
                 "hr",
-                ia({ className: "my-6 border-[#c2ccaa]/20" }, a),
+                hr({ className: "my-6 border-[#c2ccaa]/20" }, a),
               );
             },
             pre: (e) => {
               let { node: t, ...a } = e;
               return r.createElement(
                 "pre",
-                ia(
+                hr(
                   {
                     className:
                       "mb-4 p-4 rounded-lg bg-black/50 border border-[#c2ccaa]/15 overflow-x-auto text-sm [&>code]:bg-transparent [&>code]:p-0 [&>code]:text-[#e6f7f7]",
@@ -5005,7 +6058,7 @@
               let { node: t, ...a } = e;
               return r.createElement(
                 "code",
-                ia(
+                hr(
                   {
                     className:
                       "font-mono text-[0.9em] px-1.5 py-0.5 rounded bg-black/40 text-[#8cfcfb]",
@@ -5021,7 +6074,7 @@
                 { className: "mb-4 overflow-x-auto" },
                 r.createElement(
                   "table",
-                  ia({ className: "w-full text-sm border-collapse" }, a),
+                  hr({ className: "w-full text-sm border-collapse" }, a),
                 ),
               );
             },
@@ -5029,7 +6082,7 @@
               let { node: t, ...a } = e;
               return r.createElement(
                 "th",
-                ia(
+                hr(
                   {
                     className:
                       "text-left font-semibold text-white border-b border-[#c2ccaa]/30 px-3 py-2",
@@ -5042,14 +6095,14 @@
               let { node: t, ...a } = e;
               return r.createElement(
                 "td",
-                ia({ className: "border-b border-[#c2ccaa]/10 px-3 py-2" }, a),
+                hr({ className: "border-b border-[#c2ccaa]/10 px-3 py-2" }, a),
               );
             },
             img: (e) => {
               let { node: t, alt: a, ...n } = e;
               return r.createElement(
                 "img",
-                ia(
+                hr(
                   {
                     alt: a || "",
                     loading: "lazy",
@@ -5060,37 +6113,37 @@
               );
             },
           },
-          Ea = (e) => {
+          Mr = (e) => {
             let { children: t } = e;
             return r.createElement(
-              na.oz,
-              { remarkPlugins: [la.A], components: ya },
+              ur.oz,
+              { remarkPlugins: [fr.A], components: Ar },
               t,
             );
           },
-          va = ["strong", "em", "del", "code"],
-          Na = (e) => {
+          Lr = ["strong", "em", "del", "code"],
+          Tr = (e) => {
             let { children: t } = e;
             return r.createElement(
-              na.oz,
+              ur.oz,
               {
-                remarkPlugins: [la.A],
-                allowedElements: va,
+                remarkPlugins: [fr.A],
+                allowedElements: Lr,
                 unwrapDisallowed: !0,
                 components: {
-                  strong: ya.strong,
-                  em: ya.em,
-                  del: ya.del,
-                  code: ya.code,
+                  strong: Ar.strong,
+                  em: Ar.em,
+                  del: Ar.del,
+                  code: Ar.code,
                 },
               },
               t,
             );
           },
-          wa = (e) => {
+          Dr = (e) => {
             let { url: t, title: a } = e;
             const [n, l] = (0, r.useState)(!1),
-              o = ua(t);
+              o = yr(t);
             return !o || n
               ? r.createElement(
                   "div",
@@ -5117,7 +6170,7 @@
                   }),
                 );
           },
-          ka = (e) => {
+          jr = (e) => {
             let { active: t, onClick: a, children: n } = e;
             return r.createElement(
               "button",
@@ -5134,7 +6187,7 @@
               n,
             );
           },
-          Ca = () =>
+          Pr = () =>
             r.createElement(
               "div",
               {
@@ -5172,7 +6225,7 @@
                 className: "h-9 rounded-lg bg-black/20",
               }),
             ),
-          Sa = (e) => {
+          Or = (e) => {
             let { className: t = "w-4 h-4" } = e;
             return r.createElement(
               "svg",
@@ -5198,7 +6251,7 @@
               }),
             );
           },
-          Ma = (e) => {
+          _r = (e) => {
             let {
               resource: t,
               index: a,
@@ -5209,14 +6262,14 @@
             } = e;
             const {
                 title: i,
-                subCategories: m,
-                url: d,
+                subCategories: d,
+                url: m,
                 description: u,
                 rating: f,
-                addedAt: b,
+                addedAt: g,
               } = t,
-              g = ua(d),
-              p = ba(b);
+              b = yr(m),
+              p = Nr(g);
             return r.createElement(
               l.P.article,
               {
@@ -5244,7 +6297,7 @@
                 r.createElement(
                   "div",
                   { className: "flex items-start gap-3 mb-4" },
-                  r.createElement(wa, { url: d, title: i }),
+                  r.createElement(Dr, { url: m, title: i }),
                   r.createElement(
                     "div",
                     { className: "min-w-0 flex-1" },
@@ -5256,11 +6309,11 @@
                       },
                       i,
                     ),
-                    g &&
+                    b &&
                       r.createElement(
                         "p",
                         { className: "text-sm text-[#c2ccaa]/70 truncate" },
-                        g,
+                        b,
                       ),
                   ),
                   f > 0 &&
@@ -5291,13 +6344,13 @@
                     className:
                       "text-[#c2ccaa] text-sm leading-relaxed mb-5 flex-grow line-clamp-3",
                   },
-                  u ? r.createElement(Na, null, u) : "No description yet.",
+                  u ? r.createElement(Tr, null, u) : "No description yet.",
                 ),
-                m.length > 0 &&
+                d.length > 0 &&
                   r.createElement(
                     "div",
                     { className: "flex flex-wrap gap-2 mb-5" },
-                    m.map((e) =>
+                    d.map((e) =>
                       r.createElement(
                         "span",
                         {
@@ -5368,7 +6421,7 @@
                           "p-2 rounded-lg text-red-400 hover:text-red-300 hover:bg-red-400/10 transition-colors disabled:opacity-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400",
                       },
                       c
-                        ? r.createElement(Sa, { className: "w-4 h-4" })
+                        ? r.createElement(Or, { className: "w-4 h-4" })
                         : r.createElement(
                             "svg",
                             {
@@ -5385,11 +6438,11 @@
                           ),
                     ),
                   ),
-                  d &&
+                  m &&
                     r.createElement(
                       "a",
                       {
-                        href: d,
+                        href: m,
                         target: "_blank",
                         rel: "noopener noreferrer",
                         onClick: (e) => e.stopPropagation(),
@@ -5417,8 +6470,8 @@
               ),
             );
           };
-        let Aa = 0;
-        const La = (e) => {
+        let zr = 0;
+        const Br = (e) => {
             let {
               onClose: t,
               labelledBy: a,
@@ -5428,26 +6481,26 @@
               children: c,
             } = e;
             const i = (0, r.useRef)(null),
-              m = (0, r.useRef)(!1),
-              d = (0, r.useRef)(t),
+              d = (0, r.useRef)(!1),
+              m = (0, r.useRef)(t),
               u = (0, r.useRef)(o);
             return (
-              (d.current = t),
+              (m.current = t),
               (u.current = o),
               (0, r.useEffect)(() => {
                 const e = document.activeElement;
-                ((Aa += 1),
+                ((zr += 1),
                   (document.body.style.overflow = "hidden"),
                   (n?.current || i.current)?.focus());
                 const t = (e) => {
-                  "Escape" === e.key && u.current && d.current();
+                  "Escape" === e.key && u.current && m.current();
                 };
                 return (
                   window.addEventListener("keydown", t),
                   () => {
                     (window.removeEventListener("keydown", t),
-                      (Aa -= 1),
-                      0 === Aa && (document.body.style.overflow = ""));
+                      (zr -= 1),
+                      0 === zr && (document.body.style.overflow = ""));
                     const a = document.activeElement;
                     (a && a !== document.body) || !e?.isConnected || e.focus();
                   }
@@ -5463,10 +6516,10 @@
                   exit: { opacity: 0 },
                   transition: { duration: 0.2 },
                   onMouseDown: (e) => {
-                    m.current = e.target === e.currentTarget;
+                    d.current = e.target === e.currentTarget;
                   },
                   onClick: (e) => {
-                    m.current && e.target === e.currentTarget && o && t();
+                    d.current && e.target === e.currentTarget && o && t();
                   },
                 },
                 r.createElement(
@@ -5488,7 +6541,7 @@
               )
             );
           },
-          Ta = r.forwardRef((e, t) => {
+          Hr = r.forwardRef((e, t) => {
             let { onClick: a, disabled: n } = e;
             return r.createElement(
               "button",
@@ -5504,22 +6557,22 @@
               "×",
             );
           }),
-          Da = (e) => {
+          $r = (e) => {
             let { resource: t, onClose: a, onEdit: n, onDelete: l } = e;
             const o = (0, r.useRef)(null),
               {
                 title: s,
                 types: c,
                 subCategories: i,
-                url: m,
-                description: d,
+                url: d,
+                description: m,
                 rating: u,
                 addedAt: f,
               } = t,
-              b = ua(m),
-              g = ba(f);
+              g = yr(d),
+              b = Nr(f);
             return r.createElement(
-              La,
+              Br,
               {
                 onClose: a,
                 labelledBy: "resource-modal-title",
@@ -5531,7 +6584,7 @@
                 r.createElement(
                   "div",
                   { className: "flex items-start gap-4 mb-6" },
-                  r.createElement(wa, { url: m, title: s }),
+                  r.createElement(Dr, { url: d, title: s }),
                   r.createElement(
                     "div",
                     { className: "min-w-0 flex-1" },
@@ -5544,11 +6597,11 @@
                       },
                       s,
                     ),
-                    b &&
+                    g &&
                       r.createElement(
                         "p",
                         { className: "text-sm text-[#c2ccaa]/70 break-all" },
-                        b,
+                        g,
                       ),
                   ),
                   r.createElement(
@@ -5570,8 +6623,8 @@
                     className:
                       "text-[#c2ccaa] leading-relaxed mb-6 break-words",
                   },
-                  d
-                    ? r.createElement(Ea, null, d)
+                  m
+                    ? r.createElement(Mr, null, m)
                     : r.createElement("p", null, "No description yet."),
                 ),
                 (c.length > 0 || i.length > 0) &&
@@ -5629,15 +6682,15 @@
                     r.createElement(
                       "dd",
                       { className: "font-semibold text-white" },
-                      g || "Unknown",
+                      b || "Unknown",
                     ),
                   ),
                 ),
-                m &&
+                d &&
                   r.createElement(
                     "a",
                     {
-                      href: m,
+                      href: d,
                       target: "_blank",
                       rel: "noopener noreferrer",
                       "aria-label": `Visit ${s} (opens in a new tab)`,
@@ -5671,7 +6724,7 @@
                       className:
                         "inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-black/25 text-[#c2ccaa] font-semibold border border-[#c2ccaa]/20 hover:border-[#8cfcfb]/60 hover:text-[#8cfcfb] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8cfcfb]",
                     },
-                    r.createElement(Je.A, {
+                    r.createElement(ia.A, {
                       className: "w-4 h-4",
                       "aria-hidden": "true",
                     }),
@@ -5685,7 +6738,7 @@
                       className:
                         "inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-black/25 text-red-300 font-semibold border border-red-400/25 hover:bg-red-500 hover:border-red-500 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400",
                     },
-                    r.createElement(Ve.A, {
+                    r.createElement(da.A, {
                       className: "w-4 h-4",
                       "aria-hidden": "true",
                     }),
@@ -5695,10 +6748,10 @@
               ),
             );
           },
-          ja =
+          Fr =
             "w-full bg-[#1a0a0a] border border-[#c2ccaa]/30 rounded-lg py-2.5 px-3.5 text-white placeholder:text-[#c2ccaa]/40 focus:outline-none focus:border-[#8cfcfb] focus:ring-1 focus:ring-[#8cfcfb] transition-colors aria-[invalid=true]:border-red-400",
-          Pa = "block text-sm font-semibold text-white mb-1.5",
-          _a = (e) => {
+          Rr = "block text-sm font-semibold text-white mb-1.5",
+          Ir = (e) => {
             let { id: t, children: a } = e;
             return a
               ? r.createElement(
@@ -5708,7 +6761,7 @@
                 )
               : null;
           },
-          Ha = (e) => {
+          Ur = (e) => {
             let {
               resource: t,
               subOptions: a,
@@ -5726,25 +6779,25 @@
                   rating: e?.rating > 0 ? String(e.rating) : "",
                 }))(t),
               ),
-              [m, d] = (0, r.useState)(""),
+              [d, m] = (0, r.useState)(""),
               [u, f] = (0, r.useState)("write"),
-              [b, g] = (0, r.useState)({}),
+              [g, b] = (0, r.useState)({}),
               [p, h] = (0, r.useState)(""),
-              [x, y] = (0, r.useState)(!1),
-              E = (0, r.useRef)(null),
+              [x, E] = (0, r.useState)(!1),
+              y = (0, r.useRef)(null),
               v = (e) => (t) => {
                 const { value: a } = t.target;
                 (i((t) => ({ ...t, [e]: a })),
-                  g((t) => ({ ...t, [e]: void 0 })));
+                  b((t) => ({ ...t, [e]: void 0 })));
               },
               N = (e) => {
-                const t = da(e);
+                const t = Er(e);
                 (t.length &&
                   i((e) => ({
                     ...e,
                     subCategories: [...new Set([...e.subCategories, ...t])],
                   })),
-                  d(""));
+                  m(""));
               },
               w = (e) =>
                 i((t) => ({
@@ -5754,11 +6807,11 @@
               k = a.filter((e) => "All" !== e && !c.subCategories.includes(e)),
               C = s ? "Edit resource" : "Add resource";
             return r.createElement(
-              La,
+              Br,
               {
                 onClose: l,
                 labelledBy: "resource-form-title",
-                initialFocusRef: E,
+                initialFocusRef: y,
                 dismissible: !x,
                 className: "max-w-2xl",
               },
@@ -5771,7 +6824,7 @@
                         ...c,
                         url: c.url.trim(),
                         subCategories: [
-                          ...new Set([...c.subCategories, ...da(m)]),
+                          ...new Set([...c.subCategories, ...Er(d)]),
                         ],
                       },
                       r = ((e) => {
@@ -5801,12 +6854,12 @@
                         }
                         return a;
                       })(a);
-                    if ((g(r), !Object.keys(r).length)) {
-                      (y(!0), h(""));
+                    if ((b(r), !Object.keys(r).length)) {
+                      (E(!0), h(""));
                       try {
                         await o(a);
                       } catch (e) {
-                        (h(e.message), y(!1));
+                        (h(e.message), E(!1));
                       }
                     }
                   },
@@ -5825,7 +6878,7 @@
                     },
                     C,
                   ),
-                  r.createElement(Ta, { onClick: l, disabled: x }),
+                  r.createElement(Hr, { onClick: l, disabled: x }),
                 ),
                 r.createElement(
                   "fieldset",
@@ -5835,17 +6888,17 @@
                     null,
                     r.createElement(
                       "label",
-                      { htmlFor: "rf-title", className: Pa },
+                      { htmlFor: "rf-title", className: Rr },
                       "Title",
                     ),
                     r.createElement("input", {
-                      ref: E,
+                      ref: y,
                       id: "rf-title",
                       type: "text",
                       value: c.title,
                       onChange: v("title"),
                       placeholder: "e.g. UI Verse",
-                      className: ja,
+                      className: Fr,
                     }),
                   ),
                   r.createElement(
@@ -5853,7 +6906,7 @@
                     null,
                     r.createElement(
                       "label",
-                      { htmlFor: "rf-url", className: Pa },
+                      { htmlFor: "rf-url", className: Rr },
                       "URL ",
                       r.createElement(
                         "span",
@@ -5869,18 +6922,18 @@
                       value: c.url,
                       onChange: v("url"),
                       placeholder: "https://example.com",
-                      "aria-invalid": Boolean(b.url),
-                      "aria-describedby": b.url ? "rf-url-error" : void 0,
-                      className: ja,
+                      "aria-invalid": Boolean(g.url),
+                      "aria-describedby": g.url ? "rf-url-error" : void 0,
+                      className: Fr,
                     }),
-                    r.createElement(_a, { id: "rf-url-error" }, b.url),
+                    r.createElement(Ir, { id: "rf-url-error" }, g.url),
                   ),
                   r.createElement(
                     "div",
                     null,
                     r.createElement(
                       "label",
-                      { htmlFor: "rf-sub", className: Pa },
+                      { htmlFor: "rf-sub", className: Rr },
                       "Categories",
                     ),
                     c.subCategories.length > 0 &&
@@ -5916,23 +6969,23 @@
                     r.createElement("input", {
                       id: "rf-sub",
                       type: "text",
-                      value: m,
+                      value: d,
                       onChange: (e) => {
                         const { value: t } = e.target;
-                        t.includes(",") ? N(t) : d(t);
+                        t.includes(",") ? N(t) : m(t);
                       },
                       onKeyDown: (e) => {
                         "Enter" === e.key
-                          ? (e.preventDefault(), N(m))
+                          ? (e.preventDefault(), N(d))
                           : "Backspace" === e.key &&
-                            !m &&
+                            !d &&
                             c.subCategories.length &&
                             w(c.subCategories[c.subCategories.length - 1]);
                       },
-                      onBlur: () => N(m),
+                      onBlur: () => N(d),
                       placeholder: "Type a category and press Enter",
                       "aria-describedby": "rf-sub-hint",
-                      className: ja,
+                      className: Fr,
                     }),
                     r.createElement(
                       "p",
@@ -6012,7 +7065,7 @@
                           onChange: v("description"),
                           placeholder:
                             "What is it, and why is it useful? Markdown is supported.",
-                          className: `${ja} font-mono text-sm leading-relaxed resize-y min-h-[9rem]`,
+                          className: `${Fr} font-mono text-sm leading-relaxed resize-y min-h-[9rem]`,
                         })
                       : r.createElement(
                           "div",
@@ -6021,7 +7074,7 @@
                               "min-h-[9rem] max-h-80 overflow-y-auto rounded-lg border border-[#c2ccaa]/30 bg-[#1a0a0a] p-4 text-[#c2ccaa] leading-relaxed break-words",
                           },
                           c.description.trim()
-                            ? r.createElement(Ea, null, c.description)
+                            ? r.createElement(Mr, null, c.description)
                             : r.createElement(
                                 "p",
                                 { className: "text-[#c2ccaa]/50" },
@@ -6039,7 +7092,7 @@
                     { className: "max-w-[10rem]" },
                     r.createElement(
                       "label",
-                      { htmlFor: "rf-rating", className: Pa },
+                      { htmlFor: "rf-rating", className: Rr },
                       "Rating (0–5)",
                     ),
                     r.createElement("input", {
@@ -6051,11 +7104,11 @@
                       value: c.rating,
                       onChange: v("rating"),
                       placeholder: "—",
-                      "aria-invalid": Boolean(b.rating),
-                      "aria-describedby": b.rating ? "rf-rating-error" : void 0,
-                      className: ja,
+                      "aria-invalid": Boolean(g.rating),
+                      "aria-describedby": g.rating ? "rf-rating-error" : void 0,
+                      className: Fr,
                     }),
-                    r.createElement(_a, { id: "rf-rating-error" }, b.rating),
+                    r.createElement(Ir, { id: "rf-rating-error" }, g.rating),
                   ),
                 ),
                 p &&
@@ -6099,13 +7152,13 @@
               ),
             );
           },
-          Ba = (e) => {
+          Gr = (e) => {
             let { resource: t, onClose: a, onConfirm: n } = e;
             const [l, o] = (0, r.useState)(!1),
               [s, c] = (0, r.useState)(""),
               i = (0, r.useRef)(null);
             return r.createElement(
-              La,
+              Br,
               {
                 onClose: a,
                 labelledBy: "resource-delete-title",
@@ -6122,7 +7175,7 @@
                     className:
                       "w-12 h-12 mb-4 rounded-full bg-red-500/15 text-red-300 flex items-center justify-center",
                   },
-                  r.createElement(Ve.A, {
+                  r.createElement(da.A, {
                     className: "w-6 h-6",
                     "aria-hidden": "true",
                   }),
@@ -6193,7 +7246,7 @@
               ),
             );
           },
-          Oa = (e) => {
+          Wr = (e) => {
             let { toast: t, onDismiss: a } = e;
             return r.createElement(
               "div",
@@ -6204,7 +7257,7 @@
                 "aria-live": "polite",
               },
               r.createElement(
-                o.N,
+                dr.N,
                 null,
                 t &&
                   r.createElement(
@@ -6240,46 +7293,46 @@
               ),
             );
           },
-          za = () => {
+          qr = () => {
             const [e, t] = (0, r.useState)([]),
               [a, n] = (0, r.useState)(!0),
-              [s, c] = (0, r.useState)(null),
-              [i, m] = (0, r.useState)(""),
-              [d, u] = (0, r.useState)("All"),
-              [f, b] = (0, r.useState)("newest"),
-              [g, p] = (0, r.useState)(null),
-              h = (0, r.useCallback)(() => p(null), []),
-              [x, y] = (0, r.useState)(null),
-              [v, N] = (0, r.useState)(null),
-              [w, k] = (0, r.useState)(null),
-              [C, S] = (0, r.useState)(() => new Set()),
-              [M, A] = (0, r.useState)(null),
-              L = (0, r.useCallback)(
+              [o, s] = (0, r.useState)(null),
+              [c, i] = (0, r.useState)(""),
+              [d, m] = (0, r.useState)("All"),
+              [u, f] = (0, r.useState)("newest"),
+              [g, b] = (0, r.useState)(null),
+              h = (0, r.useCallback)(() => b(null), []),
+              [x, E] = (0, r.useState)(null),
+              [y, v] = (0, r.useState)(null),
+              [N, w] = (0, r.useState)(null),
+              [k, C] = (0, r.useState)(() => new Set()),
+              [S, A] = (0, r.useState)(null),
+              M = (0, r.useCallback)(
                 (e, t) => A({ type: e, message: t, id: Date.now() }),
                 [],
               );
             (0, r.useEffect)(() => {
-              if (!M) return;
+              if (!S) return;
               const e = setTimeout(() => A(null), 4500);
               return () => clearTimeout(e);
-            }, [M]);
-            const T = (0, r.useRef)(0),
-              D = (0, r.useCallback)(
+            }, [S]);
+            const L = (0, r.useRef)(0),
+              T = (0, r.useCallback)(
                 async function () {
                   let { signal: e, silent: a = !1 } =
                     arguments.length > 0 && void 0 !== arguments[0]
                       ? arguments[0]
                       : {};
-                  const r = ++T.current;
-                  a || (n(!0), c(null));
+                  const r = ++L.current;
+                  a || (n(!0), s(null));
                   try {
                     const a = await (async function () {
                       let { signal: e } =
                         arguments.length > 0 && void 0 !== arguments[0]
                           ? arguments[0]
                           : {};
-                      const t = await fetch(oa, { signal: e }),
-                        a = await sa(
+                      const t = await fetch(gr, { signal: e }),
+                        a = await br(
                           t,
                           "Couldn't load resources. Please try again.",
                         );
@@ -6287,61 +7340,61 @@
                         throw new Error("Unexpected response from the server.");
                       return a;
                     })({ signal: e });
-                    if (r !== T.current) return;
-                    (S(
+                    if (r !== L.current) return;
+                    (C(
                       new Set(
                         a
                           .map((e) => String(e.resource_url ?? "").trim())
                           .filter(Boolean),
                       ),
                     ),
-                      t(a.map(ga).filter(pa)),
-                      c(null));
+                      t(a.map(wr).filter(kr)),
+                      s(null));
                   } catch (e) {
-                    if ("AbortError" === e.name || r !== T.current) return;
+                    if ("AbortError" === e.name || r !== L.current) return;
                     a
-                      ? L("error", `Couldn't refresh the list. ${e.message}`)
-                      : c(e.message);
+                      ? M("error", `Couldn't refresh the list. ${e.message}`)
+                      : s(e.message);
                   } finally {
-                    a || r !== T.current || e?.aborted || n(!1);
+                    a || r !== L.current || e?.aborted || n(!1);
                   }
                 },
-                [L],
+                [M],
               );
             (0, r.useEffect)(() => {
               const e = new AbortController();
-              return (D({ signal: e.signal }), () => e.abort());
-            }, [D]);
-            const j = (0, r.useCallback)((e) => {
-                (p(null), y({ resource: e }));
+              return (T({ signal: e.signal }), () => e.abort());
+            }, [T]);
+            const D = (0, r.useCallback)((e) => {
+                (b(null), E({ resource: e }));
               }, []),
-              P = (0, r.useCallback)((e) => {
-                (p(null), N(e));
+              j = (0, r.useCallback)((e) => {
+                (b(null), v(e));
               }, []),
-              _ = (0, r.useMemo)(
+              P = (0, r.useMemo)(
                 () => ["All", ...new Set(e.flatMap((e) => e.subCategories))],
                 [e],
               ),
-              H = (0, r.useMemo)(() => {
-                const t = i.trim().toLowerCase();
+              O = (0, r.useMemo)(() => {
+                const t = c.trim().toLowerCase();
                 return e
                   .filter(
                     (e) =>
                       !("All" !== d && !e.subCategories.includes(d)) &&
                       (!t ||
-                        [e.title, e.description, ua(e.url), ...e.subCategories]
+                        [e.title, e.description, yr(e.url), ...e.subCategories]
                           .join(" ")
                           .toLowerCase()
                           .includes(t)),
                   )
-                  .sort(xa[f].fn);
-              }, [e, i, d, f]),
-              B = i || "All" !== d,
-              O = () => {
-                (m(""), u("All"));
+                  .sort(Sr[u].fn);
+              }, [e, c, d, u]),
+              _ = c || "All" !== d,
+              z = () => {
+                (i(""), m("All"));
               };
             return r.createElement(
-              ra.x,
+              mr.x,
               { reducedMotion: "user" },
               r.createElement(
                 "section",
@@ -6385,12 +7438,12 @@
                       "button",
                       {
                         type: "button",
-                        onClick: () => y({ resource: null }),
+                        onClick: () => E({ resource: null }),
                         "aria-haspopup": "dialog",
                         className:
                           "mt-6 inline-flex items-center gap-2 py-2.5 px-5 rounded-full bg-[#8cfcfb] text-black font-semibold hover:bg-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black",
                       },
-                      r.createElement(E.A, {
+                      r.createElement(p.A, {
                         className: "w-4 h-4",
                         "aria-hidden": "true",
                       }),
@@ -6425,17 +7478,17 @@
                         type: "text",
                         "aria-label": "Search resources",
                         placeholder: "Search by name, category, or description",
-                        value: i,
-                        onChange: (e) => m(e.target.value),
+                        value: c,
+                        onChange: (e) => i(e.target.value),
                         className:
                           "w-full bg-[#1a0a0a] border border-[#c2ccaa]/30 rounded-full py-3 pl-12 pr-11 text-white placeholder:text-[#c2ccaa]/50 focus:outline-none focus:border-[#8cfcfb] focus:ring-1 focus:ring-[#8cfcfb] transition-all",
                       }),
-                      i &&
+                      c &&
                         r.createElement(
                           "button",
                           {
                             type: "button",
-                            onClick: () => m(""),
+                            onClick: () => i(""),
                             "aria-label": "Clear search",
                             className:
                               "absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full text-[#c2ccaa] hover:text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8cfcfb]",
@@ -6447,12 +7500,12 @@
                       "select",
                       {
                         "aria-label": "Sort resources",
-                        value: f,
-                        onChange: (e) => b(e.target.value),
+                        value: u,
+                        onChange: (e) => f(e.target.value),
                         className:
                           "bg-[#1a0a0a] border border-[#c2ccaa]/30 rounded-full py-3 px-5 text-white focus:outline-none focus:border-[#8cfcfb] focus:ring-1 focus:ring-[#8cfcfb]",
                       },
-                      Object.entries(xa).map((e) => {
+                      Object.entries(Sr).map((e) => {
                         let [t, { label: a }] = e;
                         return r.createElement(
                           "option",
@@ -6463,12 +7516,12 @@
                     ),
                   ),
                   !a &&
-                    !s &&
+                    !o &&
                     e.length > 0 &&
                     r.createElement(
                       "div",
                       { className: "max-w-4xl mx-auto mb-8 space-y-3" },
-                      _.length > 2 &&
+                      P.length > 2 &&
                         r.createElement(
                           "div",
                           {
@@ -6476,10 +7529,10 @@
                             role: "group",
                             "aria-label": "Filter by sub-category",
                           },
-                          _.map((e) =>
+                          P.map((e) =>
                             r.createElement(
-                              ka,
-                              { key: e, active: d === e, onClick: () => u(e) },
+                              jr,
+                              { key: e, active: d === e, onClick: () => m(e) },
                               e,
                             ),
                           ),
@@ -6491,12 +7544,12 @@
                           "aria-live": "polite",
                         },
                         "Showing ",
-                        H.length,
+                        O.length,
                         " of ",
                         e.length,
                         " ",
                         "resources",
-                        B &&
+                        _ &&
                           r.createElement(
                             r.Fragment,
                             null,
@@ -6505,7 +7558,7 @@
                               "button",
                               {
                                 type: "button",
-                                onClick: O,
+                                onClick: z,
                                 className:
                                   "underline underline-offset-2 text-[#8cfcfb] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8cfcfb] rounded",
                               },
@@ -6523,30 +7576,30 @@
                           "aria-busy": "true",
                         },
                         Array.from({ length: 6 }).map((e, t) =>
-                          r.createElement(Ca, { key: t }),
+                          r.createElement(Pr, { key: t }),
                         ),
                       )
-                    : s
+                    : o
                       ? r.createElement(
                           "div",
                           { className: "py-12 text-center", role: "alert" },
                           r.createElement(
                             "p",
                             { className: "text-xl text-red-400 mb-2" },
-                            s,
+                            o,
                           ),
                           r.createElement(
                             "button",
                             {
                               type: "button",
-                              onClick: () => D(),
+                              onClick: () => T(),
                               className:
                                 "text-[#8cfcfb] underline underline-offset-2 hover:text-white",
                             },
                             "Try again",
                           ),
                         )
-                      : H.length > 0
+                      : O.length > 0
                         ? r.createElement(
                             "div",
                             {
@@ -6554,17 +7607,17 @@
                                 "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
                             },
                             r.createElement(
-                              o.N,
+                              dr.N,
                               { mode: "popLayout" },
-                              H.map((e, t) =>
-                                r.createElement(Ma, {
+                              O.map((e, t) =>
+                                r.createElement(_r, {
                                   key: e.id,
                                   resource: e,
                                   index: t,
-                                  onOpen: p,
-                                  onEdit: j,
-                                  onDelete: P,
-                                  isDeleting: w === e.id,
+                                  onOpen: b,
+                                  onEdit: D,
+                                  onDelete: j,
+                                  isDeleting: N === e.id,
                                 }),
                               ),
                             ),
@@ -6577,16 +7630,16 @@
                               { className: "text-xl text-[#c2ccaa] mb-3" },
                               0 === e.length
                                 ? "No resources have been added yet."
-                                : i
-                                  ? `No resources match "${i}".`
+                                : c
+                                  ? `No resources match "${c}".`
                                   : "No resources in this category yet.",
                             ),
-                            B &&
+                            _ &&
                               r.createElement(
                                 "button",
                                 {
                                   type: "button",
-                                  onClick: O,
+                                  onClick: z,
                                   className:
                                     "text-[#8cfcfb] underline underline-offset-2 hover:text-white",
                                 },
@@ -6595,39 +7648,39 @@
                           ),
                 ),
                 r.createElement(
-                  o.N,
+                  dr.N,
                   null,
                   g &&
-                    r.createElement(Da, {
+                    r.createElement($r, {
                       key: g.id,
                       resource: g,
                       onClose: h,
-                      onEdit: j,
-                      onDelete: P,
+                      onEdit: D,
+                      onDelete: j,
                     }),
                 ),
                 r.createElement(
-                  o.N,
+                  dr.N,
                   null,
                   x &&
-                    r.createElement(Ha, {
+                    r.createElement(Ur, {
                       key: x.resource ? `edit-${x.resource.id}` : "add",
                       resource: x.resource,
-                      subOptions: _,
-                      takenUrls: C,
-                      onClose: () => y(null),
+                      subOptions: P,
+                      takenUrls: k,
+                      onClose: () => E(null),
                       onSubmit: async (e) => {
                         const a = x?.resource;
                         if (a) {
-                          const r = a.types.length ? a.types : [ma],
-                            n = ha(e, r);
+                          const r = a.types.length ? a.types : [xr],
+                            n = Cr(e, r);
                           (e.url !== a.url && (n.new_resource_url = e.url),
                             await ((e, t) =>
-                              ca(
+                              pr(
                                 { ...t, action: "update", resource_url: e },
                                 "Couldn't save your changes. Please try again.",
                               ))(a.url, n));
-                          const l = ga({
+                          const l = wr({
                             ...n,
                             resource_url: e.url,
                             resource_timestamp: a.addedAt
@@ -6635,397 +7688,512 @@
                               : "",
                           });
                           (t((e) => e.map((e) => (e.id === a.id ? l : e))),
-                            L("success", "Resource updated."));
+                            M("success", "Resource updated."));
                         } else {
                           const a = {
-                            ...ha(e, [ma]),
+                            ...Cr(e, [xr]),
                             resource_url: e.url,
                             resource_timestamp: new Date().toISOString(),
                           };
                           (await ((e) =>
-                            ca(
+                            pr(
                               e,
                               "Couldn't add the resource. Please try again.",
                             ))(a),
-                            t((e) => [ga(a), ...e]),
-                            L("success", "Resource added."));
+                            t((e) => [wr(a), ...e]),
+                            M("success", "Resource added."));
                         }
-                        (S((t) => {
+                        (C((t) => {
                           const r = new Set(t);
                           return (a && r.delete(a.url), r.add(e.url), r);
                         }),
-                          y(null),
-                          D({ silent: !0 }));
+                          E(null),
+                          T({ silent: !0 }));
                       },
                     }),
                 ),
                 r.createElement(
-                  o.N,
+                  dr.N,
                   null,
-                  v &&
-                    r.createElement(Ba, {
-                      key: `delete-${v.id}`,
-                      resource: v,
-                      onClose: () => N(null),
+                  y &&
+                    r.createElement(Gr, {
+                      key: `delete-${y.id}`,
+                      resource: y,
+                      onClose: () => v(null),
                       onConfirm: async (e) => {
-                        k(e.id);
+                        w(e.id);
                         try {
                           await ((a = e.url),
-                          ca(
+                          pr(
                             { action: "delete", resource_url: a },
                             "Couldn't delete the resource. Please try again.",
                           ));
                         } finally {
-                          k(null);
+                          w(null);
                         }
                         var a;
                         (t((t) => t.filter((t) => t.id !== e.id)),
-                          S((t) => {
+                          C((t) => {
                             const a = new Set(t);
                             return (a.delete(e.url), a);
                           }),
-                          N(null),
-                          L("success", `Deleted “${e.title}”.`),
-                          D({ silent: !0 }));
+                          v(null),
+                          M("success", `Deleted “${e.title}”.`),
+                          T({ silent: !0 }));
                       },
                     }),
                 ),
-                r.createElement(Oa, { toast: M, onDismiss: () => A(null) }),
+                r.createElement(Wr, { toast: S, onDismiss: () => A(null) }),
+              ),
+            );
+          };
+        function Zr(e) {
+          let {
+            checked: t,
+            onChange: a,
+            disabled: n,
+            labelledBy: l,
+            describedBy: o,
+            label: s,
+            className: c,
+          } = e;
+          return r.createElement(
+            "button",
+            {
+              type: "button",
+              role: "switch",
+              "aria-checked": t,
+              "aria-label": s,
+              "aria-labelledby": l,
+              "aria-describedby": o,
+              disabled: n,
+              onClick: () => a(!t),
+              className: y(
+                "relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors",
+                "outline-none focus-visible:ring-[3px] focus-visible:ring-brand-fg/40",
+                "disabled:cursor-not-allowed",
+                t ? "bg-brand-fg" : "bg-muted-foreground/50",
+                c,
+              ),
+            },
+            r.createElement("span", {
+              className: y(
+                "inline-block h-5 w-5 rounded-full bg-white shadow transition-transform",
+                t ? "translate-x-[22px]" : "translate-x-0.5",
+              ),
+            }),
+          );
+        }
+        const Jr = "rounded-xl border border-border bg-card",
+          Vr = [
+            { value: "all", label: "All" },
+            { value: "unread", label: "Unread" },
+            { value: "success", label: "Success" },
+            { value: "info", label: "Info" },
+            { value: "warning", label: "Warnings" },
+            { value: "error", label: "Errors" },
+          ],
+          Yr = function () {
+            const {
+                notifications: e,
+                unreadCount: t,
+                markAllRead: a,
+                clearAll: n,
+                restore: l,
+                prefs: o,
+                setPrefs: s,
+              } = St(),
+              [c, i] = (0, r.useState)("all"),
+              d = e.filter(
+                (e) => "all" === c || ("unread" === c ? !e.read : e.type === c),
+              );
+            return r.createElement(
+              "div",
+              { className: "container mx-auto px-4 py-6 md:px-6" },
+              r.createElement(
+                "header",
+                { className: "mb-6" },
+                r.createElement(
+                  "h1",
+                  {
+                    className:
+                      "font-display text-2xl font-semibold text-foreground md:text-3xl",
+                  },
+                  "Notifications",
+                ),
+                r.createElement(
+                  "p",
+                  { className: "text-sm text-muted-foreground" },
+                  "Task sync results and other updates",
+                ),
+              ),
+              r.createElement(
+                "div",
+                { className: "grid gap-6 xl:grid-cols-3" },
+                r.createElement(
+                  "section",
+                  { className: y(Jr, "overflow-hidden xl:col-span-2") },
+                  r.createElement(
+                    "div",
+                    { className: "px-6 pb-4 pt-5" },
+                    r.createElement(
+                      "h2",
+                      {
+                        className:
+                          "flex items-center gap-2 text-base font-semibold",
+                      },
+                      r.createElement(ze.A, {
+                        className: "h-4 w-4 text-brand-fg",
+                      }),
+                      "Inbox",
+                      t > 0 &&
+                        r.createElement(
+                          "span",
+                          {
+                            className:
+                              "rounded-full bg-brand-soft px-2 py-0.5 text-xs font-medium text-brand-fg",
+                          },
+                          t,
+                          " unread",
+                        ),
+                    ),
+                    r.createElement(
+                      "p",
+                      { className: "mt-1 text-sm text-muted-foreground" },
+                      "Kept in this browser for your account. The newest 50 are saved.",
+                    ),
+                  ),
+                  r.createElement(
+                    "div",
+                    {
+                      className:
+                        "flex flex-wrap items-center justify-between gap-3 border-y border-border px-6 py-3",
+                    },
+                    r.createElement(
+                      "div",
+                      {
+                        role: "group",
+                        "aria-label": "Filter notifications",
+                        className: "flex flex-wrap gap-1",
+                      },
+                      Vr.map((e) =>
+                        r.createElement(
+                          "button",
+                          {
+                            key: e.value,
+                            type: "button",
+                            "aria-pressed": c === e.value,
+                            onClick: () => i(e.value),
+                            className: y(
+                              "rounded-md px-2.5 py-1 text-xs font-medium outline-none transition-colors focus-visible:ring-[3px] focus-visible:ring-brand-fg/40",
+                              c === e.value
+                                ? "bg-brand-soft text-brand-fg ring-1 ring-brand-fg/25"
+                                : "text-muted-foreground hover:bg-white/10 hover:text-foreground",
+                            ),
+                          },
+                          e.label,
+                        ),
+                      ),
+                    ),
+                    r.createElement(
+                      "div",
+                      { className: "flex gap-2" },
+                      r.createElement(
+                        k,
+                        {
+                          variant: "outline",
+                          size: "sm",
+                          onClick: a,
+                          disabled: 0 === t,
+                        },
+                        r.createElement(Xe.A, { className: "h-4 w-4" }),
+                        "Mark all read",
+                      ),
+                      r.createElement(
+                        k,
+                        {
+                          variant: "outline",
+                          size: "sm",
+                          onClick: function () {
+                            const t = e;
+                            (n(),
+                              xe.info("Notifications cleared", {
+                                action: { label: "Undo", onClick: () => l(t) },
+                              }));
+                          },
+                          disabled: 0 === e.length,
+                        },
+                        r.createElement(da.A, { className: "h-4 w-4" }),
+                        "Clear all",
+                      ),
+                    ),
+                  ),
+                  r.createElement(Mt, {
+                    items: d,
+                    emptyTitle:
+                      0 === e.length
+                        ? "You're all caught up"
+                        : "Nothing matches this filter",
+                    emptyDescription:
+                      0 === e.length
+                        ? "New notifications will show up here."
+                        : "Try a different filter.",
+                  }),
+                ),
+                r.createElement(
+                  "section",
+                  { className: y(Jr, "self-start p-6") },
+                  r.createElement(
+                    "h2",
+                    { className: "text-base font-semibold" },
+                    "Preferences",
+                  ),
+                  r.createElement(
+                    "p",
+                    { className: "mt-1 text-sm text-muted-foreground" },
+                    "Choose how notifications reach you",
+                  ),
+                  r.createElement(
+                    "div",
+                    {
+                      className:
+                        "mt-4 flex items-center justify-between gap-4 rounded-lg border border-border p-4",
+                    },
+                    r.createElement(
+                      "div",
+                      null,
+                      r.createElement(
+                        "div",
+                        {
+                          id: "popups-label",
+                          className: "text-sm font-medium",
+                        },
+                        "Pop-up notifications",
+                      ),
+                      r.createElement(
+                        "p",
+                        {
+                          id: "popups-desc",
+                          className: "text-xs text-muted-foreground",
+                        },
+                        "When off, only errors pop up. Your inbox still fills up as usual.",
+                      ),
+                    ),
+                    r.createElement(Zr, {
+                      checked: o.popups,
+                      onChange: (e) => s({ popups: e }),
+                      labelledBy: "popups-label",
+                      describedBy: "popups-desc",
+                    }),
+                  ),
+                ),
               ),
             );
           },
-          $a = function () {
-            const { isAuthenticated: e } = Be(),
-              t = (0, d.zy)();
+          Kr = function () {
+            return r.createElement(
+              "div",
+              {
+                className:
+                  "flex flex-col items-center justify-center min-h-screen bg-[#000000] text-[#c2ccaa]",
+              },
+              r.createElement("h1", null, "Notes"),
+              r.createElement(
+                "a",
+                {
+                  href: "https://docs.google.com/document/d/1YI_R4m_rr6TnaQ9K3qSY26MExzZiM2dJlJwaXSVM438/edit?usp=sharing",
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  className:
+                    "inline-block mt-4 px-4 py-2 rounded-md bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors",
+                },
+                "Open Nec Doc",
+              ),
+            );
+          },
+          Qr = function () {
+            const { isAuthenticated: e } = bt(),
+              t = (0, s.zy)();
             return e
-              ? r.createElement(d.sv, null)
-              : r.createElement(d.C5, {
+              ? r.createElement(s.sv, null)
+              : r.createElement(s.C5, {
                   to: "/login",
                   replace: !0,
                   state: { from: t },
                 });
           },
-          Fa = () => {
-            const e = (0, d.zy)(),
-              t = (0, d.Zp)(),
-              { isAuthenticated: a, logout: n } = Be(),
-              [u, f] = (0, r.useState)("home"),
-              [b, g] = (0, r.useState)(!1),
-              p = [
-                { name: "home", label: "home", url: "/" },
-                {
-                  name: "time-planner",
-                  label: "time-planner",
-                  url: "/time-planner",
-                },
-                {
-                  name: "project-track",
-                  label: "project-track",
-                  url: "/project-track",
-                },
-                { name: "todo-list", label: "todo-list", url: "/todo-list" },
-                {
-                  name: "dev-res-admin",
-                  label: "dev-res-admin",
-                  url: "/dev-res-admin",
-                },
-              ],
-              h = "/login" === e.pathname || "/signup" === e.pathname;
-            function x() {
-              (n(), g(!1), t("/login", { replace: !0 }));
-            }
-            return (
-              (0, r.useEffect)(() => {
-                const t = p.find((t) => e.pathname.includes(t.name));
-                t && f(t.name);
-              }, [e.pathname]),
+          Xr = () => {
+            const e = (0, s.zy)(),
+              t = "/login" === e.pathname || "/signup" === e.pathname;
+            return r.createElement(
+              "div",
+              {
+                className:
+                  "flex min-h-screen min-w-0 flex-col bg-[#000000] text-[#c2ccaa]",
+              },
+              !t && r.createElement(Ft, null),
               r.createElement(
-                "div",
+                "main",
+                { className: "min-w-0 flex-1" },
+                r.createElement(
+                  s.BV,
+                  null,
+                  r.createElement(s.qh, {
+                    path: "/login",
+                    element: r.createElement(na, null),
+                  }),
+                  r.createElement(s.qh, {
+                    path: "/signup",
+                    element: r.createElement(ca, null),
+                  }),
+                  r.createElement(
+                    s.qh,
+                    { element: r.createElement(Qr, null) },
+                    r.createElement(s.qh, {
+                      path: "/",
+                      element: r.createElement(_e, null),
+                    }),
+                    r.createElement(s.qh, {
+                      path: "/time-planner",
+                      element: r.createElement(ir, null),
+                    }),
+                    r.createElement(s.qh, {
+                      path: "/project-track",
+                      element: r.createElement(fa, null),
+                    }),
+                    r.createElement(s.qh, {
+                      path: "/todo-list",
+                      element: r.createElement(Ha, null),
+                    }),
+                    r.createElement(s.qh, {
+                      path: "/nec-doc",
+                      element: r.createElement(Kr, null),
+                    }),
+                    r.createElement(s.qh, {
+                      path: "/dev-res-admin",
+                      element: r.createElement(qr, null),
+                    }),
+                    r.createElement(s.qh, {
+                      path: "/notifications",
+                      element: r.createElement(Yr, null),
+                    }),
+                  ),
+                ),
+              ),
+              r.createElement(
+                "footer",
                 {
                   className:
-                    "flex min-h-screen min-w-0 flex-col bg-[#000000] text-[#c2ccaa]",
+                    "sticky bottom-0 z-40 bg-[#000000] text-[#c2ccaa] border-t border-[#c2ccaa]/10",
                 },
-                !h &&
-                  r.createElement(
-                    "header",
-                    {
-                      className:
-                        "fixed inset-x-0 top-0 z-50 border-b border-black/20 bg-[#6A0C0B]/90 backdrop-blur-md",
-                    },
-                    r.createElement(
-                      "nav",
-                      {
-                        className:
-                          "container mx-auto flex min-w-0 items-center justify-between px-4 py-3 sm:px-6 sm:py-4",
-                      },
-                      r.createElement(
-                        l.P.div,
-                        {
-                          initial: { opacity: 0, x: -50 },
-                          animate: { opacity: 1, x: 0 },
-                          transition: { duration: 0.5 },
-                          className:
-                            "min-w-0 truncate pr-4 text-xl font-display font-semibold text-[#FFFFFF] sm:text-2xl",
-                        },
-                        r.createElement(d.k2, { to: "/" }, "Ashtro Planner"),
-                      ),
-                      r.createElement(
-                        "div",
-                        {
-                          className:
-                            "hidden items-center space-x-4 md:flex lg:space-x-6",
-                        },
-                        p.map((e) =>
-                          r.createElement(
-                            d.k2,
-                            { key: e.name, to: e.url },
-                            r.createElement(
-                              l.P.button,
-                              {
-                                whileHover: { scale: 1.1 },
-                                whileTap: { scale: 0.95 },
-                                className: `capitalize font-semibold ${u === e.name ? "text-[#8cfcfb]" : "text-[#c2ccaa]"} hover:text-[#67C7EB] transition-colors`,
-                              },
-                              e.label,
-                            ),
-                          ),
-                        ),
-                        a &&
-                          r.createElement(
-                            l.P.button,
-                            {
-                              whileHover: { scale: 1.1 },
-                              whileTap: { scale: 0.95 },
-                              onClick: x,
-                              className:
-                                "flex items-center gap-1.5 font-semibold text-[#c2ccaa] hover:text-[#67C7EB] transition-colors",
-                            },
-                            r.createElement(s.A, { className: "w-4 h-4" }),
-                            " logout",
-                          ),
-                      ),
-                      r.createElement(
-                        "div",
-                        { className: "md:hidden" },
-                        r.createElement(
-                          "button",
-                          { onClick: () => g(!b) },
-                          b
-                            ? r.createElement(c.A, { className: "w-6 h-6" })
-                            : r.createElement(i.A, { className: " w-6 h-6" }),
-                        ),
-                      ),
-                    ),
-                  ),
                 r.createElement(
-                  o.N,
-                  null,
-                  !h &&
-                    b &&
-                    r.createElement(
-                      l.P.div,
-                      {
-                        initial: { opacity: 0, y: -50 },
-                        animate: { opacity: 1, y: 0 },
-                        exit: { opacity: 0, y: -50 },
-                        className:
-                          "fixed inset-0 z-40 bg-[#582726] bg-opacity-95 flex flex-col items-center justify-center space-y-6",
-                      },
-                      p.map((e) =>
-                        r.createElement(
-                          d.k2,
-                          {
-                            key: e.name,
-                            to: e.url,
-                            onClick: () => {
-                              (f(e.name), g(!1));
-                            },
-                          },
-                          r.createElement(
-                            l.P.button,
-                            {
-                              whileHover: { scale: 1.1 },
-                              whileTap: { scale: 0.95 },
-                              className: `text-2xl font-bold capitalize ${u === e.name ? "text-[#8cfcfb]" : "text-[#c2ccaa]"} hover:text-[#67C7EB] transition-colors`,
-                            },
-                            e.label,
-                          ),
-                        ),
-                      ),
-                      a &&
-                        r.createElement(
-                          l.P.button,
-                          {
-                            whileHover: { scale: 1.1 },
-                            whileTap: { scale: 0.95 },
-                            onClick: x,
-                            className:
-                              "flex items-center gap-2 text-2xl font-bold capitalize text-[#c2ccaa] hover:text-[#67C7EB] transition-colors",
-                          },
-                          r.createElement(s.A, { className: "w-5 h-5" }),
-                          " logout",
-                        ),
-                    ),
-                ),
-                r.createElement(
-                  "main",
+                  "div",
                   {
                     className:
-                      "min-w-0 flex-1 " + (h ? "" : "pt-[4.5rem] sm:pt-24"),
+                      "container mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-1 px-4 py-2 text-center sm:px-6",
                   },
                   r.createElement(
-                    d.BV,
-                    null,
-                    r.createElement(d.qh, {
-                      path: "/login",
-                      element: r.createElement(Ie, null),
-                    }),
-                    r.createElement(d.qh, {
-                      path: "/signup",
-                      element: r.createElement(qe, null),
-                    }),
+                    "div",
+                    { className: "mt-1" },
+                    "© 2026",
+                    " ",
                     r.createElement(
-                      d.qh,
-                      { element: r.createElement($a, null) },
-                      r.createElement(d.qh, {
-                        path: "/",
-                        element: r.createElement(ge, null),
-                      }),
-                      r.createElement(d.qh, {
-                        path: "/time-planner",
-                        element: r.createElement(aa, null),
-                      }),
-                      r.createElement(d.qh, {
-                        path: "/project-track",
-                        element: r.createElement(Qe, null),
-                      }),
-                      r.createElement(d.qh, {
-                        path: "/todo-list",
-                        element: r.createElement(Dt, null),
-                      }),
-                      r.createElement(d.qh, {
-                        path: "/dev-res-admin",
-                        element: r.createElement(za, null),
-                      }),
+                      "span",
+                      null,
+                      r.createElement(
+                        "strong",
+                        null,
+                        r.createElement(
+                          "a",
+                          {
+                            href: "https://ashserrao.github.io/portfolio/",
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            className: "text-[#67C7EB] transition-colors",
+                          },
+                          "Ashtro Dev",
+                        ),
+                      ),
+                    ),
+                    ". v2.0.14 All rights reserved.",
+                  ),
+                  r.createElement(
+                    "div",
+                    { className: "flex justify-center space-x-5 sm:ml-2" },
+                    r.createElement(
+                      l.P.a,
+                      {
+                        href: "https://github.com/ashserrao",
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        whileHover: { scale: 1.1 },
+                        whileTap: { scale: 0.95 },
+                        className: "hover:text-[#67C7EB] transition-colors",
+                      },
+                      r.createElement(o.hL4, { className: "w-6 h-6" }),
+                    ),
+                    r.createElement(
+                      l.P.a,
+                      {
+                        href: "https://www.linkedin.com/in/anush-serrao-31440a16a/",
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        whileHover: { scale: 1.1 },
+                        whileTap: { scale: 0.95 },
+                        className: "hover:text-[#67C7EB] transition-colors",
+                      },
+                      r.createElement(o.QEs, { className: "w-6 h-6" }),
+                    ),
+                    r.createElement(
+                      l.P.a,
+                      {
+                        href: "https://www.facebook.com/profile.php?id=100009259891356",
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        whileHover: { scale: 1.1 },
+                        whileTap: { scale: 0.95 },
+                        className: "hover:text-[#67C7EB] transition-colors",
+                      },
+                      r.createElement(o.iYk, { className: "w-6 h-6" }),
+                    ),
+                    r.createElement(
+                      l.P.a,
+                      {
+                        href: "https://www.instagram.com/cipher_beast/",
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        whileHover: { scale: 1.1 },
+                        whileTap: { scale: 0.95 },
+                        className: "hover:text-[#67C7EB] transition-colors",
+                      },
+                      r.createElement(o.ao$, { className: "w-6 h-6" }),
                     ),
                   ),
                 ),
-                !b &&
-                  r.createElement(
-                    "footer",
-                    {
-                      className:
-                        "sticky bottom-0 z-40 bg-[#000000] text-[#c2ccaa] border-t border-[#c2ccaa]/10",
-                    },
-                    r.createElement(
-                      "div",
-                      {
-                        className:
-                          "container mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-1 px-4 py-2 text-center sm:px-6",
-                      },
-                      r.createElement(
-                        "div",
-                        { className: "mt-1" },
-                        "© 2026",
-                        " ",
-                        r.createElement(
-                          "span",
-                          null,
-                          r.createElement(
-                            "strong",
-                            null,
-                            r.createElement(
-                              "a",
-                              {
-                                href: "https://ashserrao.github.io/portfolio/",
-                                target: "_blank",
-                                rel: "noopener noreferrer",
-                                className: "text-[#67C7EB] transition-colors",
-                              },
-                              "Ashtro Dev",
-                            ),
-                          ),
-                        ),
-                        ". v2.0.12 All rights reserved.",
-                      ),
-                      r.createElement(
-                        "div",
-                        { className: "flex justify-center space-x-5 sm:ml-2" },
-                        r.createElement(
-                          l.P.a,
-                          {
-                            href: "https://github.com/ashserrao",
-                            target: "_blank",
-                            rel: "noopener noreferrer",
-                            whileHover: { scale: 1.1 },
-                            whileTap: { scale: 0.95 },
-                            className: "hover:text-[#67C7EB] transition-colors",
-                          },
-                          r.createElement(m.hL4, { className: "w-6 h-6" }),
-                        ),
-                        r.createElement(
-                          l.P.a,
-                          {
-                            href: "https://www.linkedin.com/in/anush-serrao-31440a16a/",
-                            target: "_blank",
-                            rel: "noopener noreferrer",
-                            whileHover: { scale: 1.1 },
-                            whileTap: { scale: 0.95 },
-                            className: "hover:text-[#67C7EB] transition-colors",
-                          },
-                          r.createElement(m.QEs, { className: "w-6 h-6" }),
-                        ),
-                        r.createElement(
-                          l.P.a,
-                          {
-                            href: "https://www.facebook.com/profile.php?id=100009259891356",
-                            target: "_blank",
-                            rel: "noopener noreferrer",
-                            whileHover: { scale: 1.1 },
-                            whileTap: { scale: 0.95 },
-                            className: "hover:text-[#67C7EB] transition-colors",
-                          },
-                          r.createElement(m.iYk, { className: "w-6 h-6" }),
-                        ),
-                        r.createElement(
-                          l.P.a,
-                          {
-                            href: "https://www.instagram.com/cipher_beast/",
-                            target: "_blank",
-                            rel: "noopener noreferrer",
-                            whileHover: { scale: 1.1 },
-                            whileTap: { scale: 0.95 },
-                            className: "hover:text-[#67C7EB] transition-colors",
-                          },
-                          r.createElement(m.ao$, { className: "w-6 h-6" }),
-                        ),
-                      ),
-                    ),
-                  ),
-              )
+              ),
             );
           },
-          Ra = function () {
+          en = function () {
             return r.createElement(
               "div",
               { className: "App" },
               r.createElement(
-                He,
+                gt,
                 null,
                 r.createElement(
-                  ee,
+                  Ct,
                   null,
-                  r.createElement(ne, null, r.createElement(Fa, null)),
+                  r.createElement(we, null, r.createElement(Xr, null)),
                 ),
               ),
             );
           };
-        var Ia;
+        var tn;
         (n
           .createRoot(document.getElementById("root"))
-          .render(r.createElement(d.I9, null, r.createElement(Ra, null))),
-          Ia &&
-            Ia instanceof Function &&
+          .render(r.createElement(s.I9, null, r.createElement(en, null))),
+          tn &&
+            tn instanceof Function &&
             a
               .e(364)
               .then(a.bind(a, 364))
@@ -7037,30 +8205,30 @@
                   getLCP: n,
                   getTTFB: l,
                 } = e;
-                (t(Ia), a(Ia), r(Ia), n(Ia), l(Ia));
+                (t(tn), a(tn), r(tn), n(tn), l(tn));
               }));
       },
     },
-    n = {};
-  function l(e) {
-    var t = n[e];
+    o = {};
+  function s(e) {
+    var t = o[e];
     if (void 0 !== t) return t.exports;
-    var a = (n[e] = { exports: {} });
-    return (r[e].call(a.exports, a, a.exports, l), a.exports);
+    var a = (o[e] = { exports: {} });
+    return (l[e].call(a.exports, a, a.exports, s), a.exports);
   }
-  ((l.m = r),
+  ((s.m = l),
     (e = []),
-    (l.O = (t, a, r, n) => {
+    (s.O = (t, a, r, n) => {
       if (!a) {
-        var o = 1 / 0;
-        for (m = 0; m < e.length; m++) {
-          ((a = e[m][0]), (r = e[m][1]), (n = e[m][2]));
-          for (var s = !0, c = 0; c < a.length; c++)
-            (!1 & n || o >= n) && Object.keys(l.O).every((e) => l.O[e](a[c]))
+        var l = 1 / 0;
+        for (d = 0; d < e.length; d++) {
+          ((a = e[d][0]), (r = e[d][1]), (n = e[d][2]));
+          for (var o = !0, c = 0; c < a.length; c++)
+            (!1 & n || l >= n) && Object.keys(s.O).every((e) => s.O[e](a[c]))
               ? a.splice(c--, 1)
-              : ((s = !1), n < o && (o = n));
-          if (s) {
-            e.splice(m--, 1);
+              : ((o = !1), n < l && (l = n));
+          if (o) {
+            e.splice(d--, 1);
             var i = r();
             void 0 !== i && (t = i);
           }
@@ -7068,100 +8236,117 @@
         return t;
       }
       n = n || 0;
-      for (var m = e.length; m > 0 && e[m - 1][2] > n; m--) e[m] = e[m - 1];
-      e[m] = [a, r, n];
+      for (var d = e.length; d > 0 && e[d - 1][2] > n; d--) e[d] = e[d - 1];
+      e[d] = [a, r, n];
     }),
-    (l.d = (e, t) => {
+    (a = Object.getPrototypeOf
+      ? (e) => Object.getPrototypeOf(e)
+      : (e) => e.__proto__),
+    (s.t = function (e, r) {
+      if ((1 & r && (e = this(e)), 8 & r)) return e;
+      if ("object" == typeof e && e) {
+        if (4 & r && e.__esModule) return e;
+        if (16 & r && "function" == typeof e.then) return e;
+      }
+      var n = Object.create(null);
+      s.r(n);
+      var l = {};
+      t = t || [null, a({}), a([]), a(a)];
+      for (var o = 2 & r && e; "object" == typeof o && !~t.indexOf(o); o = a(o))
+        Object.getOwnPropertyNames(o).forEach((t) => (l[t] = () => e[t]));
+      return ((l.default = () => e), s.d(n, l), n);
+    }),
+    (s.d = (e, t) => {
       for (var a in t)
-        l.o(t, a) &&
-          !l.o(e, a) &&
+        s.o(t, a) &&
+          !s.o(e, a) &&
           Object.defineProperty(e, a, { enumerable: !0, get: t[a] });
     }),
-    (l.f = {}),
-    (l.e = (e) =>
-      Promise.all(Object.keys(l.f).reduce((t, a) => (l.f[a](e, t), t), []))),
-    (l.u = (e) => "bundle.49239971958313ee0ec7.js"),
-    (l.miniCssF = (e) => {}),
-    (l.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
-    (t = {}),
-    (a = "react-taskplanner:"),
-    (l.l = (e, r, n, o) => {
-      if (t[e]) t[e].push(r);
+    (s.f = {}),
+    (s.e = (e) =>
+      Promise.all(Object.keys(s.f).reduce((t, a) => (s.f[a](e, t), t), []))),
+    (s.u = (e) => "bundle.49239971958313ee0ec7.js"),
+    (s.miniCssF = (e) => {}),
+    (s.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
+    (r = {}),
+    (n = "react-taskplanner:"),
+    (s.l = (e, t, a, l) => {
+      if (r[e]) r[e].push(t);
       else {
-        var s, c;
-        if (void 0 !== n)
+        var o, c;
+        if (void 0 !== a)
           for (
-            var i = document.getElementsByTagName("script"), m = 0;
-            m < i.length;
-            m++
+            var i = document.getElementsByTagName("script"), d = 0;
+            d < i.length;
+            d++
           ) {
-            var d = i[m];
+            var m = i[d];
             if (
-              d.getAttribute("src") == e ||
-              d.getAttribute("data-webpack") == a + n
+              m.getAttribute("src") == e ||
+              m.getAttribute("data-webpack") == n + a
             ) {
-              s = d;
+              o = m;
               break;
             }
           }
-        (s ||
+        (o ||
           ((c = !0),
-          ((s = document.createElement("script")).charset = "utf-8"),
-          (s.timeout = 120),
-          l.nc && s.setAttribute("nonce", l.nc),
-          s.setAttribute("data-webpack", a + n),
-          (s.src = e)),
-          (t[e] = [r]));
-        var u = (a, r) => {
-            ((s.onerror = s.onload = null), clearTimeout(f));
-            var n = t[e];
+          ((o = document.createElement("script")).charset = "utf-8"),
+          (o.timeout = 120),
+          s.nc && o.setAttribute("nonce", s.nc),
+          o.setAttribute("data-webpack", n + a),
+          (o.src = e)),
+          (r[e] = [t]));
+        var u = (t, a) => {
+            ((o.onerror = o.onload = null), clearTimeout(f));
+            var n = r[e];
             if (
-              (delete t[e],
-              s.parentNode && s.parentNode.removeChild(s),
-              n && n.forEach((e) => e(r)),
-              a)
+              (delete r[e],
+              o.parentNode && o.parentNode.removeChild(o),
+              n && n.forEach((e) => e(a)),
+              t)
             )
-              return a(r);
+              return t(a);
           },
           f = setTimeout(
-            u.bind(null, void 0, { type: "timeout", target: s }),
+            u.bind(null, void 0, { type: "timeout", target: o }),
             12e4,
           );
-        ((s.onerror = u.bind(null, s.onerror)),
-          (s.onload = u.bind(null, s.onload)),
-          c && document.head.appendChild(s));
+        ((o.onerror = u.bind(null, o.onerror)),
+          (o.onload = u.bind(null, o.onload)),
+          c && document.head.appendChild(o));
       }
     }),
-    (l.r = (e) => {
+    (s.r = (e) => {
       ("undefined" != typeof Symbol &&
         Symbol.toStringTag &&
         Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(e, "__esModule", { value: !0 }));
     }),
-    (l.p = "./"),
+    (s.p = "./"),
     (() => {
       var e = { 792: 0 };
-      ((l.f.j = (t, a) => {
-        var r = l.o(e, t) ? e[t] : void 0;
+      ((s.f.j = (t, a) => {
+        var r = s.o(e, t) ? e[t] : void 0;
         if (0 !== r)
           if (r) a.push(r[2]);
           else {
             var n = new Promise((a, n) => (r = e[t] = [a, n]));
             a.push((r[2] = n));
-            var o = l.p + l.u(t),
-              s = new Error();
-            l.l(
-              o,
+            var l = s.p + s.u(t),
+              o = new Error();
+            s.l(
+              l,
               (a) => {
-                if (l.o(e, t) && (0 !== (r = e[t]) && (e[t] = void 0), r)) {
+                if (s.o(e, t) && (0 !== (r = e[t]) && (e[t] = void 0), r)) {
                   var n = a && ("load" === a.type ? "missing" : a.type),
-                    o = a && a.target && a.target.src;
-                  ((s.message =
-                    "Loading chunk " + t + " failed.\n(" + n + ": " + o + ")"),
-                    (s.name = "ChunkLoadError"),
-                    (s.type = n),
-                    (s.request = o),
-                    r[1](s));
+                    l = a && a.target && a.target.src;
+                  ((o.message =
+                    "Loading chunk " + t + " failed.\n(" + n + ": " + l + ")"),
+                    (o.name = "ChunkLoadError"),
+                    (o.type = n),
+                    (o.request = l),
+                    r[1](o));
                 }
               },
               "chunk-" + t,
@@ -7169,26 +8354,27 @@
             );
           }
       }),
-        (l.O.j = (t) => 0 === e[t]));
+        (s.O.j = (t) => 0 === e[t]));
       var t = (t, a) => {
           var r,
             n,
-            o = a[0],
-            s = a[1],
+            l = a[0],
+            o = a[1],
             c = a[2],
             i = 0;
-          if (o.some((t) => 0 !== e[t])) {
-            for (r in s) l.o(s, r) && (l.m[r] = s[r]);
-            if (c) var m = c(l);
+          if (l.some((t) => 0 !== e[t])) {
+            for (r in o) s.o(o, r) && (s.m[r] = o[r]);
+            if (c) var d = c(s);
           }
-          for (t && t(a); i < o.length; i++)
-            ((n = o[i]), l.o(e, n) && e[n] && e[n][0](), (e[n] = 0));
-          return l.O(m);
+          for (t && t(a); i < l.length; i++)
+            ((n = l[i]), s.o(e, n) && e[n] && e[n][0](), (e[n] = 0));
+          return s.O(d);
         },
         a = (self.webpackChunkreact_taskplanner =
           self.webpackChunkreact_taskplanner || []);
       (a.forEach(t.bind(null, 0)), (a.push = t.bind(null, a.push.bind(a))));
-    })());
-  var o = l.O(void 0, [549], () => l(2074));
-  o = l.O(o);
+    })(),
+    (s.nc = void 0));
+  var c = s.O(void 0, [685], () => s(8305));
+  c = s.O(c);
 })();

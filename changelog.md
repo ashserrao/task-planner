@@ -22,3 +22,5 @@
 - v2.0.10 dev res admin opt added
 - v2.0.11 bugfix Fix validation date and time for form; Add change log for projects;
 - v2.0.12 added google calendar connectivity for priority task reminders
+- v2.0.13 navbar added from ashtro template and notification service added
+- v2.0.14 nec-doc added and left open google doc to add notes
