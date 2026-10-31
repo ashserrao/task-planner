@@ -21,6 +21,7 @@
 - v2.0.9 changed the ui of to card and added date to task creating and edit form
 - v2.0.10 dev res admin opt added
 - v2.0.11 bugfix Fix validation date and time for form; Add change log for projects;
-- v2.0.12 added google calendar connectivity for priority task reminders
-- v2.0.13 navbar added from ashtro template and notification service added
-- v2.0.14 nec-doc added and left open google doc to add notes
+- v2.0.12 README rewritten with full project documentation (setup, architecture, backend, task model, design system)
+- v2.0.13 admin and demo roles: demo account uses dummy JSON data stored for the session only, no Google API access, no Calendar sync, and no access to nec-doc and dev-res-admin; hidden admin account for real data
+- v2.0.14 duplicate task option (card menu and edit form); description and notes saved in separate sheet columns ("task notes")
+- v2.0.15 recurring tasks (daily, weekly, monthly) with repeat-until date; delete all tasks in a recurring series; Apps Script createSeries and deleteSeries actions
